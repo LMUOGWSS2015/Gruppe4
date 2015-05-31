@@ -34,22 +34,22 @@ public class SimpleMovingPlatform : InteractivePhysicsObject {
 			distanceVector = transform.right * transform.localScale.x;
 			break;
 		case Direction.LEFT:
-			distanceVector =  -transform.right * transform.localScale.x;
+			distanceVector = -transform.right * transform.localScale.x;
 			break;
 		case Direction.BACK:
-			distanceVector =  -transform.forward * transform.localScale.z;
+			distanceVector = -transform.forward * transform.localScale.z;
 			break;
 		case Direction.FORWARD:
-			distanceVector =  transform.forward * transform.localScale.z;
+			distanceVector = transform.forward * transform.localScale.z;
 			break;
 		case Direction.UP:
-			distanceVector =  transform.up * transform.localScale.y;
+			distanceVector = transform.up * transform.localScale.y;
 			break;
 		case Direction.DOWN:
-			distanceVector =  -transform.up * transform.localScale.y;
+			distanceVector = -transform.up * transform.localScale.y;
 			break;
 		default:
-			distanceVector =  -transform.right * transform.localScale.x;
+			distanceVector = -transform.right * transform.localScale.x;
 			break;
 		}
 
