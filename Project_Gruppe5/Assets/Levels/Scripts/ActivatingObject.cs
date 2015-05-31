@@ -13,6 +13,11 @@ public class ActivatingObject : MyMonoBehaviour {
 		UpdateMe ();
 	}
 
+	void Start() 
+	{
+		StartMe ();
+	}
+
 	public virtual void Activated()
 	{
 		foreach(InteractiveObject obj in interactingObjects) {
