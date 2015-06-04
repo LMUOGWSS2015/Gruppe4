@@ -21,12 +21,18 @@ public class Player : Singleton<Player> {
 	float turnAmount;
 	float forwardAmount;
 
+	Vector3 startPosition;
+	Quaternion startRotation;
+
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animator> ();
 
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
+
+		startPosition = transform.position;
+		startRotation = transform.rotation;
 	}
 
 	public void Move(Vector3 move, bool jump) {
@@ -117,6 +123,7 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Kill() {
-		Debug.Log ("Player was killed!");
+		transform.position = startPosition;
+		transform.rotation = startRotation;
 	}
 }
