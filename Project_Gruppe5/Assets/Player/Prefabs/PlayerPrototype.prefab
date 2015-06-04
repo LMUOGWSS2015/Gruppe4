@@ -120,9 +120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckDistance: .300000012
   gravityMultiplier: 2
-  jumpPower: 8
+  jumpPower: 8.5
   turnSpeed: 1000
-  forwardSpeed: 6
+  forwardSpeed: 8
 --- !u!114 &11474226
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,13 +6,14 @@ public class Player : Singleton<Player> {
 
 	[SerializeField] float groundCheckDistance = 0.3f;
 	[Range(1f, 4f)][SerializeField] float gravityMultiplier = 2f;
-	[SerializeField] float jumpPower = 8.5f;	// 2m Sprunghöhe; 5,5m Sprungweite
+	[SerializeField] float jumpPower = 8.5f;	// 2m Sprunghöhe, 3,5m Doppelsprunghöhe; 7m Sprungweite, 14m Doppelsprungweite
 	[SerializeField] float turnSpeed = 1000f;
-	[SerializeField] float forwardSpeed = 6f;	// 5,5m Sprungweite
+	[SerializeField] float forwardSpeed = 8f;	// 7m Sprungweite, 14m Doppelsprungweite
 
 	Rigidbody rigidbody;
 	Animator anim;
 
+	bool doubleJump;
 	bool isGrounded;
 	Vector3 groundNormal;
 	float origGroundCheckDistance;
@@ -22,7 +23,7 @@ public class Player : Singleton<Player> {
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody> ();
 		//anim = GetComponent<Animator> ();
-
+		Debug.Log (doubleJump);
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
 	}
@@ -40,17 +41,17 @@ public class Player : Singleton<Player> {
 			TurnRotation ();
 		}
 
-		forwardAmount = move.z;
-		Forward ();
-
 		if (isGrounded)
 		{
 			HandleGroundedMovement(jump);
 		}
 		else
 		{
-			HandleAirborneMovement();
+			HandleAirborneMovement(jump);
 		}
+
+		forwardAmount = move.z;
+		Forward ();
 
 		//Animating ();
 	}
@@ -63,19 +64,24 @@ public class Player : Singleton<Player> {
 		transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
 	}
 
-	void HandleAirborneMovement()
+	void HandleAirborneMovement(bool jump)
 	{
-		// apply extra gravity from multiplier:
-		Vector3 extraGravityForce = (Physics.gravity * gravityMultiplier) - Physics.gravity;
-		rigidbody.AddForce(extraGravityForce);
-		
-		groundCheckDistance = rigidbody.velocity.y < 0 ? origGroundCheckDistance : 0.01f;
+		if (jump && doubleJump) {
+			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpPower, rigidbody.velocity.z);
+			doubleJump = false;
+		}
+		else {
+			// apply extra gravity from multiplier:
+			Vector3 extraGravityForce = (Physics.gravity * gravityMultiplier) - Physics.gravity;
+			rigidbody.AddForce(extraGravityForce);
+			
+			groundCheckDistance = rigidbody.velocity.y < 0 ? origGroundCheckDistance : 0.01f;
+		}
 	}
 	
 	
 	void HandleGroundedMovement(bool jump)
 	{
-		//Debug.Log ("Jump: " + jump + "; Crouch: " + crouch + "; isGrounded: " + isGrounded);
 		// check whether conditions are right to allow a jump:
 		if (jump && isGrounded)
 		{
@@ -83,6 +89,7 @@ public class Player : Singleton<Player> {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpPower, rigidbody.velocity.z);
 			isGrounded = false;
 			groundCheckDistance = 0.1f;
+			doubleJump = true;
 		}
 	}
 	
@@ -94,6 +101,7 @@ public class Player : Singleton<Player> {
 		{
 			groundNormal = hitInfo.normal;
 			isGrounded = true;
+			doubleJump = false;
 		}
 		else
 		{
