@@ -2,6 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Animator))]
 public class Player : Singleton<Player> {
 
 	[SerializeField] float groundCheckDistance = 0.3f;
@@ -22,8 +23,8 @@ public class Player : Singleton<Player> {
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody> ();
-		//anim = GetComponent<Animator> ();
-		Debug.Log (doubleJump);
+		anim = GetComponent<Animator> ();
+
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
 	}
@@ -53,7 +54,7 @@ public class Player : Singleton<Player> {
 		forwardAmount = move.z;
 		Forward ();
 
-		//Animating ();
+		Animating ();
 	}
 	
 	void TurnRotation() {
@@ -111,7 +112,7 @@ public class Player : Singleton<Player> {
 	}
 
 	void Animating() {
-		bool walking = forwardAmount != 0.0f;
+		bool walking = isGrounded && forwardAmount != 0.0f;
 		anim.SetBool ("IsWalking", walking);
 	}
 
