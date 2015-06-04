@@ -8,7 +8,7 @@ public class CameraRotation : MonoBehaviour {
 	void FixedUpdate() {
 
 		// Freie Rotation
-		transform.Rotate (0.0f, Input.GetAxis("Rotate") * rotateSpeed, 0.0f);
+		transform.Rotate (0.0f, Input.GetAxis("RotateY") * rotateSpeed, 0.0f);
 
 		// 4-Stufen Rotation
 		/*

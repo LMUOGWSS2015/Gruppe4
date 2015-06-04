@@ -6,7 +6,9 @@ public class Player : Singleton<Player> {
 
 	[SerializeField] float groundCheckDistance = 0.3f;
 	[Range(1f, 4f)][SerializeField] float gravityMultiplier = 2f;
-	[SerializeField] float jumpPower = 8f;
+	[SerializeField] float jumpPower = 8.5f;	// 2m Sprunghöhe; 5,5m Sprungweite
+	[SerializeField] float turnSpeed = 1000f;
+	[SerializeField] float forwardSpeed = 6f;	// 5,5m Sprungweite
 
 	Rigidbody rigidbody;
 	Animator anim;
@@ -31,11 +33,12 @@ public class Player : Singleton<Player> {
 		move = transform.InverseTransformDirection(move);
 
 		CheckGroundStatus ();
-
 		move = Vector3.ProjectOnPlane(move, groundNormal);
 
-		turnAmount = Mathf.Atan2(move.x, move.z);
-		TurnRotation ();
+		turnAmount = Mathf.Atan2 (move.x, move.z);
+		if (move != Vector3.zero) {
+			TurnRotation ();
+		}
 
 		forwardAmount = move.z;
 		Forward ();
@@ -53,12 +56,10 @@ public class Player : Singleton<Player> {
 	}
 	
 	void TurnRotation() {
-		float turnSpeed = 500f;
 		transform.Rotate(0, turnAmount * turnSpeed * Time.deltaTime, 0);
 	}
 
 	void Forward() {
-		float forwardSpeed = 5f;
 		transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
 	}
 

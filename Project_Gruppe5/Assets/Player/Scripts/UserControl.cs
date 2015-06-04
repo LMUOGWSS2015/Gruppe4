@@ -54,9 +54,7 @@ public class UserControl : MonoBehaviour
 			// walk speed multiplier
 			if (Input.GetKey(KeyCode.LeftShift)) move *= 0.5f;
 			#endif
-			*/
-		//Debug.Log ("Horizontal: " + h + "; " + "X: " + move.x);
-		//Debug.Log ("Vertical: " + v + "; " + "Z: " + move.z);
+		*/
 		// pass all parameters to the character control script
 		player.Move(move, jump);
 		jump = false;
