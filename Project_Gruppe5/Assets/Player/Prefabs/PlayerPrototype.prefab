@@ -12,6 +12,7 @@ GameObject:
   - 136: {fileID: 13619572}
   - 114: {fileID: 11474226}
   - 114: {fileID: 11440216}
+  - 95: {fileID: 9541620}
   m_Layer: 0
   m_Name: PlayerPrototype
   m_TagString: Player
@@ -43,8 +44,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .800000012, z: 0}
-  m_LocalScale: {x: .5, y: .800000012, z: .5}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: .600000024, y: 1, z: .600000024}
   m_Children: []
   m_Father: {fileID: 498694}
   m_RootOrder: 0
@@ -107,6 +108,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &9541620
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 478d4ddeee034bc4cb1a0de3e20731cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11440216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +138,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckDistance: .300000012
   gravityMultiplier: 2
-  jumpPower: 8
+  jumpPower: 8.5
+  turnSpeed: 1000
+  forwardSpeed: 8
 --- !u!114 &11474226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,9 +162,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .300000012
-  m_Height: 1.60000002
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: .800000012, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
