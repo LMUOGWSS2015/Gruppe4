@@ -64,7 +64,7 @@ GameObject:
   - 54: {fileID: 5467450}
   - 114: {fileID: 11490100}
   m_Layer: 0
-  m_Name: DesertCyclone
+  m_Name: Cyclone_Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
