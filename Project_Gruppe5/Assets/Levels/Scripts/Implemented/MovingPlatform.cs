@@ -30,61 +30,64 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 	public override void DoActivation () 
 	{
-
-		if(newActivation && !movingForward && !randomize) {
-			currentPoint++;
-			movingForward = true;
-			newActivation = false;
-		}
-
-		if(randomize && transform.position == pathPoints[currentPoint].position) {
-			int newPoint = currentPoint;
-
-			while(newPoint == currentPoint || newPoint == lastPoint) {
-				newPoint = Random.Range(0, pathPoints.Count);
-				Debug.Log (newPoint);
-			}
-
-			lastPoint = currentPoint;
-			currentPoint = newPoint;
-		}
-
-		rb.MovePosition(Vector3.MoveTowards(transform.position, pathPoints[currentPoint].position, Time.deltaTime * speed));
-
-		if(movingForward && transform.position == pathPoints[currentPoint].position && !randomize) {
-			if(currentPoint == pathPoints.Count - 1) {
-				movingForward = false;
-				currentPoint--;
-			} else {
+		if(pathPoints.Count > 1) {
+			if(newActivation && !movingForward && !randomize) {
 				currentPoint++;
-			}
-		} else if(!movingForward && transform.position == pathPoints[currentPoint].position) {
-			if(currentPoint == 0) { 
 				movingForward = true;
-				currentPoint++;
-			} else {
-				currentPoint--;
+				newActivation = false;
 			}
-		} 
+
+			if(randomize && transform.position == pathPoints[currentPoint].position) {
+				int newPoint = currentPoint;
+
+				while(newPoint == currentPoint || newPoint == lastPoint) {
+					newPoint = Random.Range(0, pathPoints.Count);
+					Debug.Log (newPoint);
+				}
+
+				lastPoint = currentPoint;
+				currentPoint = newPoint;
+			}
+
+			rb.MovePosition(Vector3.MoveTowards(transform.position, pathPoints[currentPoint].position, Time.deltaTime * speed));
+
+			if(movingForward && transform.position == pathPoints[currentPoint].position && !randomize) {
+				if(currentPoint == pathPoints.Count - 1) {
+					movingForward = false;
+					currentPoint--;
+				} else {
+					currentPoint++;
+				}
+			} else if(!movingForward && transform.position == pathPoints[currentPoint].position) {
+				if(currentPoint == 0) { 
+					movingForward = true;
+					currentPoint++;
+				} else {
+					currentPoint--;
+				}
+			} 
+		}
 	}
 
 	public override void DoDeactivation ()
 	{
-		newActivation = true;
-		if(movingForward) {
-			currentPoint--;
-			movingForward = false;
-		}
-
-		rb.MovePosition(Vector3.MoveTowards(transform.position, pathPoints[currentPoint].position, Time.deltaTime * speed));
-
-		if(transform.position == pathPoints[currentPoint].position) {
-			if(currentPoint == 0) { 
-				movingForward = true;
-				currentPoint++;
-				EndDeactivation();
-			} else {
+		if(pathPoints.Count > 1) {
+			newActivation = true;
+			if(movingForward) {
 				currentPoint--;
+				movingForward = false;
+			}
+
+			rb.MovePosition(Vector3.MoveTowards(transform.position, pathPoints[currentPoint].position, Time.deltaTime * speed));
+
+			if(transform.position == pathPoints[currentPoint].position) {
+				if(currentPoint == 0) { 
+					movingForward = true;
+					currentPoint++;
+					EndDeactivation();
+				} else {
+					currentPoint--;
+				}
 			}
 		}
 	}
