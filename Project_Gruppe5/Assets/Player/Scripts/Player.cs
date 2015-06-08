@@ -14,6 +14,7 @@ public class Player : Singleton<Player> {
 	Rigidbody rigidbody;
 	Animator anim;
 
+	bool walk;
 	bool doubleJump;
 	bool isGrounded;
 	Vector3 groundNormal;
@@ -115,10 +116,17 @@ public class Player : Singleton<Player> {
 			isGrounded = false;
 			groundNormal = Vector3.up;
 		}
+
+		if (Physics.Raycast (transform.position + (Vector3.up * 0.1f), Vector3.down, 1.3f)) {
+			walk = true;
+		}
+		else {
+			walk = false;
+		}
 	}
 
 	void Animating() {
-		bool walking = isGrounded && forwardAmount != 0.0f;
+		bool walking = walk && forwardAmount != 0.0f;
 		anim.SetBool ("IsWalking", walking);
 	}
 
