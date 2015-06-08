@@ -14,6 +14,7 @@ public class Player : Singleton<Player> {
 	Rigidbody rigidbody;
 	Animator anim;
 
+	bool jumped;
 	bool walk;
 	bool doubleJump;
 	bool isGrounded;
@@ -37,6 +38,11 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Move(Vector3 move, bool jump) {
+		if (jumped) {
+			rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.5f, rigidbody.velocity.y, rigidbody.velocity.z * 0.5f);
+			jumped = false;
+		}
+
 		if (move.magnitude > 1f)
 			move.Normalize();
 		move = transform.InverseTransformDirection(move);
@@ -94,10 +100,11 @@ public class Player : Singleton<Player> {
 		if (jump && isGrounded)
 		{
 			// jump!
-			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpPower, rigidbody.velocity.z);
+			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y + jumpPower, rigidbody.velocity.z);
 			isGrounded = false;
 			groundCheckDistance = 0.1f;
 			doubleJump = true;
+			jumped = true;
 		}
 	}
 	
