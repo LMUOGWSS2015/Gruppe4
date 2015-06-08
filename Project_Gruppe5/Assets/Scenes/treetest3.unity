@@ -2682,7 +2682,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 34
 --- !u!1 &576357933
 GameObject:
   m_ObjectHideFlags: 0
@@ -4672,26 +4672,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11438828, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 60332091}
     - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: focalTransform
       value: 
       objectReference: {fileID: 60332091}
-    - target: {fileID: 4565332, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
-      propertyPath: m_CustomSkybox
+    - target: {fileID: 11438828, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: target
       value: 
-      objectReference: {fileID: 2100000, guid: 05cc35b481751434d89817850eee0a63, type: 2}
-    - target: {fileID: 4565332, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 60332091}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
   m_IsPrefabParent: 0
