@@ -3,8 +3,8 @@ using System.Collections;
 
 public class DeadZone : MonoBehaviour {
 
-	void OnTriggerEnter(Collider col) {
-		if(col.transform.tag == "Player") {
+	void OnTriggerEnter(Collider other) {
+		if(other.transform.tag == "Player") {
 			Player.Instance.Kill();
 		}
 	}

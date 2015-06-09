@@ -23,8 +23,10 @@ public class Player : Singleton<Player> {
 	float turnAmount;
 	float forwardAmount;
 
-	Vector3 startPosition;
-	Quaternion startRotation;
+	public Transform respawnPoint {
+		set;
+		get;
+	}
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody> ();
@@ -33,8 +35,7 @@ public class Player : Singleton<Player> {
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
 
-		startPosition = transform.position;
-		startRotation = transform.rotation;
+		respawnPoint = transform;
 	}
 
 	public void Move(Vector3 move, bool jump) {
@@ -138,7 +139,11 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Kill() {
-		transform.position = startPosition;
-		transform.rotation = startRotation;
+		Respawn ();
+	}
+
+	public void Respawn() {
+		transform.position = respawnPoint.position;
+		transform.rotation = respawnPoint.rotation;
 	}
 }

@@ -1,15 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Checkpoint : MonoBehaviour {
+public class CheckPoint : MonoBehaviour {
 
-	public Transform respawnPoint;
+	public Light spotlight;
+
+	void Start() {
+		spotlight.color = Color.red;
+	}
 
 	void OnTriggerEnter(Collider other) 
 	{
 		if(other.transform.tag == "Player") {
-			PlayerUtils.Instance.respawnPoint = respawnPoint;
+			CheckPoint oldCheckPoint = Player.Instance.respawnPoint.gameObject.GetComponent<CheckPoint>();
+			if (oldCheckPoint)
+				oldCheckPoint.DeActivate();
 
+			Player.Instance.respawnPoint = transform;
+			Activate();
 		}
+	}
+
+	private void Activate() {
+		spotlight.color = Color.yellow;
+	}
+
+	private void DeActivate() {
+		spotlight.color = Color.red;
 	}
 }
