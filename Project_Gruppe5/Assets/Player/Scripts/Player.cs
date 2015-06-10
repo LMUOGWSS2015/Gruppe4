@@ -23,6 +23,7 @@ public class Player : Singleton<Player> {
 	float turnAmount;
 	float forwardAmount;
 
+	public Transform startPoint;
 	public Transform respawnPoint {
 		set;
 		get;
@@ -35,7 +36,8 @@ public class Player : Singleton<Player> {
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
 
-		respawnPoint = transform;
+		respawnPoint = startPoint;
+		Respawn ();
 	}
 
 	public void Move(Vector3 move, bool jump) {
