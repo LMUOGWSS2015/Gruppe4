@@ -18,6 +18,7 @@ public class Player : Singleton<Player> {
 	bool walk;
 	bool doubleJump;
 	bool isGrounded;
+	bool isJumping;
 	Vector3 groundNormal;
 	float origGroundCheckDistance;
 	float turnAmount;
@@ -108,6 +109,7 @@ public class Player : Singleton<Player> {
 			groundCheckDistance = 0.1f;
 			doubleJump = true;
 			jumped = true;
+			isJumping = true;
 		}
 	}
 	
@@ -119,6 +121,7 @@ public class Player : Singleton<Player> {
 		{
 			groundNormal = hitInfo.normal;
 			isGrounded = true;
+			isJumping = false;
 			doubleJump = false;
 		}
 		else
@@ -137,9 +140,10 @@ public class Player : Singleton<Player> {
 
 	void Animating() {
 		bool walking = walk && forwardAmount != 0.0f;
-		bool jumping = jumped;
+		bool jumping = isJumping;
 		anim.SetBool ("IsJumping", jumping);
-		anim.SetBool ("IsWalking", walking);
+		if (!jumping)
+			anim.SetBool ("IsWalking", walking);
 		Debug.Log ("XXX:" + jumping);
 	}
 
