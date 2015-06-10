@@ -1737,6 +1737,7 @@ MonoBehaviour:
   jumpPower: 8.5
   turnSpeed: 1000
   forwardSpeed: 8
+  startPoint: {fileID: 0}
 --- !u!114 &11434986
 MonoBehaviour:
   m_ObjectHideFlags: 1
