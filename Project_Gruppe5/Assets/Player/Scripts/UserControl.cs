@@ -20,7 +20,7 @@ public class UserControl : MonoBehaviour
 				"Warning: no main camera found. Third person character needs a Camera tagged \"MainCamera\", for camera-relative controls.");
 			// we use self-relative controls in this case, which probably isn't what the user wants, but hey, we warned them!
 		}
-		
+
 		// get the third person character ( this should never be null due to require component )
 		player = GetComponent<Player>();
 	}
@@ -28,7 +28,7 @@ public class UserControl : MonoBehaviour
 	
 	private void Update() {
 		if (!jump) {
-			jump = Input.GetButtonDown("Jump");
+			jump = InputManager.Jump();
 		}
 	}
 	
@@ -36,8 +36,8 @@ public class UserControl : MonoBehaviour
 	// Fixed update is called in sync with physics
 	private void FixedUpdate() {
 		// read inputs
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		float h = InputManager.Horizontal ();
+		float v = InputManager.Vertical ();
 		
 		// calculate move direction to pass to character
 		if (cam != null) {

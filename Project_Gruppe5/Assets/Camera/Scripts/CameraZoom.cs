@@ -3,9 +3,9 @@ using System.Collections;
 
 public class CameraZoom : MonoBehaviour {
 
-	public float minZoom = 1.0f;
+	public float minZoom = 5.0f;
 	public float maxZoom = 50.0f;
-	public float sensitivity = 1.0f;
+	public float zoomSpeed = 1.0f;
 
 	Camera camera;
 	float zoom;
@@ -27,7 +27,7 @@ public class CameraZoom : MonoBehaviour {
 	}
 
 	void Zoom() {
-		zoom += -1 * Input.GetAxis ("Zoom") * sensitivity;
+		zoom += InputManager.Zoom() * InputManager.zoomSensivity * zoomSpeed;
 		zoom = Mathf.Clamp (zoom, minZoom, maxZoom);
 	}
 }

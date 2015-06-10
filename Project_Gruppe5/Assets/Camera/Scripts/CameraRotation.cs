@@ -3,12 +3,12 @@ using System.Collections;
 
 public class CameraRotation : MonoBehaviour {
 
-	public float rotateSpeed = 3.0f;
+	public float rotationSpeed = 1.0f;
 
 	void FixedUpdate() {
 
 		// Freie Rotation
-		transform.Rotate (0.0f, Input.GetAxis("RotateY") * rotateSpeed, 0.0f);
+		transform.Rotate (0.0f, InputManager.RotateY() * InputManager.rotationSensivity * rotationSpeed, 0.0f);
 
 		// 4-Stufen Rotation
 		/*
