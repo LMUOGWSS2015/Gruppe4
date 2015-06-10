@@ -137,7 +137,10 @@ public class Player : Singleton<Player> {
 
 	void Animating() {
 		bool walking = walk && forwardAmount != 0.0f;
+		bool jumping = jumped;
+		anim.SetBool ("IsJumping", jumping);
 		anim.SetBool ("IsWalking", walking);
+		Debug.Log ("XXX:" + jumping);
 	}
 
 	public void Kill() {
