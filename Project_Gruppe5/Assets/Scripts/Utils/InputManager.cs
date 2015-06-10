@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour {
 		PS2
 	}
 
-	public static Controller controller = Controller.MOUSE;
+	public static Controller controller = Controller.PS2;
 
 	public static float rotationSensivity = 2.0f;
 	public static float zoomSensivity = 2.0f;

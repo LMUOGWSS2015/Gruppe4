@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraRotation : MonoBehaviour {
+public class CameraRotationY : MonoBehaviour {
 
 	public float rotationSpeed = 1.0f;
 
