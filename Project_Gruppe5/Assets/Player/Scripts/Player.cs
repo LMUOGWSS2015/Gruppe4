@@ -145,7 +145,7 @@ public class Player : Singleton<Player> {
 		bool walking = walk && forwardAmount != 0.0f;
 		bool jumping = isJumping;
 		bool doublejumping = isDoubleJumping;
-		bool grounded = isGrounded;
+		bool grounded = walk;
 	
 		anim.SetBool ("IsJumping", jumping);
 		if (!jumping)
