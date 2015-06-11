@@ -1738,6 +1738,10 @@ Prefab:
       propertyPath: m_CustomSkybox
       value: 
       objectReference: {fileID: 2100000, guid: b0e778b81b6c940bda25e3edf34efefa, type: 2}
+    - target: {fileID: 11472944, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: maxRotation
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
   m_IsPrefabParent: 0
