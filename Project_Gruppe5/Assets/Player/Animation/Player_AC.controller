@@ -280,7 +280,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Salto
-  m_Speed: 2.4000001
+  m_Speed: 2.80999994
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110138108}
@@ -298,7 +298,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Jump
-  m_Speed: 2.5
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110102768}
