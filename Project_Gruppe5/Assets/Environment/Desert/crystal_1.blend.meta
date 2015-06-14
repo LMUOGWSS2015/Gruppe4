@@ -1,24 +1,16 @@
 fileFormatVersion: 2
-guid: b745c17c1e088844aa508f1974f1035f
-timeCreated: 1434306140
+guid: c3255f6babc2d7f4398056c24f0bc682
+timeCreated: 1434303800
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Bars
-    100002: //RootNode
-    100004: Surface
-    400000: Bars
-    400002: //RootNode
-    400004: Surface
-    2300000: Bars
-    2300002: Surface
-    3300000: Bars
-    3300002: Surface
-    4300000: Bars
-    4300002: Surface
-    6400000: Bars
-    6400002: Surface
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
+    6400000: //RootNode
     7400000: Default Take
     9500000: //RootNode
   materials:

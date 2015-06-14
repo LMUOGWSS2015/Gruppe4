@@ -27,6 +27,10 @@ ModelImporter:
     4300002: Shovels
     4300004: Wheel
     4300006: Bars
+    6400000: Axis
+    6400002: Bars
+    6400004: Shovels
+    6400006: Wheel
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -38,6 +42,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -50,7 +58,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
