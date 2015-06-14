@@ -6352,7 +6352,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: aperture
-      value: 10
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: focalLength
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
