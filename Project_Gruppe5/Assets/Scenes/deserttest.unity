@@ -319,7 +319,7 @@ Transform:
   m_Children:
   - {fileID: 1784784682}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!23 &141968555
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ Transform:
   - {fileID: 1176472615}
   - {fileID: 1698854892}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 24
 --- !u!4 &584695701 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: ec439852140d34d0d96b92d7e9c683b7, type: 3}
@@ -773,7 +773,7 @@ Transform:
   - {fileID: 584695701}
   - {fileID: 26482027}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1001 &732423218
 Prefab:
   m_ObjectHideFlags: 0
@@ -1670,7 +1670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
 --- !u!1 &1423550021 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 146188, guid: 5dfa4a9f7b49b413d8ecaaabb4a8b99a, type: 2}
@@ -1738,6 +1738,26 @@ Prefab:
       propertyPath: m_CustomSkybox
       value: 
       objectReference: {fileID: 2100000, guid: b0e778b81b6c940bda25e3edf34efefa, type: 2}
+    - target: {fileID: 11472944, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: maxRotation
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: visualizeFocus
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: focalSize
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
+      propertyPath: aperture
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
   m_IsPrefabParent: 0
@@ -3987,7 +4007,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
 --- !u!1001 &2100698701
 Prefab:
   m_ObjectHideFlags: 0

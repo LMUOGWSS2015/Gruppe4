@@ -18,11 +18,14 @@ public class Player : Singleton<Player> {
 	bool walk;
 	bool doubleJump;
 	bool isGrounded;
+	bool isJumping;
+	bool isDoubleJumping;
 	Vector3 groundNormal;
 	float origGroundCheckDistance;
 	float turnAmount;
 	float forwardAmount;
 
+	public Transform startPoint;
 	public Transform respawnPoint {
 		set;
 		get;
@@ -35,7 +38,8 @@ public class Player : Singleton<Player> {
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
 
-		respawnPoint = transform;
+		respawnPoint = startPoint;
+		Respawn ();
 	}
 
 	public void Move(Vector3 move, bool jump) {
@@ -84,6 +88,7 @@ public class Player : Singleton<Player> {
 		if (jump && doubleJump) {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpPower, rigidbody.velocity.z);
 			doubleJump = false;
+			isDoubleJumping = true;
 		}
 		else {
 			// apply extra gravity from multiplier:
@@ -106,6 +111,7 @@ public class Player : Singleton<Player> {
 			groundCheckDistance = 0.1f;
 			doubleJump = true;
 			jumped = true;
+			isJumping = true;
 		}
 	}
 	
@@ -117,7 +123,9 @@ public class Player : Singleton<Player> {
 		{
 			groundNormal = hitInfo.normal;
 			isGrounded = true;
+			isJumping = false;
 			doubleJump = false;
+			isDoubleJumping = false;
 		}
 		else
 		{
@@ -135,7 +143,17 @@ public class Player : Singleton<Player> {
 
 	void Animating() {
 		bool walking = walk && forwardAmount != 0.0f;
-		anim.SetBool ("IsWalking", walking);
+		bool jumping = isJumping;
+		bool doublejumping = isDoubleJumping;
+		bool grounded = walk;
+	
+		anim.SetBool ("IsJumping", jumping);
+		if (!jumping)
+			anim.SetBool ("IsWalking", walking);
+
+		anim.SetBool ("IsDoubleJumping", doublejumping);
+		anim.SetBool ("IsGrounded", grounded);
+
 	}
 
 	public void Kill() {

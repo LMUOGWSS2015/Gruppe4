@@ -12,9 +12,12 @@ public class CheckPoint : MonoBehaviour {
 	void OnTriggerEnter(Collider other) 
 	{
 		if(other.transform.tag == "Player") {
-			CheckPoint oldCheckPoint = Player.Instance.respawnPoint.gameObject.GetComponent<CheckPoint>();
-			if (oldCheckPoint)
-				oldCheckPoint.DeActivate();
+			Transform oldRespawnPoint = Player.Instance.respawnPoint;
+			if (oldRespawnPoint) {
+				CheckPoint oldCheckPoint = oldRespawnPoint.gameObject.GetComponent<CheckPoint>();
+				if (oldCheckPoint)
+					oldCheckPoint.DeActivate();
+			}
 
 			Player.Instance.respawnPoint = transform;
 			Activate();
