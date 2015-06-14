@@ -130,11 +130,13 @@ ModelImporter:
     4300004: Icosphere_001
     4300006: Nose
     4300008: Hat
-    7400000: Default Take
+    7400000: DoubleJump
     7400002: Idle_1
     7400004: Idle_2
     7400006: Walk_1
     7400008: Jump
+    7400010: Salto
+    7400012: Jumpfalling
     9500000: //RootNode
     13700000: Bear
     13700002: Icosphere
@@ -157,148 +159,6 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
-    - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
-      firstFrame: 0
-      lastFrame: 59
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Bear
-        weight: 1
-      - path: BearBones
-        weight: 1
-      - path: BearBones/Spine
-        weight: 1
-      - path: BearBones/Spine/Chest
-        weight: 1
-      - path: BearBones/Spine/Chest/Neck
-        weight: 1
-      - path: BearBones/Spine/Chest/Neck/Head
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L/FingerMid1_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L/FingerMid1_L/FingerTip1_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerMid2_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerMid2_L/Fingertip2_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L/FingerMid3_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L/FingerMid3_L/FingerTip3_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/ThumbBase_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/ThumbBase_L/Thumb_L
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R/FingerMid1_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R/FingerMid1_R/FingerTip1_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerMid2_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerMid2_R/Fingertip2_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R/FingerMid3_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R/FingerMid3_R/FingerTip3_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/ThumbBase_R
-        weight: 1
-      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/ThumbBase_R/Thumb_R
-        weight: 1
-      - path: BearBones/Waist
-        weight: 1
-      - path: BearBones/Waist/Hip_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase1_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase1_L/ToeTip1_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase2_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase2_L/ToeTip2_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase3_L
-        weight: 1
-      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase3_L/ToeTip3_L
-        weight: 1
-      - path: BearBones/Waist/Hip_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase1_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase1_R/ToeTip1_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase2_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase2_R/ToeTip2_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase3_R
-        weight: 1
-      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase3_R/ToeTip3_R
-        weight: 1
-      - path: Icosphere
-        weight: 1
-      - path: Icosphere_001
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
     - serializedVersion: 16
       name: Idle_1
       takeName: Idle_1
@@ -727,8 +587,300 @@ ModelImporter:
       maskSource: {instanceID: 0}
     - serializedVersion: 16
       name: Jump
-      takeName: Default Take
-      firstFrame: 0
+      takeName: Jump
+      firstFrame: -1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bear
+        weight: 1
+      - path: BearBones
+        weight: 1
+      - path: BearBones/Spine
+        weight: 1
+      - path: BearBones/Spine/Chest
+        weight: 1
+      - path: BearBones/Spine/Chest/Neck
+        weight: 1
+      - path: BearBones/Spine/Chest/Neck/Head
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L/FingerMid1_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L/FingerMid1_L/FingerTip1_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerMid2_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerMid2_L/Fingertip2_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L/FingerMid3_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L/FingerMid3_L/FingerTip3_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/ThumbBase_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/ThumbBase_L/Thumb_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R/FingerMid1_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R/FingerMid1_R/FingerTip1_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerMid2_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerMid2_R/Fingertip2_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R/FingerMid3_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R/FingerMid3_R/FingerTip3_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/ThumbBase_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/ThumbBase_R/Thumb_R
+        weight: 1
+      - path: BearBones/Waist
+        weight: 1
+      - path: BearBones/Waist/Hip_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase1_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase1_L/ToeTip1_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase2_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase2_L/ToeTip2_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase3_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase3_L/ToeTip3_L
+        weight: 1
+      - path: BearBones/Waist/Hip_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase1_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase1_R/ToeTip1_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase2_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase2_R/ToeTip2_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase3_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase3_R/ToeTip3_R
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Icosphere_001
+        weight: 1
+      - path: Nose
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Salto
+      takeName: Salto
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bear
+        weight: 1
+      - path: BearBones
+        weight: 1
+      - path: BearBones/Spine
+        weight: 1
+      - path: BearBones/Spine/Chest
+        weight: 1
+      - path: BearBones/Spine/Chest/Neck
+        weight: 1
+      - path: BearBones/Spine/Chest/Neck/Head
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L/FingerMid1_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerBase1_L/FingerMid1_L/FingerTip1_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerMid2_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/FingerMid2_L/Fingertip2_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L/FingerMid3_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/RingerBase3_L/FingerMid3_L/FingerTip3_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/ThumbBase_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_L/UpperArm_L/Arm_L/FingerBase2_L/ThumbBase_L/Thumb_L
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R/FingerMid1_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerBase1_R/FingerMid1_R/FingerTip1_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerMid2_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/FingerMid2_R/Fingertip2_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R/FingerMid3_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/RingerBase3_R/FingerMid3_R/FingerTip3_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/ThumbBase_R
+        weight: 1
+      - path: BearBones/Spine/Chest/Shoulder_R/UpperArm_R/Arm_R/FingerBase2_R/ThumbBase_R/Thumb_R
+        weight: 1
+      - path: BearBones/Waist
+        weight: 1
+      - path: BearBones/Waist/Hip_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase1_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase1_L/ToeTip1_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase2_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase2_L/ToeTip2_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase3_L
+        weight: 1
+      - path: BearBones/Waist/Hip_L/UpperLeg_L/LowerLeg_L/Foot_L/ToeBase3_L/ToeTip3_L
+        weight: 1
+      - path: BearBones/Waist/Hip_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase1_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase1_R/ToeTip1_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase2_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase2_R/ToeTip2_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase3_R
+        weight: 1
+      - path: BearBones/Waist/Hip_R/UpperLeg_R/LowerLeg_R/Foot_R/ToeBase3_R/ToeTip3_R
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Icosphere_001
+        weight: 1
+      - path: Nose
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jumpfalling
+      takeName: Jumpfalling
+      firstFrame: -1
       lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0

@@ -19,6 +19,7 @@ public class Player : Singleton<Player> {
 	bool doubleJump;
 	bool isGrounded;
 	bool isJumping;
+	bool isDoubleJumping;
 	Vector3 groundNormal;
 	float origGroundCheckDistance;
 	float turnAmount;
@@ -87,6 +88,7 @@ public class Player : Singleton<Player> {
 		if (jump && doubleJump) {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpPower, rigidbody.velocity.z);
 			doubleJump = false;
+			isDoubleJumping = true;
 		}
 		else {
 			// apply extra gravity from multiplier:
@@ -123,6 +125,7 @@ public class Player : Singleton<Player> {
 			isGrounded = true;
 			isJumping = false;
 			doubleJump = false;
+			isDoubleJumping = false;
 		}
 		else
 		{
@@ -141,10 +144,16 @@ public class Player : Singleton<Player> {
 	void Animating() {
 		bool walking = walk && forwardAmount != 0.0f;
 		bool jumping = isJumping;
+		bool doublejumping = isDoubleJumping;
+		bool grounded = walk;
+	
 		anim.SetBool ("IsJumping", jumping);
 		if (!jumping)
 			anim.SetBool ("IsWalking", walking);
-		Debug.Log ("XXX:" + jumping);
+
+		anim.SetBool ("IsDoubleJumping", doublejumping);
+		anim.SetBool ("IsGrounded", grounded);
+
 	}
 
 	public void Kill() {
