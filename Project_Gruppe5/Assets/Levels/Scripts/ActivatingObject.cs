@@ -9,17 +9,21 @@ public class ActivatingObject : MyMonoBehaviour {
 
 	public List<InteractiveObject> interactingObjects;
 
-	void Update() {
+	public virtual void Update() {
 		UpdateMe ();
 	}
 
 	void Start() 
 	{
+		isActivated = false;
+		isDeactivated = true;
 		StartMe ();
 	}
 
 	public virtual void Activated()
 	{
+		isActivated = true;
+		isDeactivated = false;
 		foreach(InteractiveObject obj in interactingObjects) {
 			obj.Activate();
 		}
@@ -27,6 +31,8 @@ public class ActivatingObject : MyMonoBehaviour {
 	
 	public virtual void Deactivated()
 	{
+		isActivated = false;
+		isDeactivated = true;
 		foreach(InteractiveObject obj in interactingObjects) {
 			obj.Deactivate();
 		}
