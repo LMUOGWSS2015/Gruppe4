@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MoveableByGazePlatform
   layers:
   - Default
   - TransparentFX
@@ -14,6 +15,7 @@ TagManager:
   - 
   - 
   - BreakablePlatform
+  - BackgroundUI
   - Huge Fog
   - 
   - 
