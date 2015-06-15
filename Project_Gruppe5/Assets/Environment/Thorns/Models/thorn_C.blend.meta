@@ -1,38 +1,41 @@
 fileFormatVersion: 2
-guid: 6ec04a0bbf9487044a048c5eb36472e1
-timeCreated: 1432157259
+guid: a91e922198a37421294856f5ca531788
+timeCreated: 1432420843
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane_000
-    100004: Plane_001
-    100006: Plane_002
-    100008: Plane_003
+    100002: Bone
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Bone_004
+    100012: Bone_005
+    100014: Bone_006
+    100016: Bone_007
+    100018: Bone_008
+    100020: thornbones
+    100022: thorns
     400000: //RootNode
-    400002: Plane_000
-    400004: Plane_001
-    400006: Plane_002
-    400008: Plane_003
-    2300000: Plane_000
-    2300002: Plane_001
-    2300004: Plane_002
-    2300006: Plane_003
-    3300000: Plane_000
-    3300002: Plane_001
-    3300004: Plane_002
-    3300006: Plane_003
-    4300000: Plane_003
-    4300002: Plane_002
-    4300004: Plane_000
-    4300006: Plane_001
-    6400000: Plane_000
-    6400002: Plane_001
-    6400004: Plane_002
-    6400006: Plane_003
+    400002: Bone
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Bone_004
+    400012: Bone_005
+    400014: Bone_006
+    400016: Bone_007
+    400018: Bone_008
+    400020: thornbones
+    400022: thorns
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: thorns
     7400000: Default Take
+    7400002: thornanimation
     9500000: //RootNode
+    13700000: thorns
   materials:
     importMaterials: 1
     materialName: 0

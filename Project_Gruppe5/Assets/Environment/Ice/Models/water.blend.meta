@@ -1,36 +1,16 @@
 fileFormatVersion: 2
-guid: 6ec04a0bbf9487044a048c5eb36472e1
-timeCreated: 1432157259
+guid: 858ba87744773461eb5ea5e34610f92e
+timeCreated: 1433687474
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane_000
-    100004: Plane_001
-    100006: Plane_002
-    100008: Plane_003
     400000: //RootNode
-    400002: Plane_000
-    400004: Plane_001
-    400006: Plane_002
-    400008: Plane_003
-    2300000: Plane_000
-    2300002: Plane_001
-    2300004: Plane_002
-    2300006: Plane_003
-    3300000: Plane_000
-    3300002: Plane_001
-    3300004: Plane_002
-    3300006: Plane_003
-    4300000: Plane_003
-    4300002: Plane_002
-    4300004: Plane_000
-    4300006: Plane_001
-    6400000: Plane_000
-    6400002: Plane_001
-    6400004: Plane_002
-    6400006: Plane_003
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Water
+    6400000: //RootNode
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -48,7 +28,35 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
