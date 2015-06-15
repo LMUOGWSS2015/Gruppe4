@@ -91,4 +91,17 @@ public class InputManager : MonoBehaviour {
 			return 0;
 		}
 	}
+
+	public static bool Trigger() {
+		switch (controller) {
+		case Controller.MOUSE:
+			return Input.GetButtonDown("Trigger");
+		case Controller.XBOX:
+			return Input.GetButtonDown("XBOXTrigger");
+		case Controller.PS2:
+			return Input.GetButtonDown("PS2Trigger");
+		default:
+			return false;
+		}
+	}
 }
