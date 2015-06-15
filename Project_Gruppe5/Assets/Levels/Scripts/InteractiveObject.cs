@@ -14,8 +14,10 @@ public class InteractiveObject : MyMonoBehaviour {
 
 	private bool isUsed;
 
-	void Start()
+	public void Start()
 	{
+		isActivated = false;
+		isDeactivated = true;
 		isUsed = false;
 		StartMe ();
 		if(noTrigger) {

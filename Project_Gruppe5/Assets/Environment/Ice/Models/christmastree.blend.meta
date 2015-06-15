@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 161a8863f416b4ad9ad71875ca06b0e4
+timeCreated: 1433683731
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ChristmasBall
+    100002: ChristmasBall_001
+    100004: ChristmasBall_002
+    100006: ChristmasBall_003
+    100008: ChristmasBall_004
+    100010: ChristmasBall_005
+    100012: ChristmasBall_006
+    100014: ChristmasBall_007
+    100016: ChristmasBall_008
+    100018: ChristmasBall_009
+    100020: ChristmasBall_010
+    100022: ChristmasBall_011
+    100024: ChristmasBall_012
+    100026: ChristmasStar
+    100028: ChristmasTree
+    100030: //RootNode
+    100032: ChristmasTreePot
+    100034: ChristmasTreeTrunk
+    400000: ChristmasBall
+    400002: ChristmasBall_001
+    400004: ChristmasBall_002
+    400006: ChristmasBall_003
+    400008: ChristmasBall_004
+    400010: ChristmasBall_005
+    400012: ChristmasBall_006
+    400014: ChristmasBall_007
+    400016: ChristmasBall_008
+    400018: ChristmasBall_009
+    400020: ChristmasBall_010
+    400022: ChristmasBall_011
+    400024: ChristmasBall_012
+    400026: ChristmasStar
+    400028: ChristmasTree
+    400030: //RootNode
+    400032: ChristmasTreePot
+    400034: ChristmasTreeTrunk
+    2300000: ChristmasBall
+    2300002: ChristmasBall_001
+    2300004: ChristmasBall_002
+    2300006: ChristmasBall_003
+    2300008: ChristmasBall_004
+    2300010: ChristmasBall_005
+    2300012: ChristmasBall_006
+    2300014: ChristmasBall_007
+    2300016: ChristmasBall_008
+    2300018: ChristmasBall_009
+    2300020: ChristmasBall_010
+    2300022: ChristmasBall_011
+    2300024: ChristmasBall_012
+    2300026: ChristmasStar
+    2300028: ChristmasTree
+    2300030: ChristmasTreePot
+    2300032: ChristmasTreeTrunk
+    3300000: ChristmasBall
+    3300002: ChristmasBall_001
+    3300004: ChristmasBall_002
+    3300006: ChristmasBall_003
+    3300008: ChristmasBall_004
+    3300010: ChristmasBall_005
+    3300012: ChristmasBall_006
+    3300014: ChristmasBall_007
+    3300016: ChristmasBall_008
+    3300018: ChristmasBall_009
+    3300020: ChristmasBall_010
+    3300022: ChristmasBall_011
+    3300024: ChristmasBall_012
+    3300026: ChristmasStar
+    3300028: ChristmasTree
+    3300030: ChristmasTreePot
+    3300032: ChristmasTreeTrunk
+    4300000: ChristmasBall
+    4300002: ChristmasBall_012
+    4300004: ChristmasBall_011
+    4300006: ChristmasBall_010
+    4300008: ChristmasBall_009
+    4300010: ChristmasBall_008
+    4300012: ChristmasBall_007
+    4300014: ChristmasBall_006
+    4300016: ChristmasBall_005
+    4300018: ChristmasBall_004
+    4300020: ChristmasBall_003
+    4300022: ChristmasBall_002
+    4300024: ChristmasBall_001
+    4300026: ChristmasStar
+    4300028: ChristmasTreePot
+    4300030: ChristmasTreeTrunk
+    4300032: ChristmasTree
+    6400000: ChristmasBall
+    6400002: ChristmasBall_001
+    6400004: ChristmasBall_002
+    6400006: ChristmasBall_003
+    6400008: ChristmasBall_004
+    6400010: ChristmasBall_005
+    6400012: ChristmasBall_006
+    6400014: ChristmasBall_007
+    6400016: ChristmasBall_008
+    6400018: ChristmasBall_009
+    6400020: ChristmasBall_010
+    6400022: ChristmasBall_011
+    6400024: ChristmasBall_012
+    6400026: ChristmasStar
+    6400028: ChristmasTree
+    6400030: ChristmasTreePot
+    6400032: ChristmasTreeTrunk
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
