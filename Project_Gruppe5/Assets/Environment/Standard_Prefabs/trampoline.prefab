@@ -159,6 +159,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &161530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 426762}
+  - 64: {fileID: 6451090}
+  - 114: {fileID: 11488826}
+  m_Layer: 0
+  m_Name: TrampolinEnter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &174982
 GameObject:
   m_ObjectHideFlags: 1
@@ -215,6 +232,18 @@ Transform:
   - {fileID: 488674}
   m_Father: {fileID: 429888}
   m_RootOrder: 0
+--- !u!4 &426762
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161530}
+  m_LocalRotation: {x: .696364284, y: .122787811, z: -.122787833, w: .696364164}
+  m_LocalPosition: {x: 0, y: .5, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: .100000001}
+  m_Children: []
+  m_Father: {fileID: 492150}
+  m_RootOrder: 4
 --- !u!4 &429888
 Transform:
   m_ObjectHideFlags: 1
@@ -271,9 +300,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112234}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: -1.11000001, y: -.0199999996, z: .5}
-  m_LocalScale: {x: .99999994, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492150}
   m_RootOrder: 1
@@ -322,13 +351,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.4800491, y: -.00461447239, z: -2.13016129}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406108}
   - {fileID: 452474}
   - {fileID: 482598}
   - {fileID: 439920}
+  - {fileID: 426762}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &498626
@@ -418,6 +448,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300004, guid: 8ac0a1ee4dd2f474dad42446c6971530, type: 3}
+--- !u!64 &6451090
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300002, guid: e75c43b9991e0472fab720542d6e4e88, type: 3}
 --- !u!64 &6465384
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -447,6 +489,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11488826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fecdebe0d954c37a1cd72e24b1cb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trampolinJumpPower: 20
 --- !u!137 &13708488
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

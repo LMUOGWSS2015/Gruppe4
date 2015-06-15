@@ -156,6 +156,10 @@ public class Player : Singleton<Player> {
 
 	}
 
+	public void TrampolinEnter(float trampolinJumpPower) {
+		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
+	}
+
 	public void Kill() {
 		Respawn ();
 	}
