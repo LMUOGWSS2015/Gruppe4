@@ -6,8 +6,9 @@ public class InteractivePhysicsObject : InteractiveObject {
 	[HideInInspector]
 	public Rigidbody rb;
 	
-	void Start() 
+	public void Start() 
 	{
+		base.Start ();
 		rb = GetComponent<Rigidbody>();
 		if(rb != null) {
 			StartMe ();
