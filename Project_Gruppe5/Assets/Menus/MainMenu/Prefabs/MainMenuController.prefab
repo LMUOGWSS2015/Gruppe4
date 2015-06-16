@@ -39,6 +39,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576e1c41387663e4abb010375a084dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content: {fileID: 0}
+  islands:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  islandNames:
+  - Desert
+  - Thorns
+  - Forest
+  - Temple
+  - Ice
+  islandName: {fileID: 0}
+  startText: {fileID: 0}
+  titleLogo: {fileID: 0}
+  backgroundCamera: {fileID: 0}
+  fog: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
