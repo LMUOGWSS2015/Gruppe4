@@ -1847,10 +1847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce05b2dbf6814e2b8114638da568436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: .300000012
-  gravityMultiplier: 2
-  jumpPower: 10
-  turnSpeed: 1000
+  minGravityMultiplier: 2
+  maxGravityMultiplier: 3
+  jumpPower: 14
   forwardSpeed: 8
   startPoint: {fileID: 0}
 --- !u!136 &13657854
