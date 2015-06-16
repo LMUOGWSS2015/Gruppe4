@@ -12,6 +12,7 @@ public class Player : Singleton<Player> {
 	[SerializeField] float jumpPower = 8.5f;
 	float turnSpeed = 1000f;
 	[SerializeField] float forwardSpeed = 8f;
+	[SerializeField] float jumpForwardAmountMultiplier = 4f;
 
 	Rigidbody rigidbody;
 	Animator anim;
@@ -26,6 +27,7 @@ public class Player : Singleton<Player> {
 	float origGroundCheckDistance;
 	float turnAmount;
 	float forwardAmount;
+	float jumpForwardAmount;
 
 	public Transform startPoint;
 	public Transform respawnPoint {
@@ -85,7 +87,10 @@ public class Player : Singleton<Player> {
 	}
 
 	void Forward() {
-		transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
+		if (isGrounded)
+			transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
+		else
+			transform.Translate (0, 0, ((forwardAmount * forwardSpeed) + jumpForwardAmount) * Time.deltaTime);
 	}
 
 	void HandleAirborneMovement(bool jump)
@@ -112,6 +117,7 @@ public class Player : Singleton<Player> {
 		{
 			// jump!
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y + jumpPower, rigidbody.velocity.z);
+			jumpForwardAmount = jumpForwardAmountMultiplier * forwardAmount;
 			isGrounded = false;
 			groundCheckDistance = 0.1f;
 			doubleJump = true;
@@ -131,6 +137,7 @@ public class Player : Singleton<Player> {
 			isJumping = false;
 			doubleJump = false;
 			isDoubleJumping = false;
+			jumpForwardAmount = 0.0f;
 		}
 		else
 		{
