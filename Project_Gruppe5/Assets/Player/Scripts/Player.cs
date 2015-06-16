@@ -47,7 +47,6 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Move(Vector3 move, bool jump) {
-		Debug.Log ("Velocity: " + rigidbody.velocity.y);
 		if (jumped) {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.5f, rigidbody.velocity.y, rigidbody.velocity.z * 0.5f);
 			jumped = false;
@@ -66,6 +65,7 @@ public class Player : Singleton<Player> {
 		}
 
 		forwardAmount = move.z;
+
 		gravityMultiplier = Mathf.Lerp(minGravityMultiplier, maxGravityMultiplier, forwardAmount);
 
 		if (isGrounded)
@@ -87,10 +87,11 @@ public class Player : Singleton<Player> {
 	}
 
 	void Forward() {
-		if (isGrounded)
+		if (isGrounded || forwardAmount == 0.0f) {
 			transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
-		else
+		} else {
 			transform.Translate (0, 0, ((forwardAmount * forwardSpeed) + jumpForwardAmount) * Time.deltaTime);
+		}
 	}
 
 	void HandleAirborneMovement(bool jump)
@@ -157,7 +158,7 @@ public class Player : Singleton<Player> {
 		bool walking = walk && forwardAmount != 0.0f;
 		bool jumping = isJumping;
 		bool doublejumping = isDoubleJumping;
-		bool grounded = walk;
+		bool grounded = isGrounded;
 
 	
 		anim.SetBool ("IsJumping", jumping);
