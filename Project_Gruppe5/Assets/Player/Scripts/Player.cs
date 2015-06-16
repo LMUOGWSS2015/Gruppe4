@@ -7,9 +7,15 @@ public class Player : Singleton<Player> {
 
 	[SerializeField] float groundCheckDistance = 0.3f;
 	[Range(1f, 4f)][SerializeField] float gravityMultiplier = 2f;
-	[SerializeField] float jumpPower = 8.5f;	// 2m Sprunghöhe, 3,5m Doppelsprunghöhe; 7m Sprungweite, 14m Doppelsprungweite
+
+	/*
+	 * Im Stand: doppelte jumpPower.
+	 * Bei max. Laufgeschwindigkeit: einfache jumpPower.
+	 * Dazwischen: jumpPower nimmt linear ab
+	 */
+	[SerializeField] float jumpPower = 8.5f;
 	[SerializeField] float turnSpeed = 1000f;
-	[SerializeField] float forwardSpeed = 8f;	// 7m Sprungweite, 14m Doppelsprungweite
+	[SerializeField] float forwardSpeed = 8f;
 
 	Rigidbody rigidbody;
 	Animator anim;
@@ -43,6 +49,7 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Move(Vector3 move, bool jump) {
+		Debug.Log ("Velocity: " + rigidbody.velocity.y);
 		if (jumped) {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.5f, rigidbody.velocity.y, rigidbody.velocity.z * 0.5f);
 			jumped = false;
@@ -80,6 +87,7 @@ public class Player : Singleton<Player> {
 	}
 
 	void Forward() {
+		//Debug.Log ("ForwardAmount: " + forwardAmount);
 		transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
 	}
 
@@ -106,7 +114,7 @@ public class Player : Singleton<Player> {
 		if (jump && isGrounded)
 		{
 			// jump!
-			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y + jumpPower, rigidbody.velocity.z);
+			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y + (jumpPower * (2.0f - forwardAmount)), rigidbody.velocity.z);
 			isGrounded = false;
 			groundCheckDistance = 0.1f;
 			doubleJump = true;
@@ -158,6 +166,7 @@ public class Player : Singleton<Player> {
 
 	public void TrampolinEnter(float trampolinJumpPower) {
 		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
+		isJumping = true;
 	}
 
 	public void Kill() {
