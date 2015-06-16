@@ -5,16 +5,12 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class Player : Singleton<Player> {
 
-	[SerializeField] float groundCheckDistance = 0.3f;
-	[Range(1f, 4f)][SerializeField] float gravityMultiplier = 2f;
-
-	/*
-	 * Im Stand: doppelte jumpPower.
-	 * Bei max. Laufgeschwindigkeit: einfache jumpPower.
-	 * Dazwischen: jumpPower nimmt linear ab
-	 */
+	float groundCheckDistance = 0.3f;
+	[SerializeField] float minGravityMultiplier = 2f;
+	[SerializeField] float maxGravityMultiplier = 3f;
+	float gravityMultiplier = 2f;
 	[SerializeField] float jumpPower = 8.5f;
-	[SerializeField] float turnSpeed = 1000f;
+	float turnSpeed = 1000f;
 	[SerializeField] float forwardSpeed = 8f;
 
 	Rigidbody rigidbody;
@@ -67,6 +63,9 @@ public class Player : Singleton<Player> {
 			TurnRotation ();
 		}
 
+		forwardAmount = move.z;
+		gravityMultiplier = Mathf.Lerp(minGravityMultiplier, maxGravityMultiplier, forwardAmount);
+
 		if (isGrounded)
 		{
 			HandleGroundedMovement(jump);
@@ -76,7 +75,6 @@ public class Player : Singleton<Player> {
 			HandleAirborneMovement(jump);
 		}
 
-		forwardAmount = move.z;
 		Forward ();
 
 		Animating ();
@@ -87,7 +85,6 @@ public class Player : Singleton<Player> {
 	}
 
 	void Forward() {
-		//Debug.Log ("ForwardAmount: " + forwardAmount);
 		transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
 	}
 
@@ -114,7 +111,7 @@ public class Player : Singleton<Player> {
 		if (jump && isGrounded)
 		{
 			// jump!
-			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y + (jumpPower * (2.0f - forwardAmount)), rigidbody.velocity.z);
+			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y + jumpPower, rigidbody.velocity.z);
 			isGrounded = false;
 			groundCheckDistance = 0.1f;
 			doubleJump = true;

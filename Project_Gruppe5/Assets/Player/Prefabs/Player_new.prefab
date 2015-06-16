@@ -1849,7 +1849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckDistance: .300000012
   gravityMultiplier: 2
-  jumpPower: 8.5
+  jumpPower: 10
   turnSpeed: 1000
   forwardSpeed: 8
   startPoint: {fileID: 0}
