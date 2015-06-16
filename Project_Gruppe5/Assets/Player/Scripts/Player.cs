@@ -5,11 +5,14 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class Player : Singleton<Player> {
 
-	[SerializeField] float groundCheckDistance = 0.3f;
-	[Range(1f, 4f)][SerializeField] float gravityMultiplier = 2f;
-	[SerializeField] float jumpPower = 8.5f;	// 2m Sprunghöhe, 3,5m Doppelsprunghöhe; 7m Sprungweite, 14m Doppelsprungweite
-	[SerializeField] float turnSpeed = 1000f;
-	[SerializeField] float forwardSpeed = 8f;	// 7m Sprungweite, 14m Doppelsprungweite
+	float groundCheckDistance = 0.3f;
+	[SerializeField] float minGravityMultiplier = 2f;
+	[SerializeField] float maxGravityMultiplier = 3f;
+	float gravityMultiplier = 2f;
+	[SerializeField] float jumpPower = 8.5f;
+	float turnSpeed = 1000f;
+	[SerializeField] float forwardSpeed = 8f;
+	[SerializeField] float jumpForwardAmountMultiplier = 4f;
 
 	Rigidbody rigidbody;
 	Animator anim;
@@ -24,6 +27,7 @@ public class Player : Singleton<Player> {
 	float origGroundCheckDistance;
 	float turnAmount;
 	float forwardAmount;
+	float jumpForwardAmount;
 
 	public Transform startPoint;
 	public Transform respawnPoint {
@@ -60,6 +64,10 @@ public class Player : Singleton<Player> {
 			TurnRotation ();
 		}
 
+		forwardAmount = move.z;
+
+		gravityMultiplier = Mathf.Lerp(minGravityMultiplier, maxGravityMultiplier, forwardAmount);
+
 		if (isGrounded)
 		{
 			HandleGroundedMovement(jump);
@@ -69,7 +77,6 @@ public class Player : Singleton<Player> {
 			HandleAirborneMovement(jump);
 		}
 
-		forwardAmount = move.z;
 		Forward ();
 
 		Animating ();
@@ -80,7 +87,11 @@ public class Player : Singleton<Player> {
 	}
 
 	void Forward() {
-		transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
+		if (isGrounded || forwardAmount == 0.0f) {
+			transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
+		} else {
+			transform.Translate (0, 0, ((forwardAmount * forwardSpeed) + jumpForwardAmount) * Time.deltaTime);
+		}
 	}
 
 	void HandleAirborneMovement(bool jump)
@@ -107,6 +118,7 @@ public class Player : Singleton<Player> {
 		{
 			// jump!
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y + jumpPower, rigidbody.velocity.z);
+			jumpForwardAmount = jumpForwardAmountMultiplier * forwardAmount;
 			isGrounded = false;
 			groundCheckDistance = 0.1f;
 			doubleJump = true;
@@ -126,6 +138,7 @@ public class Player : Singleton<Player> {
 			isJumping = false;
 			doubleJump = false;
 			isDoubleJumping = false;
+			jumpForwardAmount = 0.0f;
 		}
 		else
 		{
@@ -145,7 +158,8 @@ public class Player : Singleton<Player> {
 		bool walking = walk && forwardAmount != 0.0f;
 		bool jumping = isJumping;
 		bool doublejumping = isDoubleJumping;
-		bool grounded = walk;
+		bool grounded = isGrounded;
+
 	
 		anim.SetBool ("IsJumping", jumping);
 		if (!jumping)
@@ -154,10 +168,12 @@ public class Player : Singleton<Player> {
 		anim.SetBool ("IsDoubleJumping", doublejumping);
 		anim.SetBool ("IsGrounded", grounded);
 
+
 	}
 
 	public void TrampolinEnter(float trampolinJumpPower) {
 		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
+		isJumping = true;
 	}
 
 	public void Kill() {
