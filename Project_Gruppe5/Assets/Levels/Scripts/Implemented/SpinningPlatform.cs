@@ -5,7 +5,7 @@ public class SpinningPlatform : InteractivePhysicsObject {
 
 	public Vector3 velocity;
 
-	public Vector3 inverseVelocity;
+	private Vector3 inverseVelocity;
 
 	public bool directionChanger;
 
