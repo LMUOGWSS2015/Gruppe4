@@ -1298,7 +1298,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .478028297, y: 2.5, z: 3.43114853}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 482916}
@@ -1849,8 +1849,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minGravityMultiplier: 2
   maxGravityMultiplier: 3
-  jumpPower: 14
+  jumpPower: 13
   forwardSpeed: 8
+  jumpForwardAmountMultiplier: 1
   startPoint: {fileID: 0}
 --- !u!136 &13657854
 CapsuleCollider:
