@@ -338,6 +338,10 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &517484720 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 413120, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
+  m_PrefabInternal: {fileID: 1900731351}
 --- !u!1 &556190838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,10 +1533,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
---- !u!4 &775158441 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 436674, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
-  m_PrefabInternal: {fileID: 1900731351}
 --- !u!1 &785721452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,14 +1839,14 @@ Prefab:
     - target: {fileID: 11438828, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 775158441}
+      objectReference: {fileID: 517484720}
     - target: {fileID: 4565332, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: m_CustomSkybox
       value: 
       objectReference: {fileID: 2100000, guid: 05cc35b481751434d89817850eee0a63, type: 2}
     - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2089242, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: m_OcclusionCulling
@@ -2203,6 +2203,18 @@ Prefab:
       propertyPath: jumpForwardAmountMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 413120, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.53999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 413120, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.72000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 413120, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.939999998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
   m_IsPrefabParent: 0
@@ -2259,7 +2271,6 @@ MonoBehaviour:
   isDeactivated: 0
   rb: {fileID: 0}
   velocity: {x: 0, y: 0, z: -12}
-  inverseVelocity: {x: 0, y: 0, z: 0}
   directionChanger: 1
 --- !u!23 &2122393804
 MeshRenderer:

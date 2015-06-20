@@ -7,24 +7,37 @@ public class SwingingObject : InteractivePhysicsObject {
 	public AXIS axis;
 
 	// The total swinging angle
-	public float angle;
+	public float totalAngle;
 
 	// The start position of the object (0 = center, positive value = to the right, negative value = to the left)
 	public float startAngle;
 
-	// The velocity the swinging object reaches in the center
-	public float maxVelocity;
-
 	// The current swinging direction
 	public bool swingingRight;
 
+	// The length of the pendulum
+	public float pendulumLength;
+
+	// Factor to multiply with the frequency
+	public float frequencyFactor = 1.0f;
+
 	// The current swinging velocity
 	private float currentVelocity;
-	
-	// The quaternions for the target rotations
-	//private Quaternion currentRotation;
-	private Quaternion rightEndRotation;
-	private Quaternion leftEndRotation;
+
+	// Frequency of the swing
+	private float frequency;
+
+	// Amplitude of the swing
+	private float amplitude;
+
+	// Keeps track of the time
+	private float currentTime = 0;
+
+	// Gravity
+	private float gravityConstant = 9.81f;
+
+	// Start phase of the rotation
+	private float startPhase = 0;
 
 	public enum AXIS {
 		X,
@@ -35,9 +48,41 @@ public class SwingingObject : InteractivePhysicsObject {
 	// Initialization
 	public override void StartMe () 
 	{
-		//base.Start ();
+		// Calculate the frequency
+		frequency = Mathf.Sqrt (gravityConstant / pendulumLength) * frequencyFactor;
 
-		// Calculate the degrees for the target rotations
+		// Calculate the amplitude
+		amplitude = (totalAngle / 2);
+
+		// Set the start phase to 180 degrees if the pendulum should start swinging to the left
+		if (!swingingRight) {
+			startPhase = 180 * Mathf.Deg2Rad;
+		} else {
+			startPhase = 0;
+		}
+	}
+	
+	// Update if the swinging is activated
+	public override void DoActivation () 
+	{
+		currentTime += Time.deltaTime;
+		// Calculate the new angle to rotate towards
+		float newAngle = amplitude * Mathf.Cos (frequency * currentTime + startPhase) + startAngle * -1;
+		Debug.Log ("New angle: " + newAngle);
+		float currentAngle = GetCurrentAngle();
+		float deltaAngle = newAngle - currentAngle;
+		// Rotate
+		rb.MoveRotation(Quaternion.RotateTowards(Quaternion.Euler(AngleToVector(currentAngle)), Quaternion.Euler(AngleToVector(newAngle)), 1.0f));
+	}
+	
+	// Do nothing if the swinging is deactivated
+	public override void DoDeactivation ()
+	{
+
+	}
+
+	// Returns the current rotation angle in degrees
+	public float GetCurrentAngle() {
 		float currentDegrees;
 		switch (axis) {
 		case AXIS.X:
@@ -53,79 +98,27 @@ public class SwingingObject : InteractivePhysicsObject {
 			currentDegrees = transform.rotation.eulerAngles.y;
 			break;
 		}
-		float rightDegrees = currentDegrees + (angle / 2) - startAngle;
-		float leftDegrees = currentDegrees - (angle / 2) - startAngle;
+		return currentDegrees;
+	}
 
-		// Create the euler vectors for the target rotations
-		Vector3 currentEuler = new Vector3();
-		Vector3 leftEuler = new Vector3();
-		Vector3 rightEuler = new Vector3();
+	// Returns a Vector3 object for a given angle, depending on the selected rotation axis
+	public Vector3 AngleToVector(float angle) {
+		Vector3 eulerAngle;
 		switch(axis) {
 		case AXIS.X:
-			currentEuler = new Vector3(rightDegrees, 0, 0);
-			leftEuler = new Vector3(leftDegrees, 0, 0);
-			rightEuler = new Vector3(rightDegrees, 0, 0);
+			eulerAngle = new Vector3(angle, 0, 0);
 			break;
 		case AXIS.Y:
-			currentEuler = new Vector3(0, currentDegrees, 0);
-			leftEuler = new Vector3(0, leftDegrees, 0);
-			rightEuler = new Vector3(0, rightDegrees, 0);
+			eulerAngle = new Vector3(0, angle, 0);
 			break;
 		case AXIS.Z:
-			currentEuler = new Vector3(0, 0, currentDegrees);
-			leftEuler = new Vector3(0, 0, leftDegrees);
-			rightEuler = new Vector3(0, 0, rightDegrees);
+			eulerAngle = new Vector3(0, 0, angle);
 			break;
 		default:
-			currentEuler = new Vector3(0, currentDegrees, 0);
-			leftEuler = new Vector3(0, leftDegrees, 0);
-			rightEuler = new Vector3(0, rightDegrees, 0);
+			eulerAngle = new Vector3(0, angle, 0);
 			break;
 		}
-
-		// Calculate the rotation vectors for the target rotations
-		//currentRotation = Quaternion.Euler(currentEuler);
-		leftEndRotation = Quaternion.Euler(leftEuler);
-		rightEndRotation = Quaternion.Euler(rightEuler);
-	}
-	
-	// Update if the swinging is activated
-	public override void DoActivation () 
-	{
-		//Debug.Log (Quaternion.Angle (transform.rotation, rightEndRotation));
-		if (swingingRight) {
-			// Check if the target rotation is reached
-			if (Quaternion.Angle (transform.rotation, rightEndRotation) <= 0.1f) {
-				swingingRight = false;
-			}
-			// Calculate the new velocity
-			currentVelocity = calculateVelocity();
-			// Swing (rotate) to the right
-			rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rightEndRotation, Time.deltaTime * currentVelocity));
-		} else {
-			// Check if the target rotation is reached
-			if (Quaternion.Angle (transform.rotation, leftEndRotation) <= 0.1f) {
-				swingingRight = true;
-			}
-			// Calculate the new velocity
-			currentVelocity = calculateVelocity();
-			// Swing (rotate) to the left
-			rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, leftEndRotation, Time.deltaTime * currentVelocity));
-		}
-	}
-	
-	// Do nothing if the swinging is deactivated
-	public override void DoDeactivation ()
-	{
-
-	}
-
-	// Calculate the velocity
-	public float calculateVelocity() {
-		//float leftAngle = Quaternion.Angle (transform.rotation, leftEndRotation);
-		//float rightAngle = Quaternion.Angle (transform.rotation, rightEndRotation);
-		//return Mathf.Sin (leftAngle) * maxVelocity;
-		return maxVelocity;
+		return eulerAngle;
 	}
 
 }
