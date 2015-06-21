@@ -87,6 +87,56 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &72395579
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: interactingObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.8000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5.9000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.707106888
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .707106769
+      objectReference: {fileID: 0}
+    - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: interactingObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 2122393803}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &126322368
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +209,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &309476874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1509,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &633774406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1582,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &785721452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1655,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &885812250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,7 +1768,7 @@ Transform:
   m_LocalScale: {x: 2, y: 4, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1 &1114653294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1842,7 @@ Transform:
   m_Children:
   - {fileID: 885812252}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1001 &1297531797
 Prefab:
   m_ObjectHideFlags: 0
@@ -1918,7 +1968,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1470154698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,7 +2101,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1562698145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,7 +2174,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1673549997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,7 +2302,7 @@ Transform:
   - {fileID: 309476880}
   - {fileID: 1470154699}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &2122393803
 MonoBehaviour:
   m_ObjectHideFlags: 0
