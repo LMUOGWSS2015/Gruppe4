@@ -134,6 +134,10 @@ Prefab:
       propertyPath: interactingObjects.Array.data[0]
       value: 
       objectReference: {fileID: 2122393803}
+    - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: clickRequired
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
   m_IsPrefabParent: 0

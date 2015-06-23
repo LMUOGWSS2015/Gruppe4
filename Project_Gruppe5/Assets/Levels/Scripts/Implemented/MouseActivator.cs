@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MouseActivator : ActivatingObject {
 
+	public bool clickRequired = false;
 	public bool deactivateOnExit = false;
 
 	public override void Activated()
@@ -17,12 +18,24 @@ public class MouseActivator : ActivatingObject {
 	}
 
 	public void OnMouseEnter() {
-		Activated ();
+		if (!clickRequired) {
+			Activated ();
+		}
 	}
 
 	public void OnMouseExit() {
-		if (deactivateOnExit) {
+		if (!clickRequired && deactivateOnExit) {
 			Deactivated();
+		}
+	}
+
+	public void OnMouseDown() {
+		if (clickRequired) {
+			if (isActivated) {
+				Deactivated();
+			} else {
+				Activated();
+			}
 		}
 	}
 

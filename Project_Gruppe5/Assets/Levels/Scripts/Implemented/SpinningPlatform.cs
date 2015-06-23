@@ -18,7 +18,7 @@ public class SpinningPlatform : InteractivePhysicsObject {
 	public override void DoActivation () 
 	{
 		if (directionChanger)
-			Rotate (inverseVelocity);
+			Rotate (velocity);
 		else
 			Rotate (velocity);
 	}
@@ -26,7 +26,7 @@ public class SpinningPlatform : InteractivePhysicsObject {
 	public override void DoDeactivation ()
 	{
 		if (directionChanger)
-			Rotate (velocity);
+			Rotate (inverseVelocity);
 	}
 	
 	public void Rotate(Vector3 v) {
