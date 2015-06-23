@@ -68,7 +68,7 @@ public class SwingingObject : InteractivePhysicsObject {
 		currentTime += Time.deltaTime;
 		// Calculate the new angle to rotate towards
 		float newAngle = amplitude * Mathf.Cos (frequency * currentTime + startPhase) + startAngle * -1;
-		Debug.Log ("New angle: " + newAngle);
+		//Debug.Log ("New angle: " + newAngle);
 		float currentAngle = GetCurrentAngle();
 		float deltaAngle = newAngle - currentAngle;
 		// Rotate
@@ -95,7 +95,7 @@ public class SwingingObject : InteractivePhysicsObject {
 			currentDegrees = transform.rotation.eulerAngles.z;
 			break;
 		default:
-			currentDegrees = transform.rotation.eulerAngles.y;
+			currentDegrees = transform.rotation.eulerAngles.x;
 			break;
 		}
 		return currentDegrees;
@@ -115,7 +115,7 @@ public class SwingingObject : InteractivePhysicsObject {
 			eulerAngle = new Vector3(0, 0, angle);
 			break;
 		default:
-			eulerAngle = new Vector3(0, angle, 0);
+			eulerAngle = new Vector3(angle, 0, 0);
 			break;
 		}
 		return eulerAngle;
