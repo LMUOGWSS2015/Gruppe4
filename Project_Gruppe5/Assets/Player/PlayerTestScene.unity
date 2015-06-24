@@ -328,13 +328,21 @@ Prefab:
       propertyPath: maxGravityMultiplier
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 413120, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413120, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413120, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &400269229 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 436674, guid: 4ce80168b5b72bb469e606a18ca08e6c, type: 2}
-  m_PrefabInternal: {fileID: 400269228}
 --- !u!1001 &420464651
 Prefab:
   m_ObjectHideFlags: 0
@@ -447,11 +455,11 @@ Prefab:
     - target: {fileID: 11438828, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 400269229}
+      objectReference: {fileID: 0}
     - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: focalTransform
       value: 
-      objectReference: {fileID: 400269229}
+      objectReference: {fileID: 0}
     - target: {fileID: 11425790, guid: 360fbf0189bd541d28c6bb25a6fb1437, type: 2}
       propertyPath: m_Enabled
       value: 0
