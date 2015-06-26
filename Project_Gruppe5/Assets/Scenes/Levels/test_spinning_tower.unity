@@ -5976,10 +5976,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1442356696}
     m_Modifications:
-    - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
-      propertyPath: interactingObjects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 467632, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
       propertyPath: m_LocalPosition.x
       value: 35.9000015
@@ -6016,21 +6012,9 @@ Prefab:
       propertyPath: interactingObjects.Array.data[0]
       value: 
       objectReference: {fileID: 2099218967}
-    - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
-      propertyPath: clickRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
-      propertyPath: deactivateOnExit
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 174284, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
       propertyPath: m_Name
       value: GazeCrystal Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
-      propertyPath: deactivatable
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
