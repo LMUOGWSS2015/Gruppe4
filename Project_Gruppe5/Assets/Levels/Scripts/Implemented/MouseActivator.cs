@@ -39,4 +39,13 @@ public class MouseActivator : ActivatingObject {
 		}
 	}
 
+	public void ExternalActivation() {
+		Debug.Log ("External activation - " + isActivated);
+		if (isActivated && deactivatable) {
+			Deactivated();
+		} else {
+			Activated();
+		}
+	}
+
 }

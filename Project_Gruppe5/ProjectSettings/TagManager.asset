@@ -8,6 +8,8 @@ TagManager:
   - VanishingObject
   - ShowingObject
   - Fire
+  - GazeActivator
+  - SelectionMarker
   layers:
   - Default
   - TransparentFX
