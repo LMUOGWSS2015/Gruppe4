@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - MoveableByGazePlatform
+  - VanishingObject
+  - ShowingObject
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,6 @@ TagManager:
   - BreakablePlatform
   - BackgroundUI
   - Huge Fog
-  - 
   - 
   - 
   - 

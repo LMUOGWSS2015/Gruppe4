@@ -461,7 +461,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 0, z: 20}
   directionChanger: 0
 --- !u!114 &175381468
@@ -2611,7 +2613,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 0, z: -20}
   directionChanger: 0
 --- !u!114 &584931233
@@ -2912,7 +2916,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 0, z: -20}
   directionChanger: 0
 --- !u!114 &611684328
@@ -3106,7 +3112,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 40, z: 0}
   directionChanger: 0
 --- !u!54 &718676357
@@ -4051,7 +4059,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 0, z: 20}
   directionChanger: 0
 --- !u!114 &1038857786
@@ -4638,7 +4648,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 50, z: 0}
   directionChanger: 0
 --- !u!23 &1132841232
@@ -4783,7 +4795,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: -40, z: 0}
   directionChanger: 0
 --- !u!54 &1135281760
@@ -5120,7 +5134,9 @@ MonoBehaviour:
   singleUse: 1
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 20, z: 0}
   directionChanger: 0
 --- !u!64 &1241944085
@@ -5410,7 +5426,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 0, z: 20}
   directionChanger: 0
 --- !u!114 &1339972550
@@ -6028,7 +6046,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 0, z: 20}
   directionChanger: 0
 --- !u!114 &1480281789
@@ -7049,7 +7069,9 @@ MonoBehaviour:
   singleUse: 1
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: -20, z: 0}
   directionChanger: 0
 --- !u!23 &1826377048
@@ -7141,7 +7163,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 30, z: 0}
   directionChanger: 0
 --- !u!54 &1864841149
@@ -7250,7 +7274,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 50, z: 0}
   directionChanger: 0
 --- !u!23 &1933017118
@@ -7505,7 +7531,9 @@ MonoBehaviour:
   singleUse: 1
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: 20, z: 0}
   directionChanger: 0
 --- !u!23 &1972419103
@@ -7660,7 +7688,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   velocity: {x: 0, y: -50, z: 0}
   directionChanger: 0
 --- !u!23 &2009353381
