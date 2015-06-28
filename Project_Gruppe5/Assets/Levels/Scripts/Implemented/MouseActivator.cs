@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class MouseActivator : ActivatingObject {
 
-	public bool clickRequired = false;
-	public bool deactivatable = false;
+	public bool clickRequired = false; // Is a click necessary to activate or is the mouse movement sufficient? 
+	public bool deactivatable = false; // Is the object deactivatable, or is it fixed after one activation?
 
 	public override void Activated()
 	{
