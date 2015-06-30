@@ -39,10 +39,10 @@ public class MainMenuController : Singleton<MainMenuController> {
 	{
 		if(!initializing) {
 			if(!changing) {
-				if(Input.GetKeyDown(KeyCode.R)) {
+				if(InputManager.Next()) {
 					NextIsland();
 				}
-				if(Input.GetKeyDown(KeyCode.P)) {
+				if(InputManager.Prev()) {
 					PreviousIsland();
 				}
 			}
