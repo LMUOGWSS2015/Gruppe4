@@ -115,7 +115,7 @@ public class AlternativeSelection : MonoBehaviour {
 	}
 
 	private void ActivateObject(GameObject g) {
-		MouseActivator mouseActivator = (MouseActivator) g.transform.GetComponentInParent<MouseActivator> ();
+		GazeActivator mouseActivator = (GazeActivator) g.transform.GetComponentInParent<GazeActivator> ();
 		if (mouseActivator != null) {
 			mouseActivator.ExternalActivation();
 		}

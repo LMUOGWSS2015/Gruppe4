@@ -4,18 +4,8 @@ using System.Collections.Generic;
 
 public class GazeActivator : ActivatingObject {
 
-	public KeyCode key = KeyCode.Space;
-
-	public override void Update() {
-		base.Update ();
-		if (Input.GetKeyDown(key)) {
-			if (isActivated) {
-				Deactivated();
-			} else {
-				Activated();
-			}
-		}
-	}
+	public bool clickRequired = false; // Is a click necessary to activate or is the mouse movement sufficient? 
+	public bool deactivatable = false; // Is the object deactivatable, or is it fixed after one activation?
 
 	public override void Activated()
 	{
@@ -26,4 +16,36 @@ public class GazeActivator : ActivatingObject {
 	{
 		base.Deactivated();
 	}
+
+	public void Enter() {
+		if (!clickRequired) {
+			Activated ();
+		}
+	}
+
+	public void Exit() {
+		if (!clickRequired && deactivatable) {
+			Deactivated();
+		}
+	}
+
+	public void Stay(bool trigger) {
+		if (clickRequired && trigger) {
+			if (isActivated && deactivatable) {
+				Deactivated();
+			} else {
+				Activated();
+			}
+		}
+	}
+
+	public void ExternalActivation() {
+		Debug.Log ("External activation - " + isActivated);
+		if (isActivated && deactivatable) {
+			Deactivated();
+		} else {
+			Activated();
+		}
+	}
+
 }
