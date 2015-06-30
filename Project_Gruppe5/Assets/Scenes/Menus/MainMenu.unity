@@ -261,7 +261,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 482710, guid: 245d5c37ab309be48a95e34186af746c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 245d5c37ab309be48a95e34186af746c, type: 2}
@@ -465,12 +465,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 297637991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d32784dc745864f45b2279448e3b53fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elements: {fileID: 0}
 --- !u!1 &350361900
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +733,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436830, guid: 5ea5f4da4840435459907ef998199f08, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 476870, guid: 5ea5f4da4840435459907ef998199f08, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1243,7 +1242,7 @@ GameObject:
   - 135: {fileID: 731186585}
   - 23: {fileID: 731186584}
   m_Layer: 0
-  m_Name: Temple
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1257,10 +1256,10 @@ Transform:
   m_GameObject: {fileID: 731186582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.8199997, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 1079903860}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!23 &731186584
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1271,7 +1270,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 42f449c0086e03c4fb117e6f51a8f302, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1581,7 +1580,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 459768, guid: 09fbdebfe10c5704883148e5079f9a78, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09fbdebfe10c5704883148e5079f9a78, type: 2}
@@ -1831,6 +1830,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandTexts.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: backgroundColors.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -1877,19 +1880,19 @@ Prefab:
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islands.Array.data[1]
       value: 
-      objectReference: {fileID: 633111018}
+      objectReference: {fileID: 1591325658}
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islands.Array.data[2]
       value: 
-      objectReference: {fileID: 731186583}
+      objectReference: {fileID: 1225171618}
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islands.Array.data[3]
       value: 
-      objectReference: {fileID: 1225171618}
+      objectReference: {fileID: 731186583}
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islands.Array.data[4]
       value: 
-      objectReference: {fileID: 1591325658}
+      objectReference: {fileID: 633111018}
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islandName
       value: 
@@ -1994,6 +1997,34 @@ Prefab:
       propertyPath: backgroundColors.Array.data[4].a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandNames.Array.data[3]
+      value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandText
+      value: 
+      objectReference: {fileID: 1730478019}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandTexts.Array.data[0]
+      value: Start Your Journey
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandTexts.Array.data[1]
+      value: Start Your Journey
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandTexts.Array.data[2]
+      value: Start Your Journey
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandTexts.Array.data[4]
+      value: Start Your Journey
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandTexts.Array.data[3]
+      value: Go To Settings
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
   m_IsPrefabParent: 0
@@ -2022,7 +2053,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1230386132}
   - {fileID: 380929208}
   - {fileID: 731186583}
   - {fileID: 1225171618}
@@ -2563,94 +2593,6 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 459768, guid: 09fbdebfe10c5704883148e5079f9a78, type: 2}
   m_PrefabInternal: {fileID: 1017477055}
---- !u!1 &1230386131
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1230386132}
-  - 33: {fileID: 1230386135}
-  - 135: {fileID: 1230386134}
-  - 23: {fileID: 1230386133}
-  - 114: {fileID: 1230386136}
-  m_Layer: 0
-  m_Name: Desert
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1230386132
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230386131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1079903860}
-  m_RootOrder: 0
---- !u!23 &1230386133
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230386131}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: f45d2b5ab856b484892d1adac70cc95b, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!135 &1230386134
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230386131}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1230386135
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230386131}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1230386136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230386131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34382083ad114a07d000fbfb8d76c639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iterations: 3
-  blurSpread: .600000024
-  blurShader: {fileID: 4800000, guid: 57e6deea7c2924e22a5138e2b70bb4dc, type: 3}
 --- !u!1 &1242283729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,7 +2904,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 455688, guid: 28ac04dae7bedac42b2a7a5bf241f03a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28ac04dae7bedac42b2a7a5bf241f03a, type: 2}
@@ -3697,7 +3639,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DESERT
+  m_Text: Desert
 --- !u!222 &1650950279
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3896,7 +3838,7 @@ GameObject:
   - 222: {fileID: 1730478020}
   - 114: {fileID: 1730478019}
   m_Layer: 5
-  m_Name: Start
+  m_Name: IslandText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3944,7 +3886,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: START YOUR JOURNEY
+  m_Text: Start Your Journey
 --- !u!222 &1730478020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4084,12 +4026,6 @@ CanvasRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 163840, guid: 9d136e7d7ebe51f4faf9868293ca5f0d, type: 2}
   m_PrefabInternal: {fileID: 1210988136}
---- !u!114 &1853245798 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11459652, guid: 9d136e7d7ebe51f4faf9868293ca5f0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1210988136}
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1853245800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4101,18 +4037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c014985cc8998e46817170378809a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundPanel: {fileID: 1853245798}
-  gradient:
-    key0: {}
-    key1: {}
-    key2: {}
-    key3: {}
-    key4: {}
-    key5: {}
-    key6: {}
-    key7: {}
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
 --- !u!1 &1861170089
 GameObject:
   m_ObjectHideFlags: 0

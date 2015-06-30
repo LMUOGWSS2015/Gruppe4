@@ -6,20 +6,23 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	public GameObject content;
 	public Text islandName;
-	public Text startText;
+	public Text islandText;
 	public RectTransform titleLogo;
 	public Camera backgroundCamera;
 	public Camera starsCamera;
 	public Transform fog;
 	public Transform[] islands;
 	public string[] islandNames;
+	public string[] islandTexts;
 	public Color[] backgroundColors;
 
 	private int currentIsland;
 	private Transform islesTransform;
 	private float islesAngle;
 
-	private bool changing = false;
+	private bool nameChanging = false;
+	private bool textChanging = false;
+	private bool islandChanging = false;
 	private bool initializing = true;
 
 	void Start ()
@@ -38,12 +41,15 @@ public class MainMenuController : Singleton<MainMenuController> {
 	void Update()
 	{
 		if(!initializing) {
-			if(!changing) {
+			if(!nameChanging && !islandChanging) {
 				if(InputManager.Next()) {
 					NextIsland();
 				}
 				if(InputManager.Prev()) {
 					PreviousIsland();
+				}
+				if(InputManager.Jump()) {
+					LoadLevel();
 				}
 			}
 		}
@@ -70,7 +76,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			float angle = i * Mathf.PI * 2;
 			
 			// the X &amp; Y position for this angle are calculated using Sin &amp; Cos
-			float x = Mathf.Sin(angle) * radiusX;
+			float x = Mathf.Sin(angle) * radiusX * -1.0f;
 			float z = Mathf.Cos(angle) * radiusZ;
 			float y = 100.0f;
 			
@@ -84,9 +90,9 @@ public class MainMenuController : Singleton<MainMenuController> {
 	{
 		currentIsland = (currentIsland + 1) % islands.Length;
 
-		StopCoroutine(TurnIsles());
 		StartCoroutine(TurnIsles());
 		StartCoroutine(ChangeIslandName());
+		StartCoroutine(ChangeIslandText());
 	}
 
 	private void PreviousIsland ()
@@ -96,9 +102,9 @@ public class MainMenuController : Singleton<MainMenuController> {
 		if(currentIsland < 0)
 			currentIsland = islands.Length - 1;
 
-		StopCoroutine(TurnIsles());
 		StartCoroutine(TurnIsles());
 		StartCoroutine(ChangeIslandName());
+		StartCoroutine(ChangeIslandText());
 	}
 
 	public void LoadLevel ()
@@ -108,6 +114,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	private IEnumerator TurnIsles ()
 	{
+		islandChanging = true;
 		float lerpTime = 1.0f;
 		Quaternion targetRotation = Quaternion.Euler(new Vector3(0, (islesAngle * currentIsland), 0));
 		Color startColor = RenderSettings.skybox.GetColor("_GroundColor");
@@ -139,6 +146,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 			yield return null;
 		}
+		islandChanging = false;
 	}
 
 	private void IslandsLookAtCamera()
@@ -151,7 +159,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	private IEnumerator ChangeIslandName() 
 	{
-		changing = true;
+		nameChanging = true;
 
 		float lerpTime = 1.0f;
 		bool fading = true;
@@ -193,7 +201,54 @@ public class MainMenuController : Singleton<MainMenuController> {
 			}
 			yield return null;
 		}
-		changing = false;
+		nameChanging = false;
+	}
+
+	private IEnumerator ChangeIslandText() 
+	{
+		textChanging = true;
+		
+		float lerpTime = 1.0f;
+		bool fading = true;
+		float currentLerpTime = 0.0f;
+		Color startColor = islandText.color;
+		Color endColor = new Color(startColor.r, startColor.g, startColor.b, 0);
+		Color firstColor;
+		Color secondColor;
+		
+		firstColor = startColor;
+		secondColor = endColor;
+		
+		bool fadingBack = false;
+		
+		while(fading) {
+			currentLerpTime += Time.deltaTime;
+			
+			if (currentLerpTime > lerpTime) {
+				currentLerpTime = lerpTime;
+			}
+			
+			float t = currentLerpTime / lerpTime;
+			t = t * t * t * (t * (6f * t - 15f) + 10f);
+			
+			Color c = Color.Lerp(firstColor, secondColor, t);
+			islandText.color = c;
+			
+			if(islandText.color == secondColor) {
+				if(fadingBack)
+					fading = false;
+				
+				fadingBack = true;
+				
+				islandText.text = islandTexts[currentIsland];
+				
+				firstColor = endColor;
+				secondColor = startColor;
+				currentLerpTime = 0.0f;
+			}
+			yield return null;
+		}
+		textChanging = false;
 	}
 
 	private IEnumerator StartMenuAnimation ()
@@ -239,7 +294,6 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			if(titleLogo.anchoredPosition == endPos && titleLogo.localScale == endSize) {
 				animating = false;
-				Debug.Log ("Done");
 			}
 			
 			yield return null;
@@ -318,8 +372,6 @@ public class MainMenuController : Singleton<MainMenuController> {
 		
 		Color startColor = islandName.color;
 		Color endColor = new Color(startColor.r, startColor.g, startColor.b, 1.0f);
-
-		Debug.Log (startColor + " " + endColor);
 		
 		bool fadingIn = true;
 		float currentLerpTime = 0.0f;
@@ -360,9 +412,9 @@ public class MainMenuController : Singleton<MainMenuController> {
 			//t = t;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
-			startText.color = color;
+			islandText.color = color;
 			
-			if(startText.color == endColor)
+			if(islandText.color == endColor)
 				fadingIn = false;
 			
 			yield return null;

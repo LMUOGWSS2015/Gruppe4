@@ -14,6 +14,10 @@ public class InputManager : MonoBehaviour {
 	public static float rotationSensivity = 2.0f;
 	public static float zoomSensivity = 2.0f;
 
+	public static void setController(Controller control) {
+		controller = control;
+	}
+
 	public static float Horizontal() {
 		switch (controller) {
 		case Controller.MOUSE:
