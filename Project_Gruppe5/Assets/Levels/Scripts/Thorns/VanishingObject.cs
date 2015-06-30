@@ -47,6 +47,7 @@ public class VanishingObject : MyMonoBehaviour {
 
 			foreach(Collider collider in colliders)
 				collider.isTrigger = true;
+
 		} else {
 			StartCoroutine(Shrink(4.0f));
 		}
@@ -66,6 +67,10 @@ public class VanishingObject : MyMonoBehaviour {
 
 			foreach(Collider collider in colliders)
 				collider.isTrigger = false;
+
+			if(transform.tag == "ShowingObject")
+				transform.GetComponent<Collider>().isTrigger = true;
+
 		} else {
 			StartCoroutine(Grow(2.0f));
 		}

@@ -69,7 +69,7 @@ public class LightCircle : MyMonoBehaviour {
 			yield return null;
 		}
 		refreshed = false;
-		StartCoroutine(Shrink(10.0f));
+		StartCoroutine(Shrink(shrinkTime));
 	}
 
 
