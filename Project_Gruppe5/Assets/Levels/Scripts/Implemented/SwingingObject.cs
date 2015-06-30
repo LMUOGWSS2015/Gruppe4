@@ -106,7 +106,7 @@ public class SwingingObject : InteractivePhysicsObject {
 		Vector3 eulerAngle;
 		switch(axis) {
 		case AXIS.X:
-			eulerAngle = new Vector3(angle, 0, 0);
+			eulerAngle = new Vector3(angle, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 			break;
 		case AXIS.Y:
 			eulerAngle = new Vector3(0, angle, 0);

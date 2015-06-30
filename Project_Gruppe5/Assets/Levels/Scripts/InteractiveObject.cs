@@ -12,7 +12,7 @@ public class InteractiveObject : MyMonoBehaviour {
 	[HideInInspector]
 	public bool isDeactivated;
 
-	private bool isUsed;
+	public bool isUsed;
 
 	public void Start()
 	{

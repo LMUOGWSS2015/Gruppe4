@@ -9,6 +9,7 @@ public class RotatingPlatform : InteractivePhysicsObject {
 
 	private Quaternion startRotation;
 	private Quaternion endRotation;
+	private bool checkAxis;
 
 	public enum AXIS {
 		X,
@@ -18,6 +19,11 @@ public class RotatingPlatform : InteractivePhysicsObject {
 
 	// Use this for initialization
 	public override void StartMe () 
+	{
+		checkAxis = true;
+	}
+
+	private void SetRotation ()
 	{
 		Vector3 euler = new Vector3();
 		switch(axis) {
@@ -34,18 +40,34 @@ public class RotatingPlatform : InteractivePhysicsObject {
 			euler = new Vector3(0, endRotationDegrees, 0);
 			break;
 		}
-
+		
 		endRotation = Quaternion.Euler(euler);
 		startRotation = transform.rotation;
 	}
 
 	public override void DoActivation ()
 	{
+		if(checkAxis) {
+			SetRotation();
+			checkAxis = false;
+		}
+
 		rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, endRotation, Time.deltaTime * speed));
+
+		if(transform.rotation == endRotation)
+			checkAxis = true;
 	}
 
 	public override void DoDeactivation ()
 	{
+		if(checkAxis) {
+			SetRotation();
+			checkAxis = false;
+		}
+
 		rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, startRotation, Time.deltaTime * speed));
+
+		if(transform.rotation == startRotation)
+			checkAxis = true;
 	}
 }

@@ -6,7 +6,7 @@ public class HarmfulObject : MyMonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-	
+		Debug.Log (transform.name);
 	}
 	
 	// Update is called once per frame
@@ -14,10 +14,11 @@ public class HarmfulObject : MyMonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter(Collision other) 
+	void OnTriggerEnter(Collider other) 
 	{
+		Debug.Log ("Kill");
 		if(other.transform.tag == "Player") {
-			PlayerUtils.Instance.Kill();
+			Player.Instance.Kill();
 		}
 	}
 }
