@@ -37,13 +37,13 @@ public class AlternativeSelection : MonoBehaviour {
 		}
 
 		// Determine if the user activated the currently selected object
-		if (Input.GetKeyDown (KeyCode.W) && selectedGO != null) {
+		if (InputManager.GazeTrigger() && selectedGO != null) {
 			ActivateObject(selectedGO);
 		} else {
 			// Determine if the user selects / deselects
-			bool previousSelection = Input.GetKeyDown (KeyCode.A);
-			bool removeSelection = Input.GetKeyDown (KeyCode.S);
-			bool nextSelection = Input.GetKeyDown (KeyCode.D);
+			bool previousSelection = InputManager.Prev ();
+			bool removeSelection = Input.GetKeyDown (KeyCode.C);
+			bool nextSelection = InputManager.Next ();
 			bool selectionChanged = false;
 
 			// Determine how the selection changes because of the user input
@@ -115,9 +115,9 @@ public class AlternativeSelection : MonoBehaviour {
 	}
 
 	private void ActivateObject(GameObject g) {
-		GazeActivator mouseActivator = (GazeActivator) g.transform.GetComponentInParent<GazeActivator> ();
-		if (mouseActivator != null) {
-			mouseActivator.ExternalActivation();
+		GazeActivator gazeActivator = (GazeActivator) g.transform.GetComponentInParent<GazeActivator> ();
+		if (gazeActivator != null) {
+			gazeActivator.ExternalActivation();
 		}
 	}
 

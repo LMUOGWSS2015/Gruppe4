@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour {
 		PS2
 	}
 
-	public static Controller controller = Controller.XBOX;
+	public static Controller controller = Controller.PS2;
 
 	public static float rotationSensivity = 2.0f;
 	public static float zoomSensivity = 2.0f;
@@ -95,11 +95,37 @@ public class InputManager : MonoBehaviour {
 	public static bool GazeTrigger() {
 		switch (controller) {
 		case Controller.MOUSE:
-			return Input.GetButtonDown("Trigger");
+			return Input.GetButtonDown("GazeTrigger");
 		case Controller.XBOX:
-			return Input.GetButtonDown("XBOXTrigger");
+			return Input.GetButtonDown("XBOXGazeTrigger");
 		case Controller.PS2:
-			return Input.GetButtonDown("PS2Trigger");
+			return Input.GetButtonDown("PS2GazeTrigger");
+		default:
+			return false;
+		}
+	}
+
+	public static bool Next() {
+		switch (controller) {
+		case Controller.MOUSE:
+			return Input.GetButtonDown("Next");
+		case Controller.XBOX:
+			return Input.GetButtonDown("XBOXNext");
+		case Controller.PS2:
+			return Input.GetButtonDown("PS2Next");
+		default:
+			return false;
+		}
+	}
+
+	public static bool Prev() {
+		switch (controller) {
+		case Controller.MOUSE:
+			return Input.GetButtonDown("Prev");
+		case Controller.XBOX:
+			return Input.GetButtonDown("XBOXPrev");
+		case Controller.PS2:
+			return Input.GetButtonDown("PS2Prev");
 		default:
 			return false;
 		}

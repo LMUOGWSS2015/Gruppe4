@@ -30,7 +30,6 @@ public class GazeManager : GazeMonobehaviour {
 	
 	private void OnStay() {
 		rigidbody.AddTorque (new Vector3 (0f, 10.0f, 0f));
-		Debug.Log (InputManager.GazeTrigger());
 		gazeActivator.Stay (InputManager.GazeTrigger());
 	}
 	
