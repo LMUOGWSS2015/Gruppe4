@@ -17,6 +17,7 @@ public class Player : Singleton<Player> {
 	Rigidbody rigidbody;
 	Animator anim;
 
+	bool isFreezed;
 	bool jumped;
 	bool walk;
 	bool doubleJump;
@@ -47,6 +48,11 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Move(Vector3 move, bool jump) {
+		if (isFreezed) {
+			move = new Vector3 (0.0f, 0.0f, 0.0f);
+			jump = false;
+		}
+
 		if (jumped) {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.5f, rigidbody.velocity.y, rigidbody.velocity.z * 0.5f);
 			jumped = false;
@@ -176,11 +182,17 @@ public class Player : Singleton<Player> {
 		isJumping = true;
 	}
 
+	public void Freeze(bool freeze) {
+		isFreezed = freeze;
+	}
+
 	public void Kill() {
 		Respawn ();
 	}
 
 	public void Respawn() {
+		isFreezed = false;
+
 		transform.position = respawnPoint.position;
 		transform.rotation = respawnPoint.rotation;
 	}

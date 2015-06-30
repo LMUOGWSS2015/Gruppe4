@@ -1304,7 +1304,7 @@ Prefab:
     - target: {fileID: 18302402, guid: cba05f73ccb261f4aab8e6d830e26286, type: 2}
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1142693727}
     - target: {fileID: 13708488, guid: cba05f73ccb261f4aab8e6d830e26286, type: 2}
       propertyPath: m_AABB.m_Center.x
       value: -.0575350523
@@ -1343,7 +1343,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11488826, guid: cba05f73ccb261f4aab8e6d830e26286, type: 2}
       propertyPath: trampolinJumpPower
-      value: 55
+      value: 47.5800018
+      objectReference: {fileID: 0}
+    - target: {fileID: 18302402, guid: cba05f73ccb261f4aab8e6d830e26286, type: 2}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cba05f73ccb261f4aab8e6d830e26286, type: 2}
@@ -3223,6 +3227,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f421c156eca24a4ea53256fca23cc11, type: 3}
   m_IsPrefabParent: 0
+--- !u!136 &1142693727 stripped
+CapsuleCollider:
+  m_PrefabParentObject: {fileID: 13625068, guid: 4ce80168b5b72bb469e606a18ca08e6c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1622348440}
 --- !u!1 &1176251320
 GameObject:
   m_ObjectHideFlags: 0

@@ -109,13 +109,13 @@ public class SwingingObject : InteractivePhysicsObject {
 			eulerAngle = new Vector3(angle, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 			break;
 		case AXIS.Y:
-			eulerAngle = new Vector3(0, angle, 0);
+			eulerAngle = new Vector3(transform.rotation.eulerAngles.x, angle, transform.rotation.eulerAngles.z);
 			break;
 		case AXIS.Z:
-			eulerAngle = new Vector3(0, 0, angle);
+			eulerAngle = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, angle);
 			break;
 		default:
-			eulerAngle = new Vector3(angle, 0, 0);
+			eulerAngle = new Vector3(angle, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 			break;
 		}
 		return eulerAngle;
