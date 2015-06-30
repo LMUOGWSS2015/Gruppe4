@@ -92,7 +92,7 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
-	public static bool Trigger() {
+	public static bool GazeTrigger() {
 		switch (controller) {
 		case Controller.MOUSE:
 			return Input.GetButtonDown("Trigger");
