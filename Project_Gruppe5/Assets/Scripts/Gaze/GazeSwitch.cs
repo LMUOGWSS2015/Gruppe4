@@ -26,6 +26,13 @@ public class GazeSwitch : GazeMonobehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 gazePos = iView.SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
+		if (gazePos.x < 0) {
+			gazePos.x =0;
+		}
+		if (gazePos.y < 0) {
+			gazePos.y =0;
+		}
+
 	}
 
 	public override void OnGazeEnter(RaycastHit hitInformation){

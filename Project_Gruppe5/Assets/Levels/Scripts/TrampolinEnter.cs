@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TrampolinEnter : MonoBehaviour {
 
-	[SerializeField] float trampolinJumpPower = 20.0f;
+	[SerializeField] float trampolinJumpPower;
 
 	void OnTriggerEnter(Collider other) {
 		if(other.transform.tag == "Player") {
