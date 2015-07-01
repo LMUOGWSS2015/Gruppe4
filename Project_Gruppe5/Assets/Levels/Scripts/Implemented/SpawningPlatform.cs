@@ -15,6 +15,7 @@ public class SpawningPlatform : InteractiveObject {
 		base.UpdateMe ();
 
 		if(Input.GetKeyDown(KeyCode.P)) {
+			Debug.Log ("Spwan");
 			Spawn ();
 		}
 	}

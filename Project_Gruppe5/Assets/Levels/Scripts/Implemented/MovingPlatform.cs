@@ -10,7 +10,7 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 	private int currentPoint = 1;
 	private bool movingForward = true;
-	private bool newActivation;
+	private bool newActivation = true;
 
 	private Vector3 directionVector;
 
@@ -21,11 +21,14 @@ public class MovingPlatform : InteractivePhysicsObject {
 	{
 		GameObject go = new GameObject();
 		go.transform.position = transform.position;
+		go.name = transform.name + "_StartingPoint";
 		pathPoints.Insert(0, go.transform);
 
 		if(pathPoints.Count < 3) {
 			randomize = false;
 		}
+
+		Debug.Log (pathPoints.Count);
 	}
 
 	public override void DoActivation () 
