@@ -10,6 +10,8 @@ TagManager:
   - Fire
   - GazeActivator
   - SelectionMarker
+  - GazeController
+  - LevelController
   layers:
   - Default
   - TransparentFX

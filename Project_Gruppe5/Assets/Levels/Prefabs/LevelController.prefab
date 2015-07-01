@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403978}
-  - 114: {fileID: 11440324}
+  - 114: {fileID: 11417100}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: LevelController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11440324
+--- !u!114 &11417100
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,10 +36,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 135046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15e8d3de24ac14a6398c899d806adb90, type: 3}
+  m_Script: {fileID: 11500000, guid: 46ca2ba827f1743549e3d5757d8eb34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingMenuController: {fileID: 0}
+  levelContent: {fileID: 0}
+  originalLevelMenu: {fileID: 114088, guid: afae33e025809400fbab4a0ffc8d6060, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
