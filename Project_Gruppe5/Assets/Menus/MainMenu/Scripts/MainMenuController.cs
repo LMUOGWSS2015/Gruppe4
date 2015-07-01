@@ -40,7 +40,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 	void Update()
 	{
 		if(!initializing) {
-			if(!nameChanging && !islandChanging) {
+			if(!nameChanging && !textChanging && !islandChanging) {
 				if(InputManager.Next() || Input.GetKeyDown(KeyCode.RightArrow)) {
 					NextIsland();
 				}

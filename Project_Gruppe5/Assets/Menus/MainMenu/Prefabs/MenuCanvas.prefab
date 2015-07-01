@@ -28,7 +28,7 @@ GameObject:
   - 222: {fileID: 22251380}
   - 114: {fileID: 11405438}
   m_Layer: 5
-  m_Name: Start
+  m_Name: IslandText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e933177da0f5b3448a151b1bd15dc23, type: 3}
     m_FontSize: 40
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -864,7 +864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: START YOUR JOURNEY
+  m_Text: Start Your Journey
 --- !u!114 &11405632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e933177da0f5b3448a151b1bd15dc23, type: 3}
     m_FontSize: 70
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -956,7 +956,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DESERT
+  m_Text: Desert
 --- !u!114 &11411468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e933177da0f5b3448a151b1bd15dc23, type: 3}
     m_FontSize: 80
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -2326,7 +2326,7 @@ RectTransform:
   - {fileID: 22434590}
   - {fileID: 22412218}
   m_Father: {fileID: 22477834}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2497,7 +2497,7 @@ RectTransform:
   m_Children:
   - {fileID: 22484220}
   m_Father: {fileID: 22477834}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2710,8 +2710,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 22440428}
   - {fileID: 22423194}
+  - {fileID: 22440428}
   - {fileID: 22455066}
   m_Father: {fileID: 0}
   m_RootOrder: 0

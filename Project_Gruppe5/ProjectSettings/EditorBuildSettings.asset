@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/deserttest 1.unity
   - enabled: 1
-    path: Assets/Scenes/TestScenes/thorntest.unity
+    path: Assets/Scenes/Levels/Thorns_1.unity
   - enabled: 1
     path: Assets/Scenes/TestScenes/treetest3.unity
   - enabled: 1
