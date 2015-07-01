@@ -19,6 +19,7 @@ public class Player : Singleton<Player> {
 
 	bool isFreezed;
 	bool jumped;
+	bool doublejumped = false;
 	bool walk;
 	bool doubleJump;
 	bool isGrounded;
@@ -29,6 +30,9 @@ public class Player : Singleton<Player> {
 	float turnAmount;
 	float forwardAmount;
 	float jumpForwardAmount;
+	public AudioClip[] audioClip;
+	AudioSource audio;
+	bool allowplay = true;
 
 	public Transform startPoint;
 	public Transform respawnPoint {
@@ -39,6 +43,8 @@ public class Player : Singleton<Player> {
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animator> ();
+
+		audio = GetComponent<AudioSource> ();
 
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
@@ -103,8 +109,10 @@ public class Player : Singleton<Player> {
 	void HandleAirborneMovement(bool jump)
 	{
 		if (jump && doubleJump) {
+			doublejumped =true;
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpPower, rigidbody.velocity.z);
 			doubleJump = false;
+
 			isDoubleJumping = true;
 		}
 		else {
@@ -174,6 +182,12 @@ public class Player : Singleton<Player> {
 		anim.SetBool ("IsDoubleJumping", doublejumping);
 		anim.SetBool ("IsGrounded", grounded);
 
+		//handle Sounds
+
+		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 1.0F));}
+		if (jumped) {StopWalkingSound();PlaySound(1,1f);}
+		if (doublejumped) {doublejumped =false;PlaySound(2,1f);}
+		
 
 	}
 
@@ -196,4 +210,36 @@ public class Player : Singleton<Player> {
 		transform.position = respawnPoint.position;
 		transform.rotation = respawnPoint.rotation;
 	}
+
+	void PlaySound(int Clip, float Volume) {
+		allowplay = false;
+		float clipLength = audioClip[Clip].length;
+		audio.clip = audioClip [Clip];
+		audio.volume = Volume;
+		audio.Play();
+
+		StartCoroutine(StartMethod(clipLength));
+	}
+
+	void StopWalkingSound(){
+		audio.clip = audioClip [0];
+		audio.Stop ();
+	}
+
+
+	private IEnumerator StartMethod(float clipLength)
+	{
+		//yield return new WaitForSeconds(clipLength+ Random.Range(0.30F, 0.40F)); //Walk_1
+
+		yield return new WaitForSeconds(clipLength- Random.Range(0.01F, 0.05F)); //Walk_2
+
+		callBack();
+		
+	}
+
+	void callBack(){
+	 allowplay = true;
+
+	}
+
 }
