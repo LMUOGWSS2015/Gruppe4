@@ -130,4 +130,17 @@ public class InputManager : MonoBehaviour {
 			return false;
 		}
 	}
+
+	public static bool Esc() {
+		switch (controller) {
+		case Controller.MOUSE:
+			return Input.GetButtonDown("ESC");
+		case Controller.XBOX:
+			return Input.GetButtonDown("XBOXESC");
+		case Controller.PS2:
+			return Input.GetButtonDown("PS2ESC");
+		default:
+			return false;
+		}
+	}
 }
