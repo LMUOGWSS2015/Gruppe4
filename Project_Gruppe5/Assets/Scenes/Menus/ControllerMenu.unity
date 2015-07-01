@@ -234,7 +234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
       propertyPath: settingTexts.Array.data[0]
-      value: Choose Controller
+      value: Controller Activated
       objectReference: {fileID: 0}
     - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
       propertyPath: settingTexts.Array.data[1]
@@ -310,7 +310,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11453628, guid: de8c198b5667e46749826308c886a76d, type: 2}
       propertyPath: m_Text
-      value: Choose Controller
+      value: Controller Activated
       objectReference: {fileID: 0}
     - target: {fileID: 122082, guid: de8c198b5667e46749826308c886a76d, type: 2}
       propertyPath: m_Name
