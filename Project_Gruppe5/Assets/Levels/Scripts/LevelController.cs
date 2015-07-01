@@ -3,8 +3,11 @@ using System.Collections;
 
 public class LevelController : Singleton<LevelController> {
 
+	public string levelName;
+
 	public GameObject levelContent;
 	public GameObject originalLevelMenu;
+	public GameObject originalFinishMenu;
 
 	private GameObject levelMenu;
 
@@ -22,5 +25,11 @@ public class LevelController : Singleton<LevelController> {
 		Destroy (levelMenu);
 
 		levelContent.SetActive (true);
+	}
+
+	public void EndLevel() {
+		levelContent.SetActive (false);
+		
+		Instantiate (originalFinishMenu);
 	}
 }

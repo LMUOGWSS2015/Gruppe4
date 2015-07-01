@@ -160,7 +160,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			t = t * rotationSpeed;
+			t = t * rotationSpeed/2f;
 			
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			settingName.color = c;
@@ -208,7 +208,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			t = t * rotationSpeed;
+			t = t * rotationSpeed/2f;
 			
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			settingText.color = c;
@@ -256,15 +256,15 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 
 	private IEnumerator SettingsMenuAnimation ()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(0.5f);
 		
 		StartCoroutine(MoveCamerasDown());
 		StartCoroutine(MoveLogo());
-		yield return new WaitForSeconds(0.9f);
+		yield return new WaitForSeconds(1.2f);
 		StartCoroutine(ShowFog());
-		yield return new WaitForSeconds(0.7f);
+		yield return new WaitForSeconds(0.3f);
 		StartCoroutine(ShowSettings());
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(0.5f);
 	}
 
 	private IEnumerator MoveCamerasDown () {
@@ -436,7 +436,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			settingName.color = color;
@@ -460,7 +460,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			settingText.color = color;

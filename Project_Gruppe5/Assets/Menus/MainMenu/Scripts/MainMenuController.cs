@@ -179,7 +179,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			t = t * rotationSpeed;
+			t = t * rotationSpeed/2f;
 
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			islandName.color = c;
@@ -227,7 +227,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			t = t * rotationSpeed;
+			t = t * rotationSpeed/2f;
 			
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			islandText.color = c;
@@ -251,15 +251,15 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	private IEnumerator StartMenuAnimation ()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.0f);
 
 		StartCoroutine(MoveCamerasDown());
 		StartCoroutine(MoveLogo());
-		yield return new WaitForSeconds(0.9f);
+		yield return new WaitForSeconds(1.2f);
 		StartCoroutine(ShowFog());
-		yield return new WaitForSeconds(0.7f);
+		yield return new WaitForSeconds(0.4f);
 		StartCoroutine(ShowIslands());
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(0.5f);
 	}
 
 	private IEnumerator MoveLogo()
@@ -383,7 +383,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			islandName.color = color;
@@ -407,7 +407,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			islandText.color = color;

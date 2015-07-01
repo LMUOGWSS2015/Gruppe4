@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 0}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d3279c4217ead49cea338bb885a8e45d, type: 3}
+    m_Font: {fileID: 12800000, guid: d198e22c276b647498e9d7fab7386d25, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 0}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d3279c4217ead49cea338bb885a8e45d, type: 3}
+    m_Font: {fileID: 12800000, guid: d198e22c276b647498e9d7fab7386d25, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0

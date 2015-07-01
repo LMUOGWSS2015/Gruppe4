@@ -41,6 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelContent: {fileID: 0}
   originalLevelMenu: {fileID: 114088, guid: afae33e025809400fbab4a0ffc8d6060, type: 2}
+  originalFinishMenu: {fileID: 140324, guid: 49484358f2273475d9785706701e1903, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
