@@ -91,20 +91,20 @@ Material:
         second: {r: .125, g: .125, b: .125, a: 1}
       data:
         first:
-          name: _Fresnel_ST
-        second: {r: 1, g: 1, b: 0, a: 0}
-      data:
-        first:
           name: WaveSpeed
         second: {r: 9, g: 4.5, b: -8, a: -3.5}
       data:
         first:
-          name: _ReflectiveColor_ST
+          name: _HorizonColor
+        second: {r: 0, g: .37090227, b: .985294104, a: 0}
+      data:
+        first:
+          name: _Fresnel_ST
         second: {r: 1, g: 1, b: 0, a: 0}
       data:
         first:
-          name: _HorizonColor
-        second: {r: 0, g: .37090227, b: .985294104, a: 0}
+          name: _ReflectiveColor_ST
+        second: {r: 1, g: 1, b: 0, a: 0}
       data:
         first:
           name: _ReflectionTex_ST

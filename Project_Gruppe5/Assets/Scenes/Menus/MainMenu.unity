@@ -733,7 +733,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436830, guid: 5ea5f4da4840435459907ef998199f08, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 476870, guid: 5ea5f4da4840435459907ef998199f08, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1259,7 +1259,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 1079903860}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!23 &731186584
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1829,14 +1829,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandTexts.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 432332, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1874,6 +1866,30 @@ Prefab:
       value: 
       objectReference: {fileID: 393304191}
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandName
+      value: 
+      objectReference: {fileID: 1650950278}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: islandText
+      value: 
+      objectReference: {fileID: 1730478019}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: titleLogo
+      value: 
+      objectReference: {fileID: 1639469258}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: backgroundCamera
+      value: 
+      objectReference: {fileID: 1342546257}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: starsCamera
+      value: 
+      objectReference: {fileID: 1044454974}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
+      propertyPath: fog
+      value: 
+      objectReference: {fileID: 951885595}
+    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islands.Array.data[0]
       value: 
       objectReference: {fileID: 380929208}
@@ -1888,143 +1904,11 @@ Prefab:
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islands.Array.data[3]
       value: 
-      objectReference: {fileID: 731186583}
+      objectReference: {fileID: 633111018}
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islands.Array.data[4]
       value: 
-      objectReference: {fileID: 633111018}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandName
-      value: 
-      objectReference: {fileID: 1650950278}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: startText
-      value: 
-      objectReference: {fileID: 1730478019}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: titleLogo
-      value: 
-      objectReference: {fileID: 1639469258}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundCamera
-      value: 
-      objectReference: {fileID: 1342546257}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: fog
-      value: 
-      objectReference: {fileID: 951885595}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: starsCamera
-      value: 
-      objectReference: {fileID: 1044454974}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[0].r
-      value: .79411763
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[0].g
-      value: .788802028
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[0].b
-      value: .601427317
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[0].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[1].r
-      value: .102335617
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[1].g
-      value: .0801254287
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[1].b
-      value: .191176474
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[1].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[2].r
-      value: .948529422
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[2].g
-      value: .727173805
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[2].b
-      value: .676524639
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[2].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[3].r
-      value: .181877151
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[3].g
-      value: .375864983
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[3].b
-      value: .426470578
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[3].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[4].r
-      value: .75
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[4].g
-      value: .917241335
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[4].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: backgroundColors.Array.data[4].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandNames.Array.data[3]
-      value: Settings
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandText
-      value: 
-      objectReference: {fileID: 1730478019}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandTexts.Array.data[0]
-      value: Start Your Journey
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandTexts.Array.data[1]
-      value: Start Your Journey
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandTexts.Array.data[2]
-      value: Start Your Journey
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandTexts.Array.data[4]
-      value: Start Your Journey
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: islandTexts.Array.data[3]
-      value: Go To Settings
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 731186583}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
   m_IsPrefabParent: 0
@@ -2054,10 +1938,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 380929208}
-  - {fileID: 731186583}
+  - {fileID: 1591325658}
   - {fileID: 1225171618}
   - {fileID: 633111018}
-  - {fileID: 1591325658}
+  - {fileID: 731186583}
   m_Father: {fileID: 393304192}
   m_RootOrder: 0
 --- !u!1 &1081127648

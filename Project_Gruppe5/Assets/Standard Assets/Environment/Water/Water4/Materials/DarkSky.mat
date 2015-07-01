@@ -158,7 +158,7 @@ Material:
       data:
         first:
           name: _GroundColor
-        second: {r: .79411763, g: .788802028, b: .601427317, a: 1}
+        second: {r: .392156869, g: 0, b: 0, a: 0}
       data:
         first:
           name: _EmissionColorUI

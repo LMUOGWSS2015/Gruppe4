@@ -26,6 +26,10 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 	private bool settingChanging = false;
 	private bool initializing = true;
 
+	public int getCurrentSetting() {
+		return currentSetting;
+	}
+
 	void Start() {
 		RenderSettings.skybox.SetColor("_GroundColor", backgroundColors[0]);
 		RenderSettings.skybox.SetFloat("_Exposure", 0.2f);
@@ -42,13 +46,13 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 	{
 		if(!initializing) {
 			if(!nameChanging && !textChanging && !settingChanging) {
-				if(InputManager.Next()) {
+				if(InputManager.Next() || Input.GetKeyDown(KeyCode.RightArrow)) {
 					NextSetting();
 				}
-				if(InputManager.Prev()) {
+				if(InputManager.Prev() || Input.GetKeyDown(KeyCode.LeftArrow)) {
 					PreviousSetting();
 				}
-				if(InputManager.Jump()) {
+				if(InputManager.Jump() || Input.GetKeyDown(KeyCode.Return)) {
 					LoadSetting();
 				}
 			}

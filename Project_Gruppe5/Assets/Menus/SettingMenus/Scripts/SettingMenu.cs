@@ -3,7 +3,13 @@ using System.Collections;
 
 public class SettingMenu : AbstractMenu {
 
+	private string[] scenes;
+
+	void Start() {
+		scenes = new string[] {"ControllerMenu", "GraphicsMenu", "SoundMenu", "MainMenu"};
+	}
+
 	public override void DoSetting() {
-		Debug.Log ("Load Setting");
+		Application.LoadLevel (scenes[settingMenuController.getCurrentSetting()]);
 	}
 }

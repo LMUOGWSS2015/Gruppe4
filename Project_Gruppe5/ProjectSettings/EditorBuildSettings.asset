@@ -6,4 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Levels/deserttest 1.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/thorntest.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/treetest3.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/icetest.unity
+  - enabled: 1
+    path: Assets/Scenes/Menus/SettingMenu.unity
+  - enabled: 1
     path: Assets/Scenes/Menus/MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/Menus/ControllerMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/Menus/GraphicsMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/Menus/SoundMenu.unity

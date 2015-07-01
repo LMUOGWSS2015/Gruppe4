@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class MainMenuController : Singleton<MainMenuController> {
 
-	public GameObject content;
 	public Text islandName;
 	public Text islandText;
 	public RectTransform titleLogo;
@@ -42,22 +41,17 @@ public class MainMenuController : Singleton<MainMenuController> {
 	{
 		if(!initializing) {
 			if(!nameChanging && !islandChanging) {
-				if(InputManager.Next()) {
+				if(InputManager.Next() || Input.GetKeyDown(KeyCode.RightArrow)) {
 					NextIsland();
 				}
-				if(InputManager.Prev()) {
+				if(InputManager.Prev() || Input.GetKeyDown(KeyCode.LeftArrow)) {
 					PreviousIsland();
 				}
-				if(InputManager.Jump()) {
+				if(InputManager.Jump() || Input.GetKeyDown(KeyCode.Return)) {
 					LoadLevel();
 				}
 			}
 		}
-	}
-
-	public void StartLevel ()
-	{
-		//LoadingController!!!
 	}
 
 	public void InitIslands ()
@@ -109,7 +103,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	public void LoadLevel ()
 	{
-		LoadingController.Instance.LoadLevel(LoadingController.Level.TEST);
+		Application.LoadLevel (currentIsland);
 	}
 
 	private IEnumerator TurnIsles ()
