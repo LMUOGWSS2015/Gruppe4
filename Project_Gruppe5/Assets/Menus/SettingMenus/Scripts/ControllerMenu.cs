@@ -31,10 +31,6 @@ public class ControllerMenu : AbstractMenu {
 					}
 				}
 			}
-
-			Debug.Log ("Set Controller: " + controllers [settingMenuController.getCurrentSetting ()]);
-
-
 		}
 		else {
 			Application.LoadLevel("SettingMenu");

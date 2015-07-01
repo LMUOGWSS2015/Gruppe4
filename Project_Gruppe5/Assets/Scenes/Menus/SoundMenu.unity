@@ -344,6 +344,21 @@ Prefab:
       propertyPath: m_Text
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 11444814, guid: de8c198b5667e46749826308c886a76d, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: eecf517c956e344509a9deff92e350b9,
+        type: 3}
+    - target: {fileID: 11400176, guid: de8c198b5667e46749826308c886a76d, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: d3279c4217ead49cea338bb885a8e45d,
+        type: 3}
+    - target: {fileID: 11453628, guid: de8c198b5667e46749826308c886a76d, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: d3279c4217ead49cea338bb885a8e45d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de8c198b5667e46749826308c886a76d, type: 2}
   m_IsPrefabParent: 0
