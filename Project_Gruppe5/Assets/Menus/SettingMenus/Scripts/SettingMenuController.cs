@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class SettingMenuController : Singleton<SettingMenuController> {
 
 	public AbstractMenu menu;
@@ -20,6 +21,11 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 	public string[] settingTexts;
 	public Color[] backgroundColors;
 
+	public AudioClip switchSound;
+	public AudioClip selectSound;
+	
+	private AudioSource sound;
+
 	private int currentSetting;
 	private Transform settingTransform;
 	private float settingsAngle;
@@ -34,6 +40,8 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 	}
 
 	void Start() {
+		sound = GetComponent<AudioSource> ();
+
 		RenderSettings.skybox.SetColor("_GroundColor", backgroundColors[0]);
 		RenderSettings.skybox.SetFloat("_Exposure", 0.2f);
 		
@@ -69,6 +77,9 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 		StartCoroutine(TurnSettings());
 		StartCoroutine(ChangeSettingName());
 		StartCoroutine(ChangeSettingText());
+
+		sound.clip = switchSound;
+		sound.Play ();
 	}
 	
 	private void PreviousSetting ()
@@ -81,10 +92,15 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 		StartCoroutine(TurnSettings());
 		StartCoroutine(ChangeSettingName());
 		StartCoroutine(ChangeSettingText());
+
+		sound.clip = switchSound;
+		sound.Play ();
 	}
 
 	public void LoadSetting ()
 	{
+		MainController.Instance.PlaySound (selectSound);
+
 		menu.DoSetting ();
 	}
 

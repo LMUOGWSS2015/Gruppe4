@@ -178,12 +178,15 @@ public class Player : Singleton<Player> {
 	void Animating() {
 		bool walking = walk && forwardAmount != 0.0f;
 	
-		anim.SetBool ("IsJumping", isJumping);
-		if (!isJumping)
-			anim.SetBool ("IsWalking", walking);
+		if (!finish) {
+			anim.SetBool ("IsJumping", isJumping);
+			if (!isJumping)
+				anim.SetBool ("IsWalking", walking);
 
-		anim.SetBool ("IsDoubleJumping", isDoubleJumping);
-		anim.SetBool ("IsGrounded", isGrounded);
+			anim.SetBool ("IsDoubleJumping", isDoubleJumping);
+			anim.SetBool ("IsGrounded", isGrounded);
+		}
+
 		anim.SetBool ("HasWon", finish);
 
 		//handle Sounds
