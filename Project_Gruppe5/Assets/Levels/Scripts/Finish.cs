@@ -13,8 +13,8 @@ public class Finish : MonoBehaviour {
 	void Start() {
 		end = false;
 		border.SetActive (false);
-		spotLight.color = Color.red;
-		pointLight.color = Color.red;
+		//spotLight.color = Color.red;
+		//pointLight.color = Color.red;
 	}
 
 	void OnTriggerEnter(Collider other) 
