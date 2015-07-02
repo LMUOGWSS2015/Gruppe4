@@ -24,11 +24,11 @@ public class CheckPoint : MonoBehaviour {
 		}
 	}
 
-	private void Activate() {
+	public void Activate() {
 		spotlight.color = Color.yellow;
 	}
 
-	private void DeActivate() {
+	public void DeActivate() {
 		spotlight.color = Color.red;
 	}
 }

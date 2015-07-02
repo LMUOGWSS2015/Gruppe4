@@ -279,6 +279,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469674}
   - 114: {fileID: 11465034}
+  - 82: {fileID: 8202244}
   m_Layer: 0
   m_Name: SettingMenuController
   m_TagString: Untagged
@@ -1027,6 +1028,75 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103522}
   m_Enabled: 0
+--- !u!82 &8202244
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178822}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!92 &9216458
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1160,7 +1230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .75, g: .75, b: .75, a: .819607854}
+  m_Color: {r: .191176474, g: .191176474, b: .191176474, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 027cb840fdc25a64c87c514f1b7ad0cb, type: 3}
     m_FontSize: 150
@@ -1188,7 +1258,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d3279c4217ead49cea338bb885a8e45d, type: 3}
+    m_Font: {fileID: 12800000, guid: d198e22c276b647498e9d7fab7386d25, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -1199,7 +1269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Continue Playing
+  m_Text: Continue Level
 --- !u!114 &11438848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1228,7 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .749019623, g: .749019623, b: .749019623, a: .819607854}
+  m_Color: {r: .191176474, g: .191176474, b: .191176474, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: eecf517c956e344509a9deff92e350b9, type: 3}
     m_FontSize: 80
@@ -1280,14 +1350,16 @@ MonoBehaviour:
   - {fileID: 425976}
   - {fileID: 485856}
   settingNames:
-  - Game
+  - Play
   - Main Menu
   settingTexts:
-  - Continue Playing
+  - Continue Level
   - Go To Menu
   backgroundColors:
   - {r: .392156869, g: 0, b: 0, a: 0}
   - {r: 1, g: .784313798, b: 0, a: 0}
+  switchSound: {fileID: 8300000, guid: 62f214ce4db164f01917a66abb78dd1f, type: 3}
+  selectSound: {fileID: 8300000, guid: 367c53829eab2481cae8645d609dc04e, type: 3}
 --- !u!114 &11468688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1346,7 +1418,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d3279c4217ead49cea338bb885a8e45d, type: 3}
+    m_Font: {fileID: 12800000, guid: d198e22c276b647498e9d7fab7386d25, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
@@ -1357,7 +1429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game
+  m_Text: Play
 --- !u!124 &12402186
 Behaviour:
   m_ObjectHideFlags: 1

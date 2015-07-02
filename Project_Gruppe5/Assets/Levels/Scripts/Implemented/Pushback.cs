@@ -9,8 +9,7 @@ public class Pushback : MyMonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player") {
 			Vector3 pushbackPoint = new Vector3(other.contacts[0].normal.x, other.transform.position.y - 3, other.contacts[0].normal.z);
-
 			Player.Instance.gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, pushbackPoint, 20.0f);
 		}
-	}
+	}	
 }

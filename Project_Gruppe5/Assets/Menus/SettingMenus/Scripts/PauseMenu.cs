@@ -14,7 +14,7 @@ public class PauseMenu : AbstractMenu {
 			levelController.ContinueLevel();
 		}
 		else if (settingMenuController.getCurrentSetting () == 1) {
-			Application.LoadLevel ("MainMenu");
+			LoadingController.Instance.LoadScene(LoadingController.Scene.MAIN_MENU);
 		}
 	}
 }

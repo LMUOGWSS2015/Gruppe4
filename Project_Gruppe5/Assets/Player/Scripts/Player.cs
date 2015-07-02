@@ -30,6 +30,7 @@ public class Player : Singleton<Player> {
 	float turnAmount;
 	float forwardAmount;
 	float jumpForwardAmount;
+
 	public AudioClip[] audioClip;
 	AudioSource audio;
 	bool allowplay = true;
@@ -40,14 +41,20 @@ public class Player : Singleton<Player> {
 		get;
 	}
 
+	public bool finish {
+		set;
+		get;
+	}
+
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animator> ();
-
 		audio = GetComponent<AudioSource> ();
 
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		origGroundCheckDistance = groundCheckDistance;
+
+		finish = false;
 
 		respawnPoint = startPoint;
 		Respawn ();
@@ -170,25 +177,22 @@ public class Player : Singleton<Player> {
 
 	void Animating() {
 		bool walking = walk && forwardAmount != 0.0f;
-		bool jumping = isJumping;
-		bool doublejumping = isDoubleJumping;
-		bool grounded = isGrounded;
-
 	
-		anim.SetBool ("IsJumping", jumping);
-		if (!jumping)
-			anim.SetBool ("IsWalking", walking);
+		if (!finish) {
+			anim.SetBool ("IsJumping", isJumping);
+			if (!isJumping)
+				anim.SetBool ("IsWalking", walking);
 
-		anim.SetBool ("IsDoubleJumping", doublejumping);
-		anim.SetBool ("IsGrounded", grounded);
+			anim.SetBool ("IsDoubleJumping", isDoubleJumping);
+			anim.SetBool ("IsGrounded", isGrounded);
+		}
+
+		anim.SetBool ("HasWon", finish);
 
 		//handle Sounds
-
 		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 1.0F));}
 		if (jumped) {StopWalkingSound();PlaySound(1,1f);}
 		if (doublejumped) {doublejumped =false;PlaySound(2,1f);}
-		
-
 	}
 
 	public void TrampolinEnter(float trampolinJumpPower) {

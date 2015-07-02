@@ -27,8 +27,6 @@ public class MovingPlatform : InteractivePhysicsObject {
 		if(pathPoints.Count < 3) {
 			randomize = false;
 		}
-
-		Debug.Log (pathPoints.Count);
 	}
 
 	public override void DoActivation () 
@@ -45,7 +43,6 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 				while(newPoint == currentPoint || newPoint == lastPoint) {
 					newPoint = Random.Range(0, pathPoints.Count);
-					Debug.Log (newPoint);
 				}
 
 				lastPoint = currentPoint;
