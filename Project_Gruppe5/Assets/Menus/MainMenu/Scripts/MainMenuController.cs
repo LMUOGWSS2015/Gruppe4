@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class MainMenuController : Singleton<MainMenuController> {
 
-	public GameObject content;
+	public float radiusX = 25.0f;
+	public float radiusZ = 25.0f;
+	public float rotationSpeed = 10.0f;
 	public Text islandName;
 	public Text islandText;
 	public RectTransform titleLogo;
@@ -41,29 +43,22 @@ public class MainMenuController : Singleton<MainMenuController> {
 	void Update()
 	{
 		if(!initializing) {
-			if(!nameChanging && !islandChanging) {
-				if(InputManager.Next()) {
+			if(!nameChanging && !textChanging && !islandChanging) {
+				if(InputManager.Next() || Input.GetKeyDown(KeyCode.RightArrow)) {
 					NextIsland();
 				}
-				if(InputManager.Prev()) {
+				if(InputManager.Prev() || Input.GetKeyDown(KeyCode.LeftArrow)) {
 					PreviousIsland();
 				}
-				if(InputManager.Jump()) {
+				if(InputManager.Jump() || Input.GetKeyDown(KeyCode.Return)) {
 					LoadLevel();
 				}
 			}
 		}
 	}
 
-	public void StartLevel ()
-	{
-		//LoadingController!!!
-	}
-
 	public void InitIslands ()
 	{
-		float radiusX = 25.0f;
-		float radiusZ = 25.0f;
 		//Vector3 centrePos = new Vector3(0, 0, 7);
 		Vector3 centrePos = Vector3.zero;
 
@@ -109,7 +104,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	public void LoadLevel ()
 	{
-		LoadingController.Instance.LoadLevel(LoadingController.Level.TEST);
+		LoadingController.Instance.LoadScene (currentIsland);
 	}
 
 	private IEnumerator TurnIsles ()
@@ -132,6 +127,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
+			t = t * rotationSpeed;
 
 			Quaternion newRot = Quaternion.RotateTowards(islesTransform.rotation, targetRotation, t);
 			islesTransform.rotation = newRot;
@@ -183,6 +179,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
+			t = t * rotationSpeed/2f;
 
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			islandName.color = c;
@@ -230,6 +227,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
+			t = t * rotationSpeed/2f;
 			
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			islandText.color = c;
@@ -253,15 +251,15 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	private IEnumerator StartMenuAnimation ()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.0f);
 
 		StartCoroutine(MoveCamerasDown());
 		StartCoroutine(MoveLogo());
-		yield return new WaitForSeconds(0.9f);
+		yield return new WaitForSeconds(1.2f);
 		StartCoroutine(ShowFog());
-		yield return new WaitForSeconds(0.7f);
+		yield return new WaitForSeconds(0.4f);
 		StartCoroutine(ShowIslands());
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(0.5f);
 	}
 
 	private IEnumerator MoveLogo()
@@ -385,7 +383,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			islandName.color = color;
@@ -409,7 +407,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			islandText.color = color;

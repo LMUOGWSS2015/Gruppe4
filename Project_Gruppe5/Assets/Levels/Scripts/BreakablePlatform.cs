@@ -16,9 +16,9 @@ public class BreakablePlatform : MonoBehaviour {
 		//StartCoroutine(BreakingApart());
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnCollisionEnter(Collision other)
 	{
-		if(other.tag == "Player")
+		if(other.gameObject.tag == "Player")
 			StartCoroutine(BreakingApart());
 	}
 
@@ -33,7 +33,8 @@ public class BreakablePlatform : MonoBehaviour {
 	private IEnumerator BreakingApart()
 	{
 		isShaking = true;
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.0f);
+		GetComponent<Collider>().enabled = false;
 		isShaking = false;
 		BreakApart();
 	}

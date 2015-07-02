@@ -5,8 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - MoveableByGazePlatform
+  - VanishingObject
+  - ShowingObject
+  - Fire
   - GazeActivator
   - SelectionMarker
+  - GazeController
+  - LevelController
   layers:
   - Default
   - TransparentFX

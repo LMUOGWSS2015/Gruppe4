@@ -40,6 +40,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content: {fileID: 0}
+  islandName: {fileID: 0}
+  islandText: {fileID: 0}
+  titleLogo: {fileID: 0}
+  backgroundCamera: {fileID: 0}
+  starsCamera: {fileID: 0}
+  fog: {fileID: 0}
   islands:
   - {fileID: 0}
   - {fileID: 0}
@@ -50,13 +56,20 @@ MonoBehaviour:
   - Desert
   - Thorns
   - Forest
-  - Temple
   - Ice
-  islandName: {fileID: 0}
-  startText: {fileID: 0}
-  titleLogo: {fileID: 0}
-  backgroundCamera: {fileID: 0}
-  fog: {fileID: 0}
+  - Settings
+  islandTexts:
+  - Start Your Journey
+  - Start Your Journey
+  - Start Your Journey
+  - Start Your Journey
+  - Go To Settings
+  backgroundColors:
+  - {r: .79411763, g: .788802028, b: .601427317, a: 1}
+  - {r: .102335617, g: .0801254287, b: .191176474, a: 1}
+  - {r: .948529422, g: .727173805, b: .676524639, a: 1}
+  - {r: .749019623, g: .917647123, b: 1, a: 1}
+  - {r: .180392161, g: .376470596, b: .427450985, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

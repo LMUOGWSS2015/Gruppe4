@@ -126,6 +126,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11435504, guid: 12b4d6bcc77814f69a7378083a65faa0, type: 2}
+      propertyPath: settingMenuController
+      value: 
+      objectReference: {fileID: 1064987834}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12b4d6bcc77814f69a7378083a65faa0, type: 2}
   m_IsPrefabParent: 0
@@ -230,7 +234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
       propertyPath: settingTexts.Array.data[0]
-      value: Choose Controller
+      value: Controller Activated
       objectReference: {fileID: 0}
     - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
       propertyPath: settingTexts.Array.data[1]
@@ -243,6 +247,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1064987834 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336,
+    type: 2}
+  m_PrefabInternal: {fileID: 1064987833}
+  m_Script: {fileID: 11500000, guid: 63a43d1e1500049c0963b810317b1b66, type: 3}
 --- !u!114 &2035162607 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11435504, guid: 12b4d6bcc77814f69a7378083a65faa0,
@@ -300,7 +310,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11453628, guid: de8c198b5667e46749826308c886a76d, type: 2}
       propertyPath: m_Text
-      value: Choose Controller
+      value: Controller Activated
       objectReference: {fileID: 0}
     - target: {fileID: 122082, guid: de8c198b5667e46749826308c886a76d, type: 2}
       propertyPath: m_Name
@@ -321,6 +331,25 @@ Prefab:
     - target: {fileID: 22460104, guid: de8c198b5667e46749826308c886a76d, type: 2}
       propertyPath: m_SizeDelta.x
       value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444814, guid: de8c198b5667e46749826308c886a76d, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: eecf517c956e344509a9deff92e350b9,
+        type: 3}
+    - target: {fileID: 11400176, guid: de8c198b5667e46749826308c886a76d, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: d198e22c276b647498e9d7fab7386d25,
+        type: 3}
+    - target: {fileID: 11453628, guid: de8c198b5667e46749826308c886a76d, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: d198e22c276b647498e9d7fab7386d25,
+        type: 3}
+    - target: {fileID: 22450690, guid: de8c198b5667e46749826308c886a76d, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de8c198b5667e46749826308c886a76d, type: 2}

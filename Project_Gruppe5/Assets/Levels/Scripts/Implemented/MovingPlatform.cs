@@ -10,7 +10,7 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 	private int currentPoint = 1;
 	private bool movingForward = true;
-	private bool newActivation;
+	private bool newActivation = true;
 
 	private Vector3 directionVector;
 
@@ -21,6 +21,7 @@ public class MovingPlatform : InteractivePhysicsObject {
 	{
 		GameObject go = new GameObject();
 		go.transform.position = transform.position;
+		go.name = transform.name + "_StartingPoint";
 		pathPoints.Insert(0, go.transform);
 
 		if(pathPoints.Count < 3) {
@@ -42,7 +43,6 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 				while(newPoint == currentPoint || newPoint == lastPoint) {
 					newPoint = Random.Range(0, pathPoints.Count);
-					Debug.Log (newPoint);
 				}
 
 				lastPoint = currentPoint;

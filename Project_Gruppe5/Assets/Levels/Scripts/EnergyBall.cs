@@ -81,7 +81,7 @@ public class EnergyBall : MonoBehaviour {
 					// Hurt the player
 					if (playerDistance <= explosionDistance) {
 						Debug.Log("That hurt!");
-						PlayerUtils.Instance.Kill();
+						playerTransform.gameObject.GetComponent<Player>().Kill();
 					}
 					// Reset the state of the ball
 					state = EnergyBallState.RESET;

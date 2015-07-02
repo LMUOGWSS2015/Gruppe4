@@ -9,14 +9,10 @@ public class InputManager : MonoBehaviour {
 		PS2
 	}
 
-	public static Controller controller = Controller.PS2;
+	public static Controller controller = Controller.XBOX;
 
 	public static float rotationSensivity = 2.0f;
 	public static float zoomSensivity = 2.0f;
-
-	public static void setController(Controller control) {
-		controller = control;
-	}
 
 	public static float Horizontal() {
 		switch (controller) {
@@ -130,6 +126,19 @@ public class InputManager : MonoBehaviour {
 			return Input.GetButtonDown("XBOXPrev");
 		case Controller.PS2:
 			return Input.GetButtonDown("PS2Prev");
+		default:
+			return false;
+		}
+	}
+
+	public static bool Esc() {
+		switch (controller) {
+		case Controller.MOUSE:
+			return Input.GetButtonDown("ESC");
+		case Controller.XBOX:
+			return Input.GetButtonDown("XBOXESC");
+		case Controller.PS2:
+			return Input.GetButtonDown("PS2ESC");
 		default:
 			return false;
 		}

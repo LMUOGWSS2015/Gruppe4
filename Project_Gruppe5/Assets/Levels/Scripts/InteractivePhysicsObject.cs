@@ -5,10 +5,13 @@ public class InteractivePhysicsObject : InteractiveObject {
 
 	[HideInInspector]
 	public Rigidbody rb;
+	public bool canBeDeactivated;
 	
 	public void Start() 
 	{
-		base.Start ();
+		isActivated = false;
+		isDeactivated = true;
+		isUsed = false;
 		rb = GetComponent<Rigidbody>();
 		if(rb != null) {
 			StartMe ();
@@ -28,7 +31,7 @@ public class InteractivePhysicsObject : InteractiveObject {
 			DoActivation ();
 		}
 		
-		if(isDeactivated && !singleUse) {
+		if(isDeactivated && !singleUse && canBeDeactivated) {
 			DoDeactivation ();
 		}
 	}

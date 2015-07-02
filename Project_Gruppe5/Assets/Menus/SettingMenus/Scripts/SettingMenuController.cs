@@ -6,6 +6,9 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 
 	public AbstractMenu menu;
 
+	public float radiusX = 25.0f;
+	public float radiusZ = 25.0f;
+	public float rotationSpeed = 10.0f;
 	public Text settingName;
 	public Text settingText;
 	public RectTransform title;
@@ -26,6 +29,10 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 	private bool settingChanging = false;
 	private bool initializing = true;
 
+	public int getCurrentSetting() {
+		return currentSetting;
+	}
+
 	void Start() {
 		RenderSettings.skybox.SetColor("_GroundColor", backgroundColors[0]);
 		RenderSettings.skybox.SetFloat("_Exposure", 0.2f);
@@ -42,13 +49,13 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 	{
 		if(!initializing) {
 			if(!nameChanging && !textChanging && !settingChanging) {
-				if(InputManager.Next()) {
+				if(InputManager.Next() || Input.GetKeyDown(KeyCode.RightArrow)) {
 					NextSetting();
 				}
-				if(InputManager.Prev()) {
+				if(InputManager.Prev() || Input.GetKeyDown(KeyCode.LeftArrow)) {
 					PreviousSetting();
 				}
-				if(InputManager.Jump()) {
+				if(InputManager.Jump() || Input.GetKeyDown(KeyCode.Return)) {
 					LoadSetting();
 				}
 			}
@@ -101,6 +108,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
+			t = t * rotationSpeed;
 			
 			Quaternion newRot = Quaternion.RotateTowards(settingTransform.rotation, targetRotation, t);
 			settingTransform.rotation = newRot;
@@ -152,6 +160,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
+			t = t * rotationSpeed/2f;
 			
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			settingName.color = c;
@@ -199,6 +208,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
+			t = t * rotationSpeed/2f;
 			
 			Color c = Color.Lerp(firstColor, secondColor, t);
 			settingText.color = c;
@@ -222,8 +232,6 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 
 	public void InitSettings ()
 	{
-		float radiusX = 25.0f;
-		float radiusZ = 25.0f;
 		//Vector3 centrePos = new Vector3(0, 0, 7);
 		Vector3 centrePos = Vector3.zero;
 		
@@ -248,15 +256,15 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 
 	private IEnumerator SettingsMenuAnimation ()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(0.5f);
 		
 		StartCoroutine(MoveCamerasDown());
 		StartCoroutine(MoveLogo());
-		yield return new WaitForSeconds(0.9f);
+		yield return new WaitForSeconds(1.2f);
 		StartCoroutine(ShowFog());
-		yield return new WaitForSeconds(0.7f);
+		yield return new WaitForSeconds(0.3f);
 		StartCoroutine(ShowSettings());
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(0.5f);
 	}
 
 	private IEnumerator MoveCamerasDown () {
@@ -428,7 +436,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			settingName.color = color;
@@ -452,7 +460,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			t = t * t * t * (t * (6f * t - 15f) + 10f);
-			//t = t;
+			t = t * 5f;
 			
 			Color color = Color.Lerp(startColor, endColor, t);
 			settingText.color = color;

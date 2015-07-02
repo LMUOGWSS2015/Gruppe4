@@ -52,4 +52,14 @@ public class GazeSwitch : GazeMonobehaviour {
 		base.OnGazeExit ();
 		rig.angularVelocity = Vector3.zero;
 	}
+	void OnMouseOver(){
+		rig.AddTorque (new Vector3 (0f, 10.0f, 0f));
+		float step = platformSpeed * Time.deltaTime;
+		for(int i = 0; i < targets.Length; i++){
+			moveablePlatforms[i].transform.position = Vector3.MoveTowards (moveablePlatforms[i].transform.position, targets[i], step);
+		}
+	}
+	void OnMouseExit(){
+		rig.angularVelocity = Vector3.zero;
+	}
 }
