@@ -205,6 +205,7 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Kill() {
+		LevelController.Instance.restartLevel ();
 		Respawn ();
 	}
 

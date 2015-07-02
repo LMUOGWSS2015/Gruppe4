@@ -8,8 +8,15 @@ public class LevelController : Singleton<LevelController> {
 	public GameObject levelContent;
 	public GameObject originalLevelMenu;
 	public GameObject originalFinishMenu;
+	public GameObject originalRestartContent;
 
 	private GameObject levelMenu;
+	private GameObject restartContent;
+
+	private void Start() {
+		restartContent = Instantiate (originalRestartContent);
+		restartContent.transform.SetParent (levelContent.transform);
+	}
 
 	private void FixedUpdate() {
 		if (levelContent.activeSelf) {
@@ -31,5 +38,10 @@ public class LevelController : Singleton<LevelController> {
 		levelContent.SetActive (false);
 		
 		Instantiate (originalFinishMenu);
+	}
+
+	public void restartLevel() {
+		restartContent = Instantiate (originalRestartContent);
+		restartContent.transform.SetParent (levelContent.transform);
 	}
 }

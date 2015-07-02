@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LoadingController : Singleton<LoadingController> {
 
-	public static string DESERT_LEVEL = "deserttest 1";
+	public static string DESERT_LEVEL = "DesertLevel";
 	public static string THORN_LEVEL = "Thorns_1";
 	public static string FOREST_LEVEL = "treetest3";
 	public static string ICE_LEVEL = "PlayerTestScene";

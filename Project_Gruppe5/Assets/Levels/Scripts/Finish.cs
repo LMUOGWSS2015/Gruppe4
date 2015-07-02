@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Finish : MonoBehaviour {
 
-	public LevelController levelController;
-
 	public Light spotLight;
 	public Light pointLight;
 
@@ -45,14 +43,14 @@ public class Finish : MonoBehaviour {
 	public IEnumerator End() {
 		yield return new WaitForSeconds(5.0f);
 		
-		levelController.EndLevel();
+		LevelController.Instance.EndLevel();
 	}
 
 	public void Activate() {
 		spotLight.color = Color.cyan;
 		spotLight.spotAngle = 120.0f;
 
-		pointLight.color = Color.cyan;
-		pointLight.range = 20.0f;
+		//pointLight.color = Color.cyan;
+		//pointLight.range = 20.0f;
 	}
 }
