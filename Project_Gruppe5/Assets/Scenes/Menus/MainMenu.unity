@@ -1114,10 +1114,6 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: content
-      value: 
-      objectReference: {fileID: 393304191}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
       propertyPath: islandName
       value: 
       objectReference: {fileID: 572359136}
@@ -1161,10 +1157,6 @@ Prefab:
       propertyPath: islands.Array.data[4]
       value: 
       objectReference: {fileID: 1901998187}
-    - target: {fileID: 11476942, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
-      propertyPath: rotationSpeed
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc02336ddba5d284ab6ee6b2c4370809, type: 2}
   m_IsPrefabParent: 0

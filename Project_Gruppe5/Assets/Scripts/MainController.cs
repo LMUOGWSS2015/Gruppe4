@@ -8,10 +8,14 @@ public class MainController : Singleton<MainController> {
 	public LoadingController loadingControllerPrefab;
 	private LoadingController loadingController;
 
+	private AudioSource sound;
+
 	// Use this for initialization
 	void Start () 
 	{
 		DontDestroyOnLoad (this);
+
+		sound = GetComponent<AudioSource> ();
 
 		InitControllers();
 		InitGame();
@@ -26,5 +30,10 @@ public class MainController : Singleton<MainController> {
 	private void InitGame()
 	{
 		LoadingController.Instance.LoadScene (startScene);
+	}
+
+	public void PlaySound(AudioClip clip) {
+		sound.clip = clip;
+		sound.Play ();
 	}
 }
