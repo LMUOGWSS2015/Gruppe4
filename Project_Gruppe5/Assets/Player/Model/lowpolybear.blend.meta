@@ -147,6 +147,7 @@ ModelImporter:
     7400012: Jumpfalling
     7400014: Jump_Start
     7400016: Win_Animation
+    7400018: Win
     9500000: //RootNode
     13700000: Bear
     13700002: Icosphere
@@ -1186,10 +1187,10 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Win_Animation
-      takeName: Win_Animation
+      name: Win
+      takeName: Win
       firstFrame: -1
-      lastFrame: 16
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

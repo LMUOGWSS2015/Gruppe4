@@ -184,6 +184,7 @@ public class Player : Singleton<Player> {
 
 		anim.SetBool ("IsDoubleJumping", isDoubleJumping);
 		anim.SetBool ("IsGrounded", isGrounded);
+		anim.SetBool ("HasWon", finish);
 
 		//handle Sounds
 		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 1.0F));}
