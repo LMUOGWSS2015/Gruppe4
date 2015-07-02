@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LevelController : Singleton<LevelController> {
 
-	public string levelName;
+	public LoadingController.Scene levelName;
 
 	public GameObject levelContent;
 	public GameObject originalLevelMenu;

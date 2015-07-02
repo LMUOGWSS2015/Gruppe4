@@ -3,13 +3,14 @@ using System.Collections;
 
 public class SettingMenu : AbstractMenu {
 
-	private string[] scenes;
+	private LoadingController.Scene[] scenes;
 
 	void Start() {
-		scenes = new string[] {"ControllerMenu", "GraphicsMenu", "SoundMenu", "MainMenu"};
+		scenes = new LoadingController.Scene[] {LoadingController.Scene.CONTROLLER_MENU, LoadingController.Scene.GRAPHICS_MENU,
+			LoadingController.Scene.SOUND_MENU, LoadingController.Scene.MAIN_MENU};
 	}
 
 	public override void DoSetting() {
-		Application.LoadLevel (scenes[settingMenuController.getCurrentSetting()]);
+		LoadingController.Instance.LoadScene(scenes[settingMenuController.getCurrentSetting()]);
 	}
 }

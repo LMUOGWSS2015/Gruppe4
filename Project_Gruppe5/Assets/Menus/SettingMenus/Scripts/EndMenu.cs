@@ -11,10 +11,10 @@ public class EndMenu : AbstractMenu {
 
 	public override void DoSetting() {
 		if (settingMenuController.getCurrentSetting () == 0) {
-			Application.LoadLevel(levelController.levelName);
+			LoadingController.Instance.LoadScene(levelController.levelName);
 		}
 		else if (settingMenuController.getCurrentSetting () == 1) {
-			Application.LoadLevel ("MainMenu");
+			LoadingController.Instance.LoadScene(LoadingController.Scene.MAIN_MENU);
 		}
 	}
 }

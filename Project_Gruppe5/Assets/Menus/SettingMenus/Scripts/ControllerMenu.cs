@@ -33,7 +33,7 @@ public class ControllerMenu : AbstractMenu {
 			}
 		}
 		else {
-			Application.LoadLevel("SettingMenu");
+			LoadingController.Instance.LoadScene(LoadingController.Scene.SETTING_MENU);;
 		}
 	}
 }

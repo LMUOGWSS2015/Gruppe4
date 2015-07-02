@@ -2089,7 +2089,7 @@ Prefab:
       objectReference: {fileID: 1797510243}
     - target: {fileID: 11417100, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}
       propertyPath: levelName
-      value: PlayerTestScene
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}

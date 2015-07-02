@@ -104,7 +104,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	public void LoadLevel ()
 	{
-		Application.LoadLevel (currentIsland);
+		LoadingController.Instance.LoadScene (currentIsland);
 	}
 
 	private IEnumerator TurnIsles ()
