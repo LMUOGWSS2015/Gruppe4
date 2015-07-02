@@ -30,30 +30,26 @@ public class GazeSpinningPlatform : GazeMonobehaviour {
 	{
 		base.OnGazeStay (hitInformation);
 		rig.AddTorque (new Vector3 (0f, 5.0f, 0f));
-		AttachPlayerToPlatform (ObjToSpin);
 		ObjToSpin.transform.Rotate(velocity);
 	}
 	public override void OnGazeExit(){
 		base.OnGazeExit ();
 		rig.angularVelocity = Vector3.zero;
-		DetachPlayerFromPlatform ();
 	}
 	
 
 	void OnMouseOver() {
 		rig.AddTorque (new Vector3 (0f, 5.0f, 0f));
 		ObjToSpin.transform.Rotate (velocity);
-		AttachPlayerToPlatform (ObjToSpin);
 	}
 
 	void OnMouseExit(){
 		rig.angularVelocity = Vector3.zero;
-		DetachPlayerFromPlatform ();
 	}
-	void AttachPlayerToPlatform (GameObject platformToAttachTo) {
-		player.transform.parent = platformToAttachTo.transform;
+	public void AttachPlayerToPlatform () {
+		player.transform.parent = ObjToSpin.transform;
 	}
-	void DetachPlayerFromPlatform () {
+	public void DetachPlayerFromPlatform () {
 		player.transform.parent = null;
 	}
 }
