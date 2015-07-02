@@ -34,6 +34,8 @@ public class Finish : MonoBehaviour {
 			Activate();
 			border.SetActive(true);
 
+			Player.Instance.finish = true;
+
 			end = true;
 
 			StartCoroutine(End());
