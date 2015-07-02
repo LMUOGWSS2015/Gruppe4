@@ -586,7 +586,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 1
   axis: 1
   speed: 30
   endRotationDegrees: -90
@@ -3228,6 +3230,10 @@ Prefab:
       propertyPath: interactingObjects.Array.data[0]
       value: 
       objectReference: {fileID: 410150175}
+    - target: {fileID: 11454120, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: interactingObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 410150175}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
   m_IsPrefabParent: 0
@@ -3279,6 +3285,10 @@ Prefab:
       value: GazeCrystal Lift
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
+      propertyPath: interactingObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1917914571}
+    - target: {fileID: 11454120, guid: c8f29bcb050b8664291e64a6057cdf30, type: 2}
       propertyPath: interactingObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1917914571}
@@ -3426,7 +3436,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   pingPong: 0
   speed: 15
   direction: 4
