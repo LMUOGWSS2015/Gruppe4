@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class MainMenuController : Singleton<MainMenuController> {
 
 	public float radiusX = 25.0f;

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class SettingMenuController : Singleton<SettingMenuController> {
 
 	public AbstractMenu menu;
