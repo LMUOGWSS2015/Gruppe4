@@ -33,7 +33,7 @@ public class BreakablePlatform : MonoBehaviour {
 	private IEnumerator BreakingApart()
 	{
 		isShaking = true;
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.0f);
 		GetComponent<Collider>().enabled = false;
 		isShaking = false;
 		BreakApart();

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/deserttest 1.unity
+    path: Assets/Scenes/FinalLevels/deserttest 1.unity
   - enabled: 1
     path: Assets/Scenes/Levels/Thorns_1.unity
   - enabled: 1

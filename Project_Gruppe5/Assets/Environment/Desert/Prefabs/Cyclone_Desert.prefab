@@ -62,7 +62,7 @@ GameObject:
   - 136: {fileID: 13678346}
   - 114: {fileID: 11428024}
   - 54: {fileID: 5467450}
-  - 114: {fileID: 11490100}
+  - 114: {fileID: 11487634}
   m_Layer: 0
   m_Name: Cyclone_Desert
   m_TagString: Untagged
@@ -138,7 +138,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154972}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .707106769}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -321,11 +321,13 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   randomize: 1
   speed: 7
   pathPoints: []
---- !u!114 &11490100
+--- !u!114 &11487634
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -333,9 +335,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 149960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 075d2665241dbc04e8fe2bd28087c4a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dc50d8b6a2412e489ed5eabeaea7800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power: 800
 --- !u!136 &13678346
 CapsuleCollider:
   m_ObjectHideFlags: 1
