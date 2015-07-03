@@ -12,7 +12,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/treetest3.unity
   - enabled: 1
-    path: Assets/Scenes/icetest 1.unity
+    path: Assets/Scenes/FinalLevels/IceLevel.unity
   - enabled: 1
     path: Assets/Scenes/Menus/SettingMenu.unity
   - enabled: 1
