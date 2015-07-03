@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Vergrößert bzw. verkleinert den sichtbaren Bildausschnitt,
+ * mit Fokus auf den Spieler.
+ */
 public class CameraZoom : MonoBehaviour {
 
-	public float minZoom = 5.0f;
-	public float maxZoom = 50.0f;
+	public float minZoom = 5.0f; // Minimale Zoomstärke.
+	public float maxZoom = 50.0f; // Maximale Zoomstärke.
 	public float zoomSpeed = 1.0f;
 
 	Camera camera;

@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Finaler CheckPoint.
+ * Beim Erreichen des Finish endet das Level
+ * und der Spieler kann sich nur noch im Finish-Bereich bewegen.
+ */
 public class Finish : MonoBehaviour {
 
-	public Light spotLight;
-	public Light pointLight;
+	public Light spotLight; // Macht das Finish sichtbar.
+	public Light pointLight; // Macht das Finish sichtbar.
 
-	public GameObject border;
+	public GameObject border; // Begrenzt den Bewegungsradius des Spielers bei Eintritt in den Finish-Bereich.
 
-	private bool end;
+	private bool end; // Wird true wenn der Finish-Bereich erreicht wurde.
 
 	void Start() {
 		end = false;
@@ -40,12 +45,18 @@ public class Finish : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Wartet 5sec und beendet dann das Level.
+	 */
 	public IEnumerator End() {
 		yield return new WaitForSeconds(5.0f);
 		
 		LevelController.Instance.EndLevel();
 	}
 
+	/*
+	 * Markiert das Finish als erreicht, durch Änderung der Farbe.
+	 */
 	public void Activate() {
 		spotLight.color = Color.cyan;
 		spotLight.spotAngle = 120.0f;

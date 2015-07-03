@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Der Spieler, den der Nutzer steuert.
+ */
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
 public class Player : Singleton<Player> {
@@ -100,11 +103,17 @@ public class Player : Singleton<Player> {
 
 		Animating ();
 	}
-	
+
+	/*
+	 * Dreht den Spieler.
+	 */
 	void TurnRotation() {
 		transform.Rotate(0, turnAmount * turnSpeed * Time.deltaTime, 0);
 	}
 
+	/*
+	 * Bewegt den Spieler.
+	 */
 	void Forward() {
 		if (isGrounded || forwardAmount == 0.0f) {
 			transform.Translate (0, 0, forwardAmount * forwardSpeed * Time.deltaTime);
@@ -113,6 +122,10 @@ public class Player : Singleton<Player> {
 		}
 	}
 
+	/*
+	 * Behandelt die Bewegung in der Luft.
+	 * Führt u.a. den DoubleJump aus.
+	 */
 	void HandleAirborneMovement(bool jump)
 	{
 		if (jump && doubleJump) {
@@ -131,7 +144,10 @@ public class Player : Singleton<Player> {
 		}
 	}
 	
-	
+	/*
+	 * Behandelt die Bewegung am Boden.
+	 * Führt den Sprung aus.
+	 */
 	void HandleGroundedMovement(bool jump)
 	{
 		// check whether conditions are right to allow a jump:
@@ -147,7 +163,10 @@ public class Player : Singleton<Player> {
 			isJumping = true;
 		}
 	}
-	
+
+	/*
+	 * Überprüfung ob der Spieler auf dem Boden steht oder sich in der Luft befindet.
+	 */
 	void CheckGroundStatus()
 	{
 		RaycastHit hitInfo;
@@ -175,6 +194,10 @@ public class Player : Singleton<Player> {
 		}
 	}
 
+	/*
+	 * Animiert die Bewegungen des Spielers (Stehen, Laufen, Springen, DoubleJoump, Siegerpose).
+	 * Spielt die Sounds des Spielers ab (Laufen, Springen, DoubleJoump).
+	 */
 	void Animating() {
 		bool walking = walk && forwardAmount != 0.0f;
 	
@@ -195,20 +218,32 @@ public class Player : Singleton<Player> {
 		if (doublejumped) {doublejumped =false;PlaySound(2,1f);}
 	}
 
+	/*
+	 * Katapultiert den Spieler in die Luft wenn dieser auf ein Trampolin springt.
+	 */
 	public void TrampolinEnter(float trampolinJumpPower) {
 		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
 		isJumping = true;
 	}
 
+	/*
+	 * Friert den Spieler ein, so dass dieser sich nicht mehr bewegen kann.
+	 */
 	public void Freeze(bool freeze) {
 		isFreezed = freeze;
 	}
 
+	/*
+	 * Wird aufgerufen wenn der Spieler stirbt.
+	 */
 	public void Kill() {
 		LevelController.Instance.restartLevel ();
 		Respawn ();
 	}
 
+	/*
+	 * Setzt den Spieler an den aktuellen CheckPoint zurück.
+	 */
 	public void Respawn() {
 		isFreezed = false;
 
@@ -218,6 +253,9 @@ public class Player : Singleton<Player> {
 		transform.rotation = respawnPoint.rotation;
 	}
 
+	/*
+	 * Abspielen der Spieler-Sounds.
+	 */
 	void PlaySound(int Clip, float Volume) {
 		allowplay = false;
 		float clipLength = audioClip[Clip].length;

@@ -1,8 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Verwaltet und Lädt alle Szenen des Spiels.
+ */
 public class LoadingController : Singleton<LoadingController> {
 
+	/*
+	 * Die Szenen-Namen aller Szenen des Spiels.
+	 */
 	public static string DESERT_LEVEL = "DesertLevel";
 	public static string THORN_LEVEL = "Thorns_1";
 	public static string FOREST_LEVEL = "treetest3";
@@ -13,6 +19,9 @@ public class LoadingController : Singleton<LoadingController> {
 	public static string GRAPHICS_MENU = "GraphicsMenu";
 	public static string SOUND_MENU = "SoundMenu";
 
+	/*
+	 * Eine Liste aller Szenen des Spiels.
+	 */
 	public enum Scene
 	{
 		DESERT_LEVEL = 0,
@@ -31,6 +40,11 @@ public class LoadingController : Singleton<LoadingController> {
 		DontDestroyOnLoad (this);
 	}
 
+	/*
+	 * Ermittelt den Szene-Namen einer Szene die geladen werden soll.
+	 * 
+	 * Argument: die Szene als Scene-Enum-Element
+	 */
 	public void LoadScene (Scene scene)
 	{
 		string sceneName;
@@ -72,6 +86,11 @@ public class LoadingController : Singleton<LoadingController> {
 		Load (sceneName);
 	}
 
+	/*
+	 * Ermittelt den Szene-Namen einer Szene die geladen werden soll.
+	 * 
+	 * Argument: der Index der Szene
+	 */
 	public void LoadScene (int scene)
 	{
 		string sceneName;
@@ -113,6 +132,9 @@ public class LoadingController : Singleton<LoadingController> {
 		Load (sceneName);
 	}
 
+	/*
+	 * Lädt die Szene mit dem angegebenen Szenen-Namen.
+	 */
 	private void Load(string sceneName)
 	{
 		//AsyncOperation async = Application.LoadLevelAsync(sceneName);

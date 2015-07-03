@@ -1,19 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Verwaltet und behandelt die Controller- und Maus- bzw. Tastatur-Eingabe.
+ */
 public class InputManager : MonoBehaviour {
-	
+
+	/*
+	 * Liste der verfügbaren Controller.
+	 */
 	public enum Controller {
 		MOUSE,
 		XBOX,
 		PS2
 	}
 
-	public static Controller controller = Controller.XBOX;
+	public static Controller controller = Controller.XBOX; // Der aktive Controller.
 
 	public static float rotationSensivity = 2.0f;
 	public static float zoomSensivity = 2.0f;
 
+	/*
+	 * Gibt den Wert der horizontalen Bewegung des Spielers zurück.
+	 */
 	public static float Horizontal() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -27,6 +36,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt den Wert der vertikalen Bewegung des Spielers zurück.
+	 */
 	public static float Vertical() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -40,6 +52,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt true zurück wenn der Spieler die Sprung-Taste drückt.
+	 */
 	public static bool Jump() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -53,6 +68,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt den Wert der Rotation um die X-Achse zurück.
+	 */
 	public static float RotateX() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -66,6 +84,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt den Wert der Rotation um die Y-Achse zurück.
+	 */
 	public static float RotateY() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -79,6 +100,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt den Wert des Zooms zurück.
+	 */
 	public static float Zoom() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -92,6 +116,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt true zurück wenn der Spieler die GazeTrigger-Taste drückt.
+	 */
 	public static bool GazeTrigger() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -105,6 +132,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt true zurück wenn der Spieler die Next-Taste drückt.
+	 */
 	public static bool Next() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -118,6 +148,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt true zurück wenn der Spieler die Prev-Taste drückt.
+	 */
 	public static bool Prev() {
 		switch (controller) {
 		case Controller.MOUSE:
@@ -131,6 +164,9 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Gibt true zurück wenn der Spieler die Abbruch-Taste drückt.
+	 */
 	public static bool Esc() {
 		switch (controller) {
 		case Controller.MOUSE:

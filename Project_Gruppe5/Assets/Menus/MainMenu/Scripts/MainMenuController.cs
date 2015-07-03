@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+/*
+ * Controller für das Hauptmenü.
+ */
 [RequireComponent(typeof(AudioSource))]
 public class MainMenuController : Singleton<MainMenuController> {
 

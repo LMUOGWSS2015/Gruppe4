@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Startet das Spiel.
+ */
 [RequireComponent(typeof(AudioSource))]
 public class MainController : Singleton<MainController> {
 
-	public LoadingController.Scene startScene;
+	public LoadingController.Scene startScene; // Die Szene mit der das Spiel starten soll.
 
-	public LoadingController loadingControllerPrefab;
-	private LoadingController loadingController;
+	public LoadingController loadingControllerPrefab; // Prefab für den LoadingController.
+	private LoadingController loadingController; // Instanz des LoadingController.
 
-	private AudioSource sound;
-
-	// Use this for initialization
+	private AudioSource sound; // AudioSource zum Abspielen von Sounds im Menü.
+	
 	void Start () 
 	{
 		DontDestroyOnLoad (this);
@@ -22,17 +24,26 @@ public class MainController : Singleton<MainController> {
 		InitGame();
 	}
 
+	/*
+	 * Instanziiert den LoadingController.
+	 */
 	private void InitControllers()
 	{
 		loadingController = GameObject.Instantiate(loadingControllerPrefab);
 		loadingController.StartMe();
 	}
 
+	/*
+	 * Lädt die erste Szene des Spiels.
+	 */
 	private void InitGame()
 	{
 		LoadingController.Instance.LoadScene (startScene);
 	}
 
+	/*
+	 * Spielt einen AudioClip ab.
+	 */
 	public void PlaySound(AudioClip clip) {
 		sound.clip = clip;
 		sound.Play ();

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Die Kamera folt dem Spieler (target).
+ */
 public class CameraFollow : MonoBehaviour {
 
-	public Transform target;
-	public float smoothing = 5.0f;
+	public Transform target; // Der Spieler, den die Kamera verfolgt.
+	public float smoothing = 5.0f; // Trägheit der Kamera beim Verfolgen.
 
 	Vector3 offset;
 

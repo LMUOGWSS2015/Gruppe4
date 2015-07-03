@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Rotiert die Kamera um die Y-Achse.
+ * Kamera ist um 360° drehbar.
+ */
 public class CameraRotationY : MonoBehaviour {
 
 	public float rotationSpeed = 1.0f;

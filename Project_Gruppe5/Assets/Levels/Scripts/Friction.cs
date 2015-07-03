@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Setzt die Friction eines Objects so, dass der Spieler an den Seitenwänden nicht hängen bleibt
+ * aber auf der Oberfläche, auch bei Bewegung des Objects, stehen bleibt.
+ * 
+ * Kann nur auf rechteckige Objects angewendet werden.
+ */
 public class Friction : MonoBehaviour {
 	
 	void Start () {

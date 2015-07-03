@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Implementiert das Controller Auswahlmenü.
+ */
 public class ControllerMenu : AbstractMenu {
 
-	private InputManager.Controller[] controllers;
-	private bool[] settingState;
+	private InputManager.Controller[] controllers; // Die verfügbaren Controller.
+	private bool[] settingState; // Gibt an welcher Controller gerade ausgewählt ist.
 
 	void Start() {
 		controllers = new InputManager.Controller[] {InputManager.Controller.XBOX,
@@ -13,21 +16,25 @@ public class ControllerMenu : AbstractMenu {
 		settingState = new bool[] {true, false, false};
 	}
 
+	/*
+	 * Setzt den entsprächenden Controller im InputManager aktiv, der im Menü ausgewählt wurde
+	 * oder lädt das SettingMenu.
+	 */
 	public override void DoSetting() {
-		if (settingMenuController.getCurrentSetting () < controllers.Length) {
-			InputManager.controller = controllers [settingMenuController.getCurrentSetting ()];
+		if (SettingMenuController.Instance.getCurrentSetting () < controllers.Length) {
+			InputManager.controller = controllers [SettingMenuController.Instance.getCurrentSetting ()];
 
-			if (!settingState[settingMenuController.getCurrentSetting ()]) {
+			if (!settingState[SettingMenuController.Instance.getCurrentSetting ()]) {
 				for(int i=0; i<settingState.Length; i++) {
 					settingState[i] = false;
-					settingMenuController.settingTexts[i] = "Choose Controller";
+					SettingMenuController.Instance.settingTexts[i] = "Choose Controller";
 				}
-				settingState[settingMenuController.getCurrentSetting ()] = true;
-				settingMenuController.settingText.text = "Controller Activated";
+				settingState[SettingMenuController.Instance.getCurrentSetting ()] = true;
+				SettingMenuController.Instance.settingText.text = "Controller Activated";
 
 				for(int i=0; i<settingState.Length; i++) {
 					if (settingState[i]) {
-						settingMenuController.settingTexts[i] = "Controller Activated";
+						SettingMenuController.Instance.settingTexts[i] = "Controller Activated";
 					}
 				}
 			}
