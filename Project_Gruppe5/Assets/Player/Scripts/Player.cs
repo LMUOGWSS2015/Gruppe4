@@ -205,11 +205,14 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Kill() {
+		LevelController.Instance.restartLevel ();
 		Respawn ();
 	}
 
 	public void Respawn() {
 		isFreezed = false;
+
+		rigidbody.velocity = new Vector3 (0f, 0f, 0f);
 
 		transform.position = respawnPoint.position;
 		transform.rotation = respawnPoint.rotation;

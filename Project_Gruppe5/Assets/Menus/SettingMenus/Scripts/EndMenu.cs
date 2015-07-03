@@ -3,15 +3,9 @@ using System.Collections;
 
 public class EndMenu : AbstractMenu {
 
-	private LevelController levelController;
-	
-	void Start() {
-		levelController = GameObject.FindGameObjectWithTag ("LevelController").GetComponent<LevelController> ();
-	}
-
 	public override void DoSetting() {
 		if (settingMenuController.getCurrentSetting () == 0) {
-			LoadingController.Instance.LoadScene(levelController.levelName);
+			LoadingController.Instance.LoadScene(LevelController.Instance.levelName);
 		}
 		else if (settingMenuController.getCurrentSetting () == 1) {
 			LoadingController.Instance.LoadScene(LoadingController.Scene.MAIN_MENU);

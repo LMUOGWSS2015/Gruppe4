@@ -5,8 +5,11 @@ public class CheckPoint : MonoBehaviour {
 
 	public Light spotlight;
 
+	private Color startColor;
+
 	void Start() {
-		spotlight.color = Color.red;
+		//spotlight.color = Color.red;
+		startColor = spotlight.color;
 	}
 
 	void OnTriggerEnter(Collider other) 
@@ -29,6 +32,6 @@ public class CheckPoint : MonoBehaviour {
 	}
 
 	public void DeActivate() {
-		spotlight.color = Color.red;
+		spotlight.color = startColor;
 	}
 }

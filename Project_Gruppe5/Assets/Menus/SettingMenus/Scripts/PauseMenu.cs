@@ -3,17 +3,15 @@ using System.Collections;
 
 public class PauseMenu : AbstractMenu {
 
-	private LevelController levelController;
-
-	void Start() {
-		levelController = GameObject.FindGameObjectWithTag ("LevelController").GetComponent<LevelController> ();
-	}
-
 	public override void DoSetting() {
 		if (settingMenuController.getCurrentSetting () == 0) {
-			levelController.ContinueLevel();
+			LevelController.Instance.ContinueLevel ();
 		}
 		else if (settingMenuController.getCurrentSetting () == 1) {
+			Player.Instance.Kill ();
+			LevelController.Instance.ContinueLevel ();
+		}
+		else if (settingMenuController.getCurrentSetting () == 2) {
 			LoadingController.Instance.LoadScene(LoadingController.Scene.MAIN_MENU);
 		}
 	}
