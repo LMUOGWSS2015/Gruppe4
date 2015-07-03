@@ -5,7 +5,6 @@ using UnityEngine.UI;
 /*
  * Controller für das Hauptmenü.
  */
-[RequireComponent(typeof(AudioSource))]
 public class MainMenuController : Singleton<MainMenuController> {
 
 	public float radiusX = 25.0f;
@@ -25,8 +24,6 @@ public class MainMenuController : Singleton<MainMenuController> {
 	public AudioClip switchSound;
 	public AudioClip selectSound;
 
-	private AudioSource sound;
-
 	private int currentIsland;
 	private Transform islesTransform;
 	private float islesAngle;
@@ -38,8 +35,6 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 	void Start ()
 	{
-		sound = GetComponent<AudioSource> ();
-
 		RenderSettings.skybox.SetColor("_GroundColor", backgroundColors[0]);
 		RenderSettings.skybox.SetFloat("_Exposure", 0.2f);
 
@@ -100,8 +95,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 		StartCoroutine(ChangeIslandName());
 		StartCoroutine(ChangeIslandText());
 
-		sound.clip = switchSound;
-		sound.Play ();
+		MainController.Instance.PlaySound (switchSound);
 	}
 
 	private void PreviousIsland ()
@@ -115,8 +109,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 		StartCoroutine(ChangeIslandName());
 		StartCoroutine(ChangeIslandText());
 
-		sound.clip = switchSound;
-		sound.Play ();
+		MainController.Instance.PlaySound (switchSound);
 	}
 
 	public void LoadLevel ()

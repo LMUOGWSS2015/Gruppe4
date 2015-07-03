@@ -112,6 +112,7 @@ MonoBehaviour:
   startScene: 5
   loadingControllerPrefab: {fileID: 11429534, guid: e02f2786841e1ff4882c0e182db2ce71,
     type: 2}
+  menuMusic: {fileID: 8265520, guid: 579768693aead4550afc748901aa41f8, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -12,6 +12,7 @@ public class MainController : Singleton<MainController> {
 	public LoadingController loadingControllerPrefab; // Prefab für den LoadingController.
 	private LoadingController loadingController; // Instanz des LoadingController.
 
+	public AudioSource menuMusic;
 	private AudioSource sound; // AudioSource zum Abspielen von Sounds im Menü.
 	
 	void Start () 
@@ -47,5 +48,13 @@ public class MainController : Singleton<MainController> {
 	public void PlaySound(AudioClip clip) {
 		sound.clip = clip;
 		sound.Play ();
+	}
+
+	public void PlayMusic() {
+		menuMusic.Play ();
+	}
+
+	public void StopMusic() {
+		menuMusic.Stop ();
 	}
 }
