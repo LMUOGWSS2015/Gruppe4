@@ -9,7 +9,7 @@ public class RotatingPlatform : InteractivePhysicsObject {
 
 	private Quaternion startRotation;
 	private Quaternion endRotation;
-	private bool checkAxis;
+	//private bool checkAxis;
 
 	// Allow rotating the object round 360 degrees in four steps of 90 degrees
 	public bool continueRotation = false;
@@ -25,11 +25,11 @@ public class RotatingPlatform : InteractivePhysicsObject {
 	// Use this for initialization
 	public override void StartMe () 
 	{
-		checkAxis = true;
+	/*	checkAxis = true;
 	}
 
 	private void SetRotation ()
-	{
+	{*/
 		Vector3 euler = new Vector3();
 		Vector3 startEuler = transform.rotation.eulerAngles;
 
@@ -57,15 +57,15 @@ public class RotatingPlatform : InteractivePhysicsObject {
 
 	public override void DoActivation ()
 	{
-		if(checkAxis) {
+		/*if(checkAxis) {
 			SetRotation();
 			checkAxis = false;
-		}
+		}*/
 
 		rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, endRotation, Time.deltaTime * speed));
 
-		if(transform.rotation == endRotation)
-			checkAxis = true;
+		/*if(transform.rotation == endRotation)
+			checkAxis = true;*/
 		if (continueRotation && transform.rotation == endRotation) {
 			this.Deactivate();
 			currentStartRotation += endRotationDegrees;
@@ -76,15 +76,15 @@ public class RotatingPlatform : InteractivePhysicsObject {
 
 	public override void DoDeactivation ()
 	{
-		if(checkAxis) {
+		/*if(checkAxis) {
 			SetRotation();
 			checkAxis = false;
-		}
+		}*/
 
 		rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, startRotation, Time.deltaTime * speed));
 
-		if(transform.rotation == startRotation)
-			checkAxis = true;
+		/*if(transform.rotation == startRotation)
+			checkAxis = true;*/
 		if (continueRotation && transform.rotation == endRotation) {
 			this.Deactivate();
 			currentStartRotation -= endRotationDegrees;
