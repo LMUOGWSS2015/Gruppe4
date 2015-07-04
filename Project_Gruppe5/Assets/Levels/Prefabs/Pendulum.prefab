@@ -30,6 +30,8 @@ GameObject:
   - 33: {fileID: 3302188}
   - 23: {fileID: 2334290}
   - 54: {fileID: 5433516}
+  - 64: {fileID: 6451050}
+  - 114: {fileID: 11431356}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -103,8 +105,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: 17.7999992, z: 40}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: -17, y: 20, z: 126.720001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 435046}
@@ -260,6 +262,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6451050
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300004, guid: 1951e8b93cc3448829fe9a7c3ece8326, type: 3}
 --- !u!95 &9585042
 Animator:
   serializedVersion: 3
@@ -277,6 +291,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11431356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075d2665241dbc04e8fe2bd28087c4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11473060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,7 +318,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   axis: 0
   totalAngle: 90
   startAngle: 0
