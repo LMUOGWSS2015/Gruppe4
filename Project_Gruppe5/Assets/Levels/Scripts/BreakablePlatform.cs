@@ -10,16 +10,20 @@ public class BreakablePlatform : MonoBehaviour {
 
 	private float speed = 1.0f;
 	private float amount = 1.0f;
+	AudioSource audio;
 
 	void Start()
 	{
 		//StartCoroutine(BreakingApart());
+		audio = GetComponent<AudioSource> ();
 	}
 
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag == "Player")
-			StartCoroutine(BreakingApart());
+		if (other.gameObject.tag == "Player") {
+			StartCoroutine (BreakingApart ());
+			PlaySound ();
+		}
 	}
 
 	void Update()
@@ -46,6 +50,14 @@ public class BreakablePlatform : MonoBehaviour {
 			rb.AddExplosionForce(power, explosionPosition.position, 50.0f);
 			rb.useGravity = true;
 		}
+	}
+
+	void PlaySound() {
+
+
+		audio.Play();
+		
+	
 	}
 	
 }

@@ -1955,8 +1955,9 @@ MonoBehaviour:
   jumpForwardAmountMultiplier: 1
   audioClip:
   - {fileID: 8300000, guid: 6670cc43f84f90043ac1097a0d17d4cf, type: 3}
-  - {fileID: 8300000, guid: 31850bb8bef323b4f80f882cda953c48, type: 3}
-  - {fileID: 8300000, guid: dd2129a2b584fa743af27e23b85bf89c, type: 3}
+  - {fileID: 8300000, guid: e9ce8ebd36ffb41438f1a7b7d7213225, type: 3}
+  - {fileID: 8300000, guid: 81e846f0383af204c925cb9e2dde4ef1, type: 3}
+  - {fileID: 8300000, guid: b88b7216a0c104548ab9a63018172d8b, type: 3}
   startPoint: {fileID: 0}
 --- !u!114 &11463890
 MonoBehaviour:

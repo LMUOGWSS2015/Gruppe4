@@ -213,8 +213,8 @@ public class Player : Singleton<Player> {
 		anim.SetBool ("HasWon", finish);
 
 		//handle Sounds
-		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 1.0F));}
-		if (jumped) {StopWalkingSound();PlaySound(1,1f);}
+		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 0.9F));}
+		if (jumped) {StopWalkingSound();PlaySound(1,0.7f);}
 		if (doublejumped) {doublejumped =false;PlaySound(2,1f);}
 	}
 
@@ -224,6 +224,7 @@ public class Player : Singleton<Player> {
 	public void TrampolinEnter(float trampolinJumpPower) {
 		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
 		isJumping = true;
+		PlaySound(3,1f);
 	}
 
 	/*
