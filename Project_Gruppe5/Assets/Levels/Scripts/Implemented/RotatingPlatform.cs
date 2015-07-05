@@ -67,7 +67,8 @@ public class RotatingPlatform : InteractivePhysicsObject {
 		/*if(transform.rotation == endRotation)
 			checkAxis = true;*/
 		if (continueRotation && transform.rotation == endRotation) {
-			this.Deactivate();
+			//this.Deactivate();
+			this.isActivated = false;
 			currentStartRotation += endRotationDegrees;
 			currentEndRotation += endRotationDegrees;
 			updateRotationState();
