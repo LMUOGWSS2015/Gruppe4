@@ -143,7 +143,7 @@ public class LoadingController : Singleton<LoadingController> {
 		Application.LoadLevel (sceneName);
 
 		if (sceneName.Contains ("Menu")) {
-			if (!MainController.Instance.menuMusic.isPlaying) {
+			if (!MainController.Instance.menuMusic.activeSelf) {
 				MainController.Instance.PlayMusic();
 			}
 		}
