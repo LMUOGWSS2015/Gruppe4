@@ -20,7 +20,7 @@ public class MainController : Singleton<MainController> {
 		DontDestroyOnLoad (this);
 
 		sound = GetComponent<AudioSource> ();
-
+		menuMusic.Play ();
 		InitControllers();
 		InitGame();
 	}

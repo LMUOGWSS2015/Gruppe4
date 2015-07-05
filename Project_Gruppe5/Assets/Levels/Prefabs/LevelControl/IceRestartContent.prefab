@@ -3132,7 +3132,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 462768}
   m_Layer: 0
-  m_Name: RestartContent_ICE
+  m_Name: IceRestartContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
