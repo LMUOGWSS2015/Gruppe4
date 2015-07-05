@@ -11,8 +11,8 @@ public class LoadingController : Singleton<LoadingController> {
 	 */
 	public static string DESERT_LEVEL = "DesertLevel";
 	public static string THORN_LEVEL = "Thorns_1";
-	public static string FOREST_LEVEL = "treetest3";
-	public static string ICE_LEVEL = "icetest 1";
+	public static string FOREST_LEVEL = "ForestLevel";
+	public static string ICE_LEVEL = "IceLevel";
 	public static string SETTING_MENU = "SettingMenu";
 	public static string MAIN_MENU = "MainMenu";
 	public static string CONTROLLER_MENU = "ControllerMenu";

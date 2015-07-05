@@ -53,6 +53,7 @@ public class LevelController : Singleton<LevelController> {
 	 * Neustart des Levels am letzten CheckPoint mit wiederhergestellten Levelobjekten.
 	 */
 	public void restartLevel() {
+		Destroy (restartContent);
 		restartContent = Instantiate (originalRestartContent);
 		restartContent.transform.SetParent (levelContent.transform);
 	}
