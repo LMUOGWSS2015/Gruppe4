@@ -98,20 +98,20 @@ public class RotatingPlatform : InteractivePhysicsObject {
 		Vector3 eulerEnd = new Vector3();
 		switch(axis) {
 		case AXIS.X:
-			eulerStart = new Vector3(currentStartRotation, 0, 0);
-			eulerEnd = new Vector3(currentEndRotation, 0, 0);
+			eulerStart = new Vector3(currentStartRotation, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+			eulerEnd = new Vector3(currentEndRotation, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 			break;
 		case AXIS.Y:
-			eulerStart = new Vector3(0, currentStartRotation, 0);
-			eulerEnd = new Vector3(0, currentEndRotation, 0);
+			eulerStart = new Vector3(transform.rotation.eulerAngles.x, currentStartRotation, transform.rotation.eulerAngles.z);
+			eulerEnd = new Vector3(transform.rotation.eulerAngles.x, currentEndRotation, transform.rotation.eulerAngles.z);
 			break;
 		case AXIS.Z:
-			eulerStart = new Vector3(0, 0, currentStartRotation);
-			eulerEnd = new Vector3(0, 0, currentEndRotation);
+			eulerStart = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, currentStartRotation);
+			eulerEnd = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, currentEndRotation);
 			break;
 		default:
-			eulerStart = new Vector3(0, currentStartRotation, 0);
-			eulerEnd = new Vector3(0, currentEndRotation, 0);
+			eulerStart = new Vector3(transform.rotation.eulerAngles.x, currentStartRotation, transform.rotation.eulerAngles.z);
+			eulerEnd = new Vector3(transform.rotation.eulerAngles.x, currentEndRotation, transform.rotation.eulerAngles.z);
 			break;
 		}
 		startRotation = Quaternion.Euler (eulerStart);
