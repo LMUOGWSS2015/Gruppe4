@@ -9,10 +9,52 @@ ModelImporter:
     100002: Head
     100004: Limbs
     100006: //RootNode
+    100008: Bone
+    100010: Bone_001
+    100012: Bone_002
+    100014: Bone_003
+    100016: Bone_004
+    100018: Bone_005
+    100020: Bone_006
+    100022: Bone_007
+    100024: Bone_008
+    100026: Bone_009
+    100028: Bone_010
+    100030: Bone_011
+    100032: Bone_013
+    100034: Bone_014
+    100036: Bone_015
+    100038: Bone_018
+    100040: Bone_019
+    100042: Bone_020
+    100044: Bone_021
+    100046: Bone_022
+    100048: Bugbones
     400000: Body
     400002: Head
     400004: Limbs
     400006: //RootNode
+    400008: Bone
+    400010: Bone_001
+    400012: Bone_002
+    400014: Bone_003
+    400016: Bone_004
+    400018: Bone_005
+    400020: Bone_006
+    400022: Bone_007
+    400024: Bone_008
+    400026: Bone_009
+    400028: Bone_010
+    400030: Bone_011
+    400032: Bone_013
+    400034: Bone_014
+    400036: Bone_015
+    400038: Bone_018
+    400040: Bone_019
+    400042: Bone_020
+    400044: Bone_021
+    400046: Bone_022
+    400048: Bugbones
     2300000: Body
     2300002: Head
     2300004: Limbs
@@ -23,7 +65,11 @@ ModelImporter:
     4300002: Head
     4300004: Body
     7400000: Default Take
+    7400002: Moving_Action
     9500000: //RootNode
+    13700000: Body
+    13700002: Head
+    13700004: Limbs
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,13 +85,165 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Bugbones
+        weight: 1
+      - path: Bugbones/Bone
+        weight: 1
+      - path: Bugbones/Bone/Bone_001
+        weight: 1
+      - path: Bugbones/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Bugbones/Bone/Bone_003
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_004
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_004/Bone_006
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_007
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_007/Bone_008
+        weight: 1
+      - path: Bugbones/Bone/Bone_005
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_018
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_018/Bone_019
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_018/Bone_019/Bone_020
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_021
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_021/Bone_022
+        weight: 1
+      - path: Bugbones/Bone_009
+        weight: 1
+      - path: Bugbones/Bone_009/Bone_010
+        weight: 1
+      - path: Bugbones/Bone_009/Bone_010/Bone_011
+        weight: 1
+      - path: Bugbones/Bone_013
+        weight: 1
+      - path: Bugbones/Bone_013/Bone_014
+        weight: 1
+      - path: Bugbones/Bone_013/Bone_014/Bone_015
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Limbs
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Moving_Action
+      takeName: Moving_Action
+      firstFrame: -1
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Bugbones
+        weight: 1
+      - path: Bugbones/Bone
+        weight: 1
+      - path: Bugbones/Bone/Bone_001
+        weight: 1
+      - path: Bugbones/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Bugbones/Bone/Bone_003
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_004
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_004/Bone_006
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_007
+        weight: 1
+      - path: Bugbones/Bone/Bone_003/Bone_007/Bone_008
+        weight: 1
+      - path: Bugbones/Bone/Bone_005
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_018
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_018/Bone_019
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_018/Bone_019/Bone_020
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_021
+        weight: 1
+      - path: Bugbones/Bone/Bone_005/Bone_021/Bone_022
+        weight: 1
+      - path: Bugbones/Bone_009
+        weight: 1
+      - path: Bugbones/Bone_009/Bone_010
+        weight: 1
+      - path: Bugbones/Bone_009/Bone_010/Bone_011
+        weight: 1
+      - path: Bugbones/Bone_013
+        weight: 1
+      - path: Bugbones/Bone_013/Bone_014
+        weight: 1
+      - path: Bugbones/Bone_013/Bone_014/Bone_015
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Limbs
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
