@@ -8,6 +8,9 @@ public class LevelController : Singleton<LevelController> {
 
 	public LoadingController.Scene levelName; // Der Scenenname des Levels.
 
+	public GameObject levelMusic;
+	public GameObject winMusic;
+
 	public GameObject levelContent; // Der komplette Levelinhalt.
 	public GameObject originalLevelMenu; // Prefab für das Pause-Menü.
 	public GameObject originalFinishMenu; // Prefab für das Menü am Ende des Levels.
@@ -19,6 +22,8 @@ public class LevelController : Singleton<LevelController> {
 	private void Start() {
 		restartContent = Instantiate (originalRestartContent);
 		restartContent.transform.SetParent (levelContent.transform);
+
+		winMusic.SetActive (false);
 	}
 
 	private void FixedUpdate() {
@@ -56,5 +61,10 @@ public class LevelController : Singleton<LevelController> {
 		Destroy (restartContent);
 		restartContent = Instantiate (originalRestartContent);
 		restartContent.transform.SetParent (levelContent.transform);
+	}
+
+	public void PlayWinMusic() {
+		levelMusic.SetActive (false);
+		winMusic.SetActive (true);
 	}
 }

@@ -39,11 +39,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ca2ba827f1743549e3d5757d8eb34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: 0
+  levelName: 3
+  levelMusic: {fileID: 0}
+  winMusic: {fileID: 0}
   levelContent: {fileID: 0}
   originalLevelMenu: {fileID: 114088, guid: afae33e025809400fbab4a0ffc8d6060, type: 2}
   originalFinishMenu: {fileID: 140324, guid: 49484358f2273475d9785706701e1903, type: 2}
-  originalRestartContent: {fileID: 0}
+  originalRestartContent: {fileID: 119868, guid: 431775d2582766145a6abb73d6a70d1d,
+    type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

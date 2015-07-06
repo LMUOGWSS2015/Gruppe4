@@ -46,8 +46,9 @@ public class Finish : MonoBehaviour {
 
 			Player.Instance.finish = true;
 
-			end = true;
+			LevelController.Instance.PlayWinMusic();
 
+			end = true;
 			StartCoroutine(End());
 		}
 	}

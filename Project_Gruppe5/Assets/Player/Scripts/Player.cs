@@ -217,7 +217,7 @@ public class Player : Singleton<Player> {
 		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 0.9F));}
 		if (jumped) {StopWalkingSound(); PlaySound(1,0.7f);}
 		if (isDoubleJumped) {isDoubleJumped = false; PlaySound(2,1f);}
-		if (hit) {hit = false; PlaySound(4,Random.Range(0.4F, 0.9F));}
+		if (hit) {hit = false; PlaySound(3,Random.Range(0.4F, 0.9F));}
 	}
 
 	/*
