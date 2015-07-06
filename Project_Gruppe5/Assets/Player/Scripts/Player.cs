@@ -226,7 +226,7 @@ public class Player : Singleton<Player> {
 	public void TrampolinEnter(float trampolinJumpPower) {
 		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
 		isJumping = true;
-		PlaySound(4,1f);
+		PlaySound(3,1f);
 	}
 
 	public void Hit() {
