@@ -18,6 +18,9 @@ public class CheckPoint : MonoBehaviour {
 	void Start() {
 		spotlight.color = Color.red;
 		startColor = spotlight.color;
+
+		activatedSprite.SetActive (false);
+		deactivatedSprite.SetActive (true);
 	}
 
 	void OnTriggerEnter(Collider other) 
@@ -40,6 +43,7 @@ public class CheckPoint : MonoBehaviour {
 	 */
 	public void Activate() {
 		spotlight.color = Color.yellow;
+
 		deactivatedSprite.SetActive (false);
 		activatedSprite.SetActive (true);
 	}
@@ -49,6 +53,7 @@ public class CheckPoint : MonoBehaviour {
 	 */
 	public void DeActivate() {
 		spotlight.color = startColor;
+
 		activatedSprite.SetActive (false);
 		deactivatedSprite.SetActive (true);
 	}
