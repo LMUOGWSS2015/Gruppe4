@@ -8,6 +8,9 @@ using System.Collections;
  */
 public class CheckPoint : MonoBehaviour {
 
+	public GameObject activatedSprite;
+	public GameObject deactivatedSprite;
+
 	public Light spotlight; // Macht den CheckPoint sichtbar.
 
 	private Color startColor; // Farbe für deaktivierte CheckPoints.
@@ -37,6 +40,8 @@ public class CheckPoint : MonoBehaviour {
 	 */
 	public void Activate() {
 		spotlight.color = Color.yellow;
+		deactivatedSprite.SetActive (false);
+		activatedSprite.SetActive (true);
 	}
 
 	/*
@@ -44,5 +49,7 @@ public class CheckPoint : MonoBehaviour {
 	 */
 	public void DeActivate() {
 		spotlight.color = startColor;
+		activatedSprite.SetActive (false);
+		deactivatedSprite.SetActive (true);
 	}
 }
