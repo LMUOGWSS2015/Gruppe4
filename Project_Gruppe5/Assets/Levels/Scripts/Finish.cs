@@ -18,8 +18,8 @@ public class Finish : MonoBehaviour {
 	void Start() {
 		end = false;
 		border.SetActive (false);
-		//spotLight.color = Color.red;
-		//pointLight.color = Color.red;
+		spotLight.color = Color.red;
+		pointLight.color = Color.red;
 	}
 
 	void OnTriggerEnter(Collider other) 
@@ -61,7 +61,7 @@ public class Finish : MonoBehaviour {
 		spotLight.color = Color.cyan;
 		spotLight.spotAngle = 120.0f;
 
-		//pointLight.color = Color.cyan;
+		pointLight.color = Color.cyan;
 		//pointLight.range = 20.0f;
 	}
 }

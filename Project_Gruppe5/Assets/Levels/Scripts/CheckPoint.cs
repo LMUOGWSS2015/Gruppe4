@@ -13,7 +13,7 @@ public class CheckPoint : MonoBehaviour {
 	private Color startColor; // Farbe für deaktivierte CheckPoints.
 
 	void Start() {
-		//spotlight.color = Color.red;
+		spotlight.color = Color.red;
 		startColor = spotlight.color;
 	}
 

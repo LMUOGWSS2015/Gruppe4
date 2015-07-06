@@ -12,6 +12,7 @@ TagManager:
   - SelectionMarker
   - GazeController
   - LevelController
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
