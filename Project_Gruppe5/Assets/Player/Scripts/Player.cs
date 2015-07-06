@@ -222,9 +222,11 @@ public class Player : Singleton<Player> {
 	 * Katapultiert den Spieler in die Luft wenn dieser auf ein Trampolin springt.
 	 */
 	public void TrampolinEnter(float trampolinJumpPower) {
-		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
-		isJumping = true;
-		PlaySound(3,1f);
+		if (rigidbody.velocity.y < -0.1f) {
+			rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
+			isJumping = true;
+			PlaySound(3,1f);
+		}
 	}
 
 	/*
