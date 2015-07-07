@@ -28,9 +28,9 @@ public class LoadingController : Singleton<LoadingController> {
 		THORN_LEVEL = 1,
 		FOREST_LEVEL = 2,
 		ICE_LEVEL = 3,
-		SETTING_MENU = 4,
+		SETTING_MENU = 6,
 		MAIN_MENU = 5,
-		CONTROLLER_MENU = 6,
+		CONTROLLER_MENU = 4,
 		GRAPHICS_MENU = 7,
 		SOUND_MENU = 8
 	}

@@ -40,7 +40,7 @@ public class ControllerMenu : AbstractMenu {
 			}
 		}
 		else {
-			LoadingController.Instance.LoadScene(LoadingController.Scene.SETTING_MENU);;
+			LoadingController.Instance.LoadScene(LoadingController.Scene.MAIN_MENU);;
 		}
 	}
 }
