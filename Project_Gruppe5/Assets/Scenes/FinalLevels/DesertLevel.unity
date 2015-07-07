@@ -6533,6 +6533,10 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11487634, guid: 3287621c0d860cb4182e57e1b0af3473, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3287621c0d860cb4182e57e1b0af3473, type: 2}
   m_IsPrefabParent: 0
@@ -8102,6 +8106,10 @@ Prefab:
       propertyPath: pathPoints.Array.data[1]
       value: 
       objectReference: {fileID: 346286674}
+    - target: {fileID: 11487634, guid: 3287621c0d860cb4182e57e1b0af3473, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3287621c0d860cb4182e57e1b0af3473, type: 2}
   m_IsPrefabParent: 0
@@ -10215,6 +10223,10 @@ Prefab:
     - target: {fileID: 155134, guid: 824fd3cb5e87ac447b254fee2dbb10be, type: 2}
       propertyPath: m_Name
       value: skarab
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440374, guid: 824fd3cb5e87ac447b254fee2dbb10be, type: 2}
+      propertyPath: power
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 824fd3cb5e87ac447b254fee2dbb10be, type: 2}
@@ -12416,6 +12428,10 @@ Prefab:
       propertyPath: pathPoints.Array.data[3]
       value: 
       objectReference: {fileID: 1793807941}
+    - target: {fileID: 11487634, guid: 3287621c0d860cb4182e57e1b0af3473, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3287621c0d860cb4182e57e1b0af3473, type: 2}
   m_IsPrefabParent: 0
