@@ -59,10 +59,12 @@ namespace MeshBrush {
 
                 if (totalVertCount > 64000)
                 {
+					/*
                     if (UnityEditor.EditorUtility.DisplayDialog("Warning!", "You are trying to combine a group of meshes whose total vertex count exceeds Unity's built-in limit.\n\nThe process has been aborted to prevent the accidental deletion of all painted meshes and numerous disturbing error messages printed to the console.\n\nConsider splitting your meshes into smaller groups and combining them separately.", "Okay"))
                     {
                         return;
                     }
+                    */
                 }
             }
 
@@ -118,9 +120,10 @@ namespace MeshBrush {
 
                 filter = go.GetComponent<MeshFilter>();
                 filter.mesh = CombineUtility.Combine(instances, false);
-
+				/*
                 if (autoSelect)
                     UnityEditor.Selection.activeObject = go;
+				*/
             }
             gameObject.isStatic = true;
         }
