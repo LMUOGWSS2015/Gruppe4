@@ -59,6 +59,9 @@ public class MainMenuController : Singleton<MainMenuController> {
 				if(InputManager.Jump() || Input.GetKeyDown(KeyCode.Return)) {
 					LoadLevel();
 				}
+				if(Input.GetKeyDown(KeyCode.Escape)) {
+					Application.Quit();
+				}
 			}
 		}
 	}
