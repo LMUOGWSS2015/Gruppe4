@@ -410,6 +410,30 @@ Prefab:
       propertyPath: settingTexts.Array.data[2]
       value: Choose Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
+      propertyPath: backgroundColors.Array.data[0].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
+      propertyPath: backgroundColors.Array.data[0].g
+      value: .392156869
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
+      propertyPath: backgroundColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
+      propertyPath: backgroundColors.Array.data[1].b
+      value: .392156869
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
+      propertyPath: backgroundColors.Array.data[2].r
+      value: .392156869
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417522, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
+      propertyPath: backgroundColors.Array.data[2].b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 066da56ee85dc4a47b86cb7551309336, type: 2}
   m_IsPrefabParent: 0
