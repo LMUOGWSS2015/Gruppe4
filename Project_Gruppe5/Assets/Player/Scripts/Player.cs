@@ -20,9 +20,10 @@ public class Player : Singleton<Player> {
 	Rigidbody rigidbody;
 	Animator anim;
 
+	bool hit;
 	bool isFreezed;
 	bool jumped;
-	bool doublejumped = false;
+	bool isDoubleJumped = false;
 	bool walk;
 	bool doubleJump;
 	bool isGrounded;
@@ -129,7 +130,7 @@ public class Player : Singleton<Player> {
 	void HandleAirborneMovement(bool jump)
 	{
 		if (jump && doubleJump) {
-			doublejumped =true;
+			isDoubleJumped = true;
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpPower, rigidbody.velocity.z);
 			doubleJump = false;
 
@@ -214,8 +215,9 @@ public class Player : Singleton<Player> {
 
 		//handle Sounds
 		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 0.9F));}
-		if (jumped) {StopWalkingSound();PlaySound(1,0.7f);}
-		if (doublejumped) {doublejumped =false;PlaySound(2,1f);}
+		if (jumped) {StopWalkingSound(); PlaySound(1,0.7f);}
+		if (isDoubleJumped) {isDoubleJumped = false; PlaySound(2,1f);}
+		if (hit) {hit = false; PlaySound(3,Random.Range(0.4F, 0.9F));}
 	}
 
 	/*
@@ -224,7 +226,11 @@ public class Player : Singleton<Player> {
 	public void TrampolinEnter(float trampolinJumpPower) {
 		rigidbody.velocity = new Vector3(0, trampolinJumpPower, 0);
 		isJumping = true;
-		PlaySound(3,1f);
+		PlaySound(4,1f);
+	}
+
+	public void Hit() {
+		hit = true;
 	}
 
 	/*

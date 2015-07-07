@@ -8,6 +8,9 @@ using System.Collections;
  */
 public class Finish : MonoBehaviour {
 
+	public GameObject activatedSprite;
+	public GameObject deactivatedSprite;
+
 	public Light spotLight; // Macht das Finish sichtbar.
 	public Light pointLight; // Macht das Finish sichtbar.
 
@@ -18,8 +21,12 @@ public class Finish : MonoBehaviour {
 	void Start() {
 		end = false;
 		border.SetActive (false);
+
 		spotLight.color = Color.red;
 		pointLight.color = Color.red;
+
+		activatedSprite.SetActive (false);
+		deactivatedSprite.SetActive (true);
 	}
 
 	void OnTriggerEnter(Collider other) 
@@ -39,8 +46,9 @@ public class Finish : MonoBehaviour {
 
 			Player.Instance.finish = true;
 
-			end = true;
+			LevelController.Instance.PlayWinMusic();
 
+			end = true;
 			StartCoroutine(End());
 		}
 	}
@@ -49,7 +57,7 @@ public class Finish : MonoBehaviour {
 	 * Wartet 5sec und beendet dann das Level.
 	 */
 	public IEnumerator End() {
-		yield return new WaitForSeconds(5.0f);
+		yield return new WaitForSeconds(10.0f);
 		
 		LevelController.Instance.EndLevel();
 	}
@@ -63,5 +71,8 @@ public class Finish : MonoBehaviour {
 
 		pointLight.color = Color.cyan;
 		//pointLight.range = 20.0f;
+
+		deactivatedSprite.SetActive (false);
+		activatedSprite.SetActive (true);
 	}
 }
