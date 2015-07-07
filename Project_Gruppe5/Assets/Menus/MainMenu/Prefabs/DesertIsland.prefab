@@ -4675,7 +4675,7 @@ Animator:
   m_GameObject: {fileID: 115720}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c9bf0d2fb63aa48d5b30f480a3b5b0c4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b11168fb3f1e40e7ba368bab0fba569, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4726,7 +4726,7 @@ Animator:
   m_GameObject: {fileID: 178566}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c9bf0d2fb63aa48d5b30f480a3b5b0c4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b11168fb3f1e40e7ba368bab0fba569, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4743,7 +4743,7 @@ Animator:
   m_GameObject: {fileID: 148292}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c9bf0d2fb63aa48d5b30f480a3b5b0c4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b11168fb3f1e40e7ba368bab0fba569, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4863,7 +4863,9 @@ MonoBehaviour:
   singleUse: 0
   isActivated: 0
   isDeactivated: 0
+  isUsed: 0
   rb: {fileID: 0}
+  canBeDeactivated: 0
   randomize: 0
   speed: 0
   pathPoints: []
