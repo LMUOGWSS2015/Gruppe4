@@ -253,6 +253,16 @@ public class Player : Singleton<Player> {
 		Respawn ();
 	}
 
+
+	/*
+	 * Wird aufgerufen wenn der Spieler von einem HarmfulObject getroffen wird
+	 */
+	public void KillByObject ()
+	{
+		Death death = GetComponent<Death>();
+		death.Trigger();
+	}
+
 	/*
 	 * Setzt den Spieler an den aktuellen CheckPoint zurück.
 	 */
