@@ -249,7 +249,7 @@ public class Player : Singleton<Player> {
 	 * Wird aufgerufen wenn der Spieler stirbt.
 	 */
 	public void Kill() {
-		LevelController.Instance.restartLevel ();
+		LevelController.Instance.RestartLevel ();
 		Respawn ();
 	}
 

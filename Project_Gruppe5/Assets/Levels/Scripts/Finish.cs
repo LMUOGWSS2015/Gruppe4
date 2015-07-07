@@ -32,6 +32,8 @@ public class Finish : MonoBehaviour {
 	void OnTriggerEnter(Collider other) 
 	{
 		if(other.transform.tag == "Player" && !end) {
+			LevelController.Instance.StopTime();
+
 			Transform oldRespawnPoint = Player.Instance.respawnPoint;
 			if (oldRespawnPoint) {
 				CheckPoint oldCheckPoint = oldRespawnPoint.gameObject.GetComponent<CheckPoint>();
