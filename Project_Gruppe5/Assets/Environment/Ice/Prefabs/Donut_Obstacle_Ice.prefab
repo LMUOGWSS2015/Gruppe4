@@ -109,6 +109,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 431180}
+  - 54: {fileID: 5435228}
+  - 114: {fileID: 11478452}
   m_Layer: 0
   m_Name: Donut_Obstacle_Ice
   m_TagString: Untagged
@@ -426,7 +428,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -450,7 +452,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -474,7 +476,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -498,7 +500,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -522,7 +524,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -546,7 +548,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -570,7 +572,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -594,7 +596,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0414bc702dd9848bc76b3aaa579cf9, type: 2}
+  - {fileID: 2100000, guid: f7ad4928d18bee642b2adc30f48c5490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -679,13 +681,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!54 &5435228
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139450}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &6403906
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166348}
-  m_Material: {fileID: 13400000, guid: df9d98c31557b42ffac9f94a97177564, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -783,6 +800,27 @@ MonoBehaviour:
   rb: {fileID: 0}
   canBeDeactivated: 0
   velocity: {x: 0, y: 0, z: 0}
+  directionChanger: 0
+--- !u!114 &11478452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c68fc509bec314c844fd45ad41a64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noTrigger: 1
+  delay: 0
+  singleUse: 0
+  isActivated: 0
+  isDeactivated: 0
+  isUsed: 0
+  rb: {fileID: 0}
+  canBeDeactivated: 0
+  velocity: {x: 0, y: 35, z: 0}
   directionChanger: 0
 --- !u!1001 &100100000
 Prefab:

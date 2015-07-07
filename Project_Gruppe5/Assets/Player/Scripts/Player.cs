@@ -230,9 +230,10 @@ public class Player : Singleton<Player> {
 	}
 
 	public void Hit(Vector3 pushback) {
-		Debug.Log ("Hit");
 
 		rigidbody.velocity = pushback;
+
+		//Debug.Log ("velocityX: " + rigidbody.velocity.x + ", velocityY: " + rigidbody.velocity.y + ", velosityZ: " + rigidbody.velocity.z);
 
 		hit = true;
 	}
