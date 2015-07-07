@@ -229,7 +229,11 @@ public class Player : Singleton<Player> {
 		PlaySound(4,1f);
 	}
 
-	public void Hit() {
+	public void Hit(Vector3 pushback) {
+		Debug.Log ("Hit");
+
+		rigidbody.velocity = pushback;
+
 		hit = true;
 	}
 
