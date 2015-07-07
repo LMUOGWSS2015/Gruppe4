@@ -36,7 +36,6 @@ public class LevelController : Singleton<LevelController> {
 
 		clock = true;
 		startTime = Time.timeSinceLevelLoad;
-		Debug.Log ("startTime: " + startTime);
 	}
 
 	private void FixedUpdate() {

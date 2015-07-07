@@ -150,8 +150,6 @@ public class LoadingController : Singleton<LoadingController> {
 		else {
 			MainController.Instance.StopMusic();
 		}
-
-		Debug.Log("Loading of " + sceneName + " complete.");
 	}
 
 }
