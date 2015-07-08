@@ -31,6 +31,7 @@ public class LevelController : Singleton<LevelController> {
 	private void Start() {
 		restartContent = Instantiate (originalRestartContent);
 		restartContent.transform.SetParent (levelContent.transform);
+		Player.Instance.gameObject.GetComponent<AlternativeSelection> ().Initialize ();
 
 		winMusic.SetActive (false);
 
@@ -99,6 +100,7 @@ public class LevelController : Singleton<LevelController> {
 		Destroy (restartContent);
 		restartContent = Instantiate (originalRestartContent);
 		restartContent.transform.SetParent (levelContent.transform);
+		Player.Instance.gameObject.GetComponent<AlternativeSelection> ().Initialize ();
 	}
 
 	public void PlayWinMusic() {
