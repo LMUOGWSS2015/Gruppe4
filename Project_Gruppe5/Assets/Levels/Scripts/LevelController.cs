@@ -44,8 +44,15 @@ public class LevelController : Singleton<LevelController> {
 			int minutes = (int)(currentTime / 60);
 			int seconds = (int)currentTime - (minutes * 60);
 
-			minutesText.text = minutes.ToString();
-			secondsText.text = seconds.ToString();
+			if (minutes < 10)
+				minutesText.text = "0" + minutes.ToString();
+			else
+				minutesText.text = minutes.ToString();
+
+			if (seconds < 10)
+				secondsText.text = "0" + seconds.ToString();
+			else
+				secondsText.text = seconds.ToString();
 		}
 
 		if (levelContent.activeSelf) {
