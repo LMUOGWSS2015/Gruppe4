@@ -6,6 +6,7 @@ public class Firewall : MonoBehaviour {
 	public float delay;
 	public float durationTime;
 	public float cooldownTime;
+	public bool alwaysFlame;
 	public BoxCollider collider;
 	public Light groundLight;
 	public FirewallEmitter[] emitters;
@@ -16,7 +17,11 @@ public class Firewall : MonoBehaviour {
 	void Start () 
 	{
 		running = true;
-		StartCoroutine(Init ());
+		if(alwaysFlame) {
+			Activate ();
+		} else {
+			StartCoroutine(Init ());
+		}
 	}
 
 	private IEnumerator Init ()
@@ -31,7 +36,7 @@ public class Firewall : MonoBehaviour {
 		}
 	}
 
-	private void Activate ()
+	public void Activate ()
 	{
 		foreach(FirewallEmitter fe in emitters)
 			fe.Activate ();
@@ -39,7 +44,7 @@ public class Firewall : MonoBehaviour {
 		groundLight.enabled = true;
 	}
 
-	private void Deactivate ()
+	public void Deactivate ()
 	{
 		foreach(FirewallEmitter fe in emitters)
 			fe.Deactivate ();

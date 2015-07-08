@@ -13,6 +13,7 @@ TagManager:
   - GazeController
   - LevelController
   - CheckPoint
+  - Ghost
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - BreakablePlatform
   - BackgroundUI
   - Huge Fog
-  - 
+  - Ghost
   - 
   - 
   - 

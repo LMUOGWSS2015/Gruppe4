@@ -197,6 +197,7 @@ GameObject:
   - 114: {fileID: 11449398}
   - 114: {fileID: 11478612}
   - 114: {fileID: 11459624}
+  - 114: {fileID: 11463352}
   m_Layer: 0
   m_Name: Firewall_big
   m_TagString: ShowingObject
@@ -594,7 +595,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179418}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 6, z: 2}
@@ -767,6 +768,7 @@ MonoBehaviour:
   delay: 0
   durationTime: 2
   cooldownTime: 3
+  alwaysFlame: 0
   collider: {fileID: 6540032}
   groundLight: {fileID: 10877796}
   emitters:
@@ -785,6 +787,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantVanish: 1
+--- !u!114 &11463352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc50d8b6a2412e489ed5eabeaea7800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 20
 --- !u!114 &11466454
 MonoBehaviour:
   m_ObjectHideFlags: 1

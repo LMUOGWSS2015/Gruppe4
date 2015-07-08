@@ -7,11 +7,14 @@ public class Ghost : MyMonoBehaviour {
 	public List<Transform> wayPoints;
 	public float speed;
 	public float turningSpeed;
+	public Collider coneCollider;
+	public GameObject blackHolePrefab;
 
 	private bool moving;
 	private bool turning;
 	private bool forward;
 	private int currentPoint;
+	private bool isAttacking;
 
 	// Use this for initialization
 	void Start () 
@@ -20,6 +23,7 @@ public class Ghost : MyMonoBehaviour {
 		GameObject initialPoint = new GameObject();
 		initialPoint.transform.position = transform.position;
 		initialPoint.name = "Waypoint";
+		//initialPoint.transform.SetParent(LevelController.Instance.levelContent.transform);
 		wayPoints.Insert(0, initialPoint.transform);
 		currentPoint = 1;
 
@@ -32,15 +36,38 @@ public class Ghost : MyMonoBehaviour {
 	
 	}
 
+	public void StopMoving ()
+	{
+		moving = false;
+	}
+
+	public IEnumerator AttackPlayer ()
+	{
+		isAttacking = true;
+		if(isAttacking) {
+			Player.Instance.Freeze (true);
+			StopMoving ();
+			yield return new WaitForSeconds (1f);
+			Vector3 playerPos = Player.Instance.transform.position;
+			GameObject blackHole = GameObject.Instantiate(blackHolePrefab);
+			blackHole.transform.position = playerPos;
+			yield return new WaitForSeconds (2.0f);
+			Player.Instance.Kill ();
+			isAttacking = false;
+			Destroy(blackHole);
+		}
+	}
+
 	private IEnumerator Move ()
 	{
 		Debug.Log ("Move: " + wayPoints[currentPoint].position);
 		moving = true;
 		while(moving) {
 			Vector3 newPos = Vector3.MoveTowards(transform.position, wayPoints[currentPoint].position, Time.deltaTime * speed);
-			transform.position = newPos;
 
-			Debug.Log (newPos);
+			Debug.Log (newPos + " vs " + transform.position);
+
+			transform.position = newPos;
 
 			if(transform.position == wayPoints[currentPoint].position) {
 				moving = false;
