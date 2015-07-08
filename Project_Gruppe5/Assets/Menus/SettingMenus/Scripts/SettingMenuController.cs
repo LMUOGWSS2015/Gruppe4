@@ -354,7 +354,7 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 		float lerpTime = 0.9f;
 		
 		Vector3 startPos = fog.localPosition;
-		Vector3 endPos = Vector3.zero;
+		Vector3 endPos = new Vector3(0.0f, -50.0f, 0.0f);
 		
 		bool animating = true;
 		float currentLerpTime = 0.0f;
