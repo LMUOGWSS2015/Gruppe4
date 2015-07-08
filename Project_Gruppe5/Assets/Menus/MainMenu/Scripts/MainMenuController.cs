@@ -270,7 +270,7 @@ public class MainMenuController : Singleton<MainMenuController> {
 
 		StartCoroutine(MoveCamerasDown());
 		StartCoroutine(MoveLogo());
-		yield return new WaitForSeconds(1.2f);
+		yield return new WaitForSeconds(1.5f);
 		StartCoroutine(ShowFog());
 		yield return new WaitForSeconds(0.4f);
 		StartCoroutine(ShowIslands());

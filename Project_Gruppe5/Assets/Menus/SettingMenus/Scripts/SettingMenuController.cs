@@ -272,9 +272,9 @@ public class SettingMenuController : Singleton<SettingMenuController> {
 		
 		StartCoroutine(MoveCamerasDown());
 		StartCoroutine(MoveLogo());
-		yield return new WaitForSeconds(1.2f);
+		yield return new WaitForSeconds(1.5f);
 		StartCoroutine(ShowFog());
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.4f);
 		StartCoroutine(ShowSettings());
 		yield return new WaitForSeconds(0.5f);
 	}
