@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: .823529422}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71636bf05790545b8873a9ea2ea4f5d1, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -175,12 +175,12 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: .823529422}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71636bf05790545b8873a9ea2ea4f5d1, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -201,17 +201,17 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: .823529422}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71636bf05790545b8873a9ea2ea4f5d1, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: .899999976
-  m_Text: 'Time :'
+  m_Text: 'Time:'
 --- !u!114 &11479172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: .823529422}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71636bf05790545b8873a9ea2ea4f5d1, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -330,8 +330,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -199, y: 50}
-  m_SizeDelta: {x: 130, y: 100}
+  m_AnchoredPosition: {x: -171, y: 25}
+  m_SizeDelta: {x: 110, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22461896
 RectTransform:
@@ -347,8 +347,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -57, y: 50}
-  m_SizeDelta: {x: 14, y: 100}
+  m_AnchoredPosition: {x: -58, y: 25}
+  m_SizeDelta: {x: 16, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22466506
 RectTransform:
@@ -364,8 +364,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -25, y: 50}
-  m_SizeDelta: {x: 50, y: 100}
+  m_AnchoredPosition: {x: -25, y: 25}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22475252
 RectTransform:
@@ -399,8 +399,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -99, y: 50}
-  m_SizeDelta: {x: 70, y: 100}
+  m_AnchoredPosition: {x: -91, y: 25}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22493700
 RectTransform:
@@ -420,8 +420,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -132, y: 50}
-  m_SizeDelta: {x: 264, y: 100}
+  m_AnchoredPosition: {x: -112, y: 30}
+  m_SizeDelta: {x: 226, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22498184
 RectTransform:
