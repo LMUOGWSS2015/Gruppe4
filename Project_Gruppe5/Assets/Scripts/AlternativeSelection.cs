@@ -38,11 +38,13 @@ public class AlternativeSelection : MonoBehaviour {
 		visibleGazeActivators = new List<GameObject>();
 		foreach (GameObject g in gazeActivators) {
 			Vector3 viewPos = camera.WorldToViewportPoint (g.transform.position);
-			if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1) {
+			float distance = (transform.position - g.transform.position).magnitude;
+			if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && distance <= 80) {
 				visibleGazeActivators.Add(g);
-			} else if (counter == selection) { // Selected one is no more visisble -> deselect
+			} else if (counter == selection) { // Selected one is no more visible -> deselect
 				Deselect();
 			}
+			counter++;
 		}
 
 		// Determine if the user activated the currently selected object
@@ -83,16 +85,21 @@ public class AlternativeSelection : MonoBehaviour {
 				}
 				selectionChanged = true;
 			}
-			/*if (selectionChanged) {
-			Debug.Log ("Visible gaze activators: " + visibleGazeActivators.Count);
-			Debug.Log ("new selection: " + selection);
-			}*/
+
+			if (selectionChanged) {
+				Debug.Log ("Visible gaze activators: " + visibleGazeActivators.Count);
+				Debug.Log ("new selection: " + selection);
+			}
 
 			// Select the next object
 			counter = 0;
 			foreach (GameObject g in gazeActivators) {
 				Vector3 viewPos = camera.WorldToViewportPoint (g.transform.position);
-				if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1) {
+				float distance = (transform.position - g.transform.position).magnitude;
+				if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && distance <= 80) {
+					if (selectionChanged) {
+						Debug.Log (counter + " - " + distance);
+					}
 					if (selectionChanged && selection == counter) {
 						Select (g, counter);
 					}
@@ -104,19 +111,22 @@ public class AlternativeSelection : MonoBehaviour {
 
 	private void Select(GameObject g, int counter) {
 		Debug.Log ("GazeActivator is selected: Visible activator #" + counter);
+		if (g == null) {
+			Debug.Log ("!!!!!!!!!!!!!!");
+		}
 		g.GetComponentInChildren<MeshRenderer> ().enabled = true;
 		selection = counter;
 		selectedGO = g;
 	}
 
 	private void Deselect() {
-		//Debug.Log ("Selection was removed from visible activator #" + selection);
+		Debug.Log ("Selection was removed from visible activator #" + selection);
 		if (selectedGO != null) {
-			GameObject g = gazeActivators[selection];
-			SetMarker (g,false);
-			selection = -1;
-			selectedGO = null;
+			GameObject g = gazeActivators [selection];
+			SetMarker (g, false);
 		}
+		selection = -1;
+		selectedGO = null;
 	}
 
 	private void SetMarker(GameObject g, bool value) {
