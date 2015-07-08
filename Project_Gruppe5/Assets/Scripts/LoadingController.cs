@@ -13,9 +13,9 @@ public class LoadingController : Singleton<LoadingController> {
 	public static string THORN_LEVEL = "Thorns_1";
 	public static string FOREST_LEVEL = "ForestLevel";
 	public static string ICE_LEVEL = "IceLevel";
-	public static string SETTING_MENU = "SettingMenu";
 	public static string MAIN_MENU = "MainMenu";
 	public static string CONTROLLER_MENU = "ControllerMenu";
+	public static string SETTING_MENU = "SettingMenu";
 	public static string GRAPHICS_MENU = "GraphicsMenu";
 	public static string SOUND_MENU = "SoundMenu";
 
@@ -28,9 +28,9 @@ public class LoadingController : Singleton<LoadingController> {
 		THORN_LEVEL = 1,
 		FOREST_LEVEL = 2,
 		ICE_LEVEL = 3,
-		SETTING_MENU = 6,
-		MAIN_MENU = 5,
 		CONTROLLER_MENU = 4,
+		MAIN_MENU = 5,
+		SETTING_MENU = 6,
 		GRAPHICS_MENU = 7,
 		SOUND_MENU = 8
 	}
@@ -65,11 +65,11 @@ public class LoadingController : Singleton<LoadingController> {
 		case Scene.MAIN_MENU:
 			sceneName = MAIN_MENU;
 			break;
-		case Scene.SETTING_MENU:
-			sceneName = SETTING_MENU;
-			break;
 		case Scene.CONTROLLER_MENU:
 			sceneName = CONTROLLER_MENU;
+			break;
+		case Scene.SETTING_MENU:
+			sceneName = SETTING_MENU;
 			break;
 		case Scene.GRAPHICS_MENU:
 			sceneName = GRAPHICS_MENU;
@@ -111,11 +111,11 @@ public class LoadingController : Singleton<LoadingController> {
 		case (int)Scene.MAIN_MENU:
 			sceneName = MAIN_MENU;
 			break;
-		case (int)Scene.SETTING_MENU:
-			sceneName = SETTING_MENU;
-			break;
 		case (int)Scene.CONTROLLER_MENU:
 			sceneName = CONTROLLER_MENU;
+			break;
+		case (int)Scene.SETTING_MENU:
+			sceneName = SETTING_MENU;
 			break;
 		case (int)Scene.GRAPHICS_MENU:
 			sceneName = GRAPHICS_MENU;
