@@ -10,7 +10,7 @@ public class LoadingController : Singleton<LoadingController> {
 	 * Die Szenen-Namen aller Szenen des Spiels.
 	 */
 	public static string DESERT_LEVEL = "DesertLevel";
-	public static string THORN_LEVEL = "Thorns_1";
+	public static string THORN_LEVEL = "ThornLevel";
 	public static string FOREST_LEVEL = "ForestLevel";
 	public static string ICE_LEVEL = "IceLevel";
 	public static string MAIN_MENU = "MainMenu";
