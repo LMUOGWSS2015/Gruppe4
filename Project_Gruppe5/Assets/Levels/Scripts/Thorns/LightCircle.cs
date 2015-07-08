@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LightCircle : MyMonoBehaviour {
+public class LightCircle : InteractiveObject {
 
 	public Light light;
 	public SphereCollider sphere;
@@ -10,17 +10,32 @@ public class LightCircle : MyMonoBehaviour {
 	private bool refreshed;
 
 	// Use this for initialization
-	void Start () 
+	public override void StartMe () 
 	{
-		StartCoroutine(Shrink (shrinkTime));
+		//StartCoroutine(Shrink (shrinkTime));
+		FullLight ();
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	public override void UpdateMe () 
 	{
+		base.UpdateMe();
 		if(Input.GetKeyDown(KeyCode.R)) {
-			StartCoroutine(Refresh(110.0f, 17.0f, 0.3f));
+			StartCoroutine(Refresh(110.0f, 17.0f, 0.3f, true));
 		}
+	}
+
+	public override void DoActivation ()
+	{
+		sphere.enabled = true;
+		StartCoroutine(Refresh(110.0f, 17.0f, 0.3f, true));
+		isActivated = false;
+	}
+
+	public void FullLight ()
+	{
+		StartCoroutine(Refresh(110.0f, 17.0f, 0.3f, false));
+		sphere.enabled = false;
 	}
 
 	private IEnumerator Shrink (float time)
@@ -48,7 +63,7 @@ public class LightCircle : MyMonoBehaviour {
 		}
 	}
 
-	private IEnumerator Refresh(float targetAngle, float targetRadius, float time)
+	private IEnumerator Refresh(float targetAngle, float targetRadius, float time, bool shrink)
 	{
 		refreshed = true;
 		bool refreshing = true;
@@ -69,7 +84,8 @@ public class LightCircle : MyMonoBehaviour {
 			yield return null;
 		}
 		refreshed = false;
-		StartCoroutine(Shrink(shrinkTime));
+		if(shrink)
+			StartCoroutine(Shrink(shrinkTime));
 	}
 
 
