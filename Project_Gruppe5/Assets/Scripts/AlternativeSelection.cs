@@ -14,12 +14,21 @@ public class AlternativeSelection : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Initialize ();
+	}
+
+	// Resets the whole selection script
+	public void Initialize() {
+		// Get camera and all gaze activator objects
 		camera = Camera.main;
 		gazeActivators = GameObject.FindGameObjectsWithTag ("SelectionMarker");
 		// Deselect all gaze activators
 		foreach (GameObject g in gazeActivators) {
 			g.GetComponentInChildren<MeshRenderer> ().enabled = false;
 		}
+		// Reset the selection
+		selection = -1;
+		selectedGO = null;
 	}
 	
 	// Update is called once per frame
