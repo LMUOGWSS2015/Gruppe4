@@ -13055,6 +13055,10 @@ Prefab:
       propertyPath: pathPoints.Array.data[4]
       value: 
       objectReference: {fileID: 712823536}
+    - target: {fileID: 11469476, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
   m_IsPrefabParent: 0
@@ -14393,6 +14397,10 @@ Prefab:
     - target: {fileID: 11413560, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
       propertyPath: speed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469476, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
+      propertyPath: power
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
@@ -16985,6 +16993,10 @@ Prefab:
       propertyPath: pathPoints.Array.data[4]
       value: 
       objectReference: {fileID: 1941782529}
+    - target: {fileID: 11469476, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
   m_IsPrefabParent: 0
@@ -18619,6 +18631,10 @@ Prefab:
       propertyPath: pathPoints.Array.data[4]
       value: 
       objectReference: {fileID: 1704742544}
+    - target: {fileID: 11469476, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
   m_IsPrefabParent: 0
@@ -19571,6 +19587,10 @@ Prefab:
       propertyPath: pathPoints.Array.data[4]
       value: 
       objectReference: {fileID: 1983077454}
+    - target: {fileID: 11469476, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
   m_IsPrefabParent: 0
@@ -26613,6 +26633,10 @@ Prefab:
       propertyPath: pathPoints.Array.data[4]
       value: 
       objectReference: {fileID: 2012381371}
+    - target: {fileID: 11469476, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
+      propertyPath: power
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1edbd641c0ec92c4fa17ffb9ce827f83, type: 2}
   m_IsPrefabParent: 0
