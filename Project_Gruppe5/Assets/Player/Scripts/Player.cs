@@ -264,6 +264,9 @@ public class Player : Singleton<Player> {
 		Freeze (true);
 		dead = true;
 
+		rigidbody.constraints = RigidbodyConstraints.None;
+		rigidbody.AddTorque (new Vector3 (0f, 100.0f, 0f));
+
 		Death death = GetComponent<Death>();
 		death.Trigger();
 	}
@@ -274,7 +277,9 @@ public class Player : Singleton<Player> {
 	public void Respawn() {
 		isFreezed = false;
 
-		rigidbody.velocity = new Vector3 (0f, 0f, 0f);
+		rigidbody.velocity = Vector3.zero;
+		rigidbody.angularVelocity = Vector3.zero;
+		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
 		transform.position = respawnPoint.position;
 		transform.rotation = respawnPoint.rotation;
