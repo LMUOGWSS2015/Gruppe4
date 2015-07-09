@@ -1,18 +1,25 @@
 fileFormatVersion: 2
-guid: 15a0d8954e49923418949df9228df59e
-timeCreated: 1436390463
+guid: 11d51dc3c88db5a4b8d386ae410a92a2
+timeCreated: 1436405828
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Armature
+    100004: Bone
+    100006: Cube
     400000: //RootNode
+    400002: Armature
+    400004: Bone
+    400006: Cube
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
     6400000: //RootNode
-    7400000: Rotation
+    7400000: select_rot
     9500000: //RootNode
+    13700000: Cube
   materials:
     importMaterials: 1
     materialName: 0
@@ -30,7 +37,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rotation
+      name: select_rot
       takeName: Default Take
       firstFrame: -1
       lastFrame: 38
@@ -54,6 +61,12 @@ ModelImporter:
       events: []
       transformMask:
       - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Cube
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
