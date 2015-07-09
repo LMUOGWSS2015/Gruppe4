@@ -20,6 +20,7 @@ public class Player : Singleton<Player> {
 	Rigidbody rigidbody;
 	Animator anim;
 
+	bool dead;
 	bool hit;
 	bool isFreezed;
 	bool jumped;
@@ -217,7 +218,8 @@ public class Player : Singleton<Player> {
 		if (walking&&allowplay&&isGrounded) {PlaySound(0,Random.Range(0.5F, 0.9F));}
 		if (jumped) {StopWalkingSound(); PlaySound(1,0.7f);}
 		if (isDoubleJumped) {isDoubleJumped = false; PlaySound(2,1f);}
-		if (hit) {hit = false; PlaySound(3,Random.Range(0.4F, 0.9F));}
+		if (hit) {hit = false; PlaySound(3,1f);}
+		if (dead) {dead = false; PlaySound(5,1f);}
 	}
 
 	/*
@@ -259,6 +261,9 @@ public class Player : Singleton<Player> {
 	 */
 	public void KillByObject ()
 	{
+		Freeze (true);
+		dead = true;
+
 		Death death = GetComponent<Death>();
 		death.Trigger();
 	}
