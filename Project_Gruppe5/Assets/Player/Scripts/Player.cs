@@ -219,7 +219,7 @@ public class Player : Singleton<Player> {
 		if (jumped) {StopWalkingSound(); PlaySound(1,0.7f);}
 		if (isDoubleJumped) {isDoubleJumped = false; PlaySound(2,1f);}
 		if (hit) {hit = false; PlaySound(3,1f);}
-		if (dead) {dead = false; PlaySound(5,1f);}
+		if (dead&&allowplay) {dead = false; PlaySound(5,1f);}
 	}
 
 	/*
