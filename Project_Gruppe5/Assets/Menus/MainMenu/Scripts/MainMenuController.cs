@@ -38,6 +38,19 @@ public class MainMenuController : Singleton<MainMenuController> {
 		RenderSettings.skybox.SetColor("_GroundColor", backgroundColors[0]);
 		RenderSettings.skybox.SetFloat("_Exposure", 0.2f);
 
+		for (int i=0; i<islandTexts.Length; i++) {
+			if (i == islandTexts.Length-1) {
+				islandTexts[i] = "Go To Settings";
+			}
+			else {
+				bool[] activeLevels = LoadingController.Instance.ActiveLevels();
+				if (activeLevels[i])
+					islandTexts[i] = "Start Your Journey";
+				else
+					islandTexts[i] = "Level Deactivated";
+			}
+		}
+
 		currentIsland = 0;
 		islesTransform = islands[0].transform.parent;
 		islesAngle = 360.0f / islands.Length;
@@ -119,11 +132,15 @@ public class MainMenuController : Singleton<MainMenuController> {
 	{
 		MainController.Instance.PlaySound (selectSound);
 
-		if (currentIsland != 4) {
-			islandText.text = "Level Loading ...";
-		}
+		if (!(currentIsland < LoadingController.Instance.ActiveLevels ().Length
+				&& LoadingController.Instance.ActiveLevels () [currentIsland] == false)) {
 
-		LoadingController.Instance.LoadScene (currentIsland);
+			if (currentIsland != 4) {
+				islandText.text = "Level Loading ...";
+			}
+
+			LoadingController.Instance.LoadScene (currentIsland);
+		}
 	}
 
 	private IEnumerator TurnIsles ()

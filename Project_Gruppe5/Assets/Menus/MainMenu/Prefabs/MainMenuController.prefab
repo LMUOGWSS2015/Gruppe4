@@ -56,21 +56,21 @@ MonoBehaviour:
   - {fileID: 0}
   islandNames:
   - Desert
+  - Ice
   - Thorns
   - Forest
-  - Ice
   - Settings
   islandTexts:
   - Start Your Journey
-  - Start Your Journey
-  - Start Your Journey
-  - Start Your Journey
+  - Level Deactivated
+  - Level Deactivated
+  - Level Deactivated
   - Go To Settings
   backgroundColors:
   - {r: .79411763, g: .788802028, b: .601427317, a: 1}
-  - {r: .102335617, g: .0801254287, b: .191176474, a: 1}
-  - {r: .948529422, g: .727173805, b: .676524639, a: 1}
-  - {r: .749019623, g: .917647123, b: 1, a: 1}
+  - {r: .749019623, g: .917647064, b: 1, a: 1}
+  - {r: .101960786, g: .0784313753, b: .313725501, a: 1}
+  - {r: .949019611, g: .725490212, b: .678431392, a: 1}
   - {r: .180392161, g: .376470596, b: .427450985, a: 1}
   switchSound: {fileID: 8300000, guid: 62f214ce4db164f01917a66abb78dd1f, type: 3}
   selectSound: {fileID: 8300000, guid: 367c53829eab2481cae8645d609dc04e, type: 3}

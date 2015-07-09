@@ -32,6 +32,8 @@ public class Finish : MonoBehaviour {
 	void OnTriggerEnter(Collider other) 
 	{
 		if(other.transform.tag == "Player" && !end) {
+			end = true;
+
 			LevelController.Instance.StopTime();
 
 			Transform oldRespawnPoint = Player.Instance.respawnPoint;
@@ -50,7 +52,20 @@ public class Finish : MonoBehaviour {
 
 			LevelController.Instance.PlayWinMusic();
 
-			end = true;
+			switch (LevelController.Instance.levelName) {
+			case LoadingController.Scene.DESERT_LEVEL:
+				LoadingController.Instance.ICE_LEVEL_ACTIVE = true;
+				break;
+			case LoadingController.Scene.ICE_LEVEL:
+				LoadingController.Instance.THORN_LEVEL_ACTIVE = true;
+				break;
+			case LoadingController.Scene.THORN_LEVEL:
+				LoadingController.Instance.FOREST_LEVEL_ACTIVE = true;
+				break;
+			default:
+				break;
+			}
+
 			StartCoroutine(End());
 		}
 	}

@@ -10,14 +10,19 @@ public class LoadingController : Singleton<LoadingController> {
 	 * Die Szenen-Namen aller Szenen des Spiels.
 	 */
 	public static string DESERT_LEVEL = "DesertLevel";
+	public static string ICE_LEVEL = "IceLevel";
 	public static string THORN_LEVEL = "ThornLevel";
 	public static string FOREST_LEVEL = "ForestLevel";
-	public static string ICE_LEVEL = "IceLevel";
 	public static string MAIN_MENU = "MainMenu";
 	public static string CONTROLLER_MENU = "ControllerMenu";
 	public static string SETTING_MENU = "SettingMenu";
 	public static string GRAPHICS_MENU = "GraphicsMenu";
 	public static string SOUND_MENU = "SoundMenu";
+
+	public bool DESERT_LEVEL_ACTIVE = true;
+	public bool ICE_LEVEL_ACTIVE = false;
+	public bool THORN_LEVEL_ACTIVE = false;
+	public bool FOREST_LEVEL_ACTIVE = false;
 
 	/*
 	 * Eine Liste aller Szenen des Spiels.
@@ -25,14 +30,18 @@ public class LoadingController : Singleton<LoadingController> {
 	public enum Scene
 	{
 		DESERT_LEVEL = 0,
-		THORN_LEVEL = 1,
-		FOREST_LEVEL = 2,
-		ICE_LEVEL = 3,
+		ICE_LEVEL = 1,
+		THORN_LEVEL = 2,
+		FOREST_LEVEL = 3,
 		CONTROLLER_MENU = 4,
 		MAIN_MENU = 5,
 		SETTING_MENU = 6,
 		GRAPHICS_MENU = 7,
 		SOUND_MENU = 8
+	}
+
+	public bool[] ActiveLevels() {
+		return new bool[] {DESERT_LEVEL_ACTIVE, ICE_LEVEL_ACTIVE, THORN_LEVEL_ACTIVE, FOREST_LEVEL_ACTIVE};
 	}
 
 	public override void StartMe()
