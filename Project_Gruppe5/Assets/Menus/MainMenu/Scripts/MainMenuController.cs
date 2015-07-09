@@ -119,6 +119,10 @@ public class MainMenuController : Singleton<MainMenuController> {
 	{
 		MainController.Instance.PlaySound (selectSound);
 
+		if (currentIsland != 4) {
+			islandText.text = "Level Loading ...";
+		}
+
 		LoadingController.Instance.LoadScene (currentIsland);
 	}
 

@@ -12,6 +12,7 @@ public class EndMenu : AbstractMenu {
 	 */
 	public override void DoSetting() {
 		if (SettingMenuController.Instance.getCurrentSetting () == 0) {
+			SettingMenuController.Instance.settingText.text = "Level Loading ...";
 			LoadingController.Instance.LoadScene(LevelController.Instance.levelName);
 		}
 		else if (SettingMenuController.Instance.getCurrentSetting () == 1) {
