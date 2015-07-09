@@ -6,12 +6,16 @@ using iView;
 [RequireComponent(typeof(GazeActivator))]
 public class GazeManager : GazeMonobehaviour {
 
+	public GameObject selectionCrystal;
+
 	private Rigidbody rigidbody;
 	private GazeActivator gazeActivator;
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody> ();
 		gazeActivator = GetComponent<GazeActivator> ();
+
+		selectionCrystal.SetActive (false);
 	}
 
 	private void Update() {
@@ -29,12 +33,14 @@ public class GazeManager : GazeMonobehaviour {
 	}
 	
 	private void OnStay() {
-		rigidbody.AddTorque (new Vector3 (0f, 10.0f, 0f));
+		rigidbody.AddTorque (new Vector3 (0f, -5.0f, 0f));
+		selectionCrystal.SetActive (true);
 		gazeActivator.Stay (InputManager.GazeTrigger());
 	}
 	
 	private void OnExit() {
 		rigidbody.angularVelocity = Vector3.zero;
+		selectionCrystal.SetActive (false);
 		gazeActivator.Exit ();
 	}
 
