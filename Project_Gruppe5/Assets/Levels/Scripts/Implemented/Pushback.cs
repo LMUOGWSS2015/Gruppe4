@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Pushback : MyMonoBehaviour {
 
-	public float power = 800.0f;
+	public float power = 40.0f;
 
 	void OnCollisionEnter (Collision other)
 	{
