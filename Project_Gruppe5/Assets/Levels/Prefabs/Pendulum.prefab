@@ -49,6 +49,7 @@ GameObject:
   - 33: {fileID: 3371864}
   - 23: {fileID: 2380680}
   - 54: {fileID: 5455664}
+  - 64: {fileID: 6463086}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Untagged
@@ -352,6 +353,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 1951e8b93cc3448829fe9a7c3ece8326, type: 3}
+--- !u!64 &6463086
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 1951e8b93cc3448829fe9a7c3ece8326, type: 3}
 --- !u!64 &6496950
 MeshCollider:
   m_ObjectHideFlags: 1
