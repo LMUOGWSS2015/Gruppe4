@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &136014
+--- !u!1 &145204
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 422196}
+  - 4: {fileID: 499168}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -57,7 +57,6 @@ GameObject:
   - 4: {fileID: 419372}
   - 33: {fileID: 3374782}
   - 23: {fileID: 2373338}
-  - 135: {fileID: 13556314}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -95,18 +94,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441878}
   m_RootOrder: 2
---- !u!4 &422196
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136014}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 441878}
-  m_RootOrder: 1
 --- !u!4 &441878
 Transform:
   m_ObjectHideFlags: 1
@@ -114,11 +101,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.3500004, y: 22, z: -28.6299992}
+  m_LocalPosition: {x: 10.3500004, y: 22, z: -19.6299992}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
+  - {fileID: 499168}
   - {fileID: 475324}
-  - {fileID: 422196}
   - {fileID: 419372}
   - {fileID: 471308}
   m_Father: {fileID: 0}
@@ -141,6 +128,18 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 441878}
+  m_RootOrder: 1
+--- !u!4 &499168
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -237,18 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075d2665241dbc04e8fe2bd28087c4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &13556314
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164314}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .999999881
-  m_Center: {x: 0, y: 0, z: -1.90734863e-06}
 --- !u!135 &13595822
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -259,7 +246,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.35000002
+  m_Radius: 1.11000001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

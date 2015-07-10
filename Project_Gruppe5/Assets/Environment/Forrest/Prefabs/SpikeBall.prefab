@@ -27,7 +27,6 @@ GameObject:
   - 4: {fileID: 486586}
   - 33: {fileID: 3369254}
   - 23: {fileID: 2378232}
-  - 135: {fileID: 13528546}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -68,14 +67,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &199320
+--- !u!1 &179566
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 432838}
+  - 4: {fileID: 435630}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -94,19 +93,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490234}
-  m_RootOrder: 0
---- !u!4 &432838
+  m_RootOrder: 1
+--- !u!4 &435630
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199320}
+  m_GameObject: {fileID: 179566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490234}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &464010
 Transform:
   m_ObjectHideFlags: 1
@@ -138,11 +137,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.3500004, y: 22, z: -28.6299992}
+  m_LocalPosition: {x: 10.3500004, y: 22, z: -19.6299992}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
+  - {fileID: 435630}
   - {fileID: 428038}
-  - {fileID: 432838}
   - {fileID: 486586}
   - {fileID: 464010}
   m_Father: {fileID: 0}
@@ -237,18 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075d2665241dbc04e8fe2bd28087c4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &13528546
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119102}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .999999881
-  m_Center: {x: 0, y: 0, z: -1.90734863e-06}
 --- !u!135 &13529300
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -256,10 +243,10 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128938}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.35000002
+  m_Radius: 1.11000001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
