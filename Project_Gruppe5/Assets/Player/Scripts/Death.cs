@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Death : MonoBehaviour {
 
-	public float time;
+	private float onTime = 0.8f;
+	private float offTime = 0.1f;
 	private Renderer[] renderers;
 	private bool triggered;
 
@@ -26,26 +27,26 @@ public class Death : MonoBehaviour {
 
 	private IEnumerator CoTrigger()
 	{
-		yield return new WaitForSeconds (time);
+		yield return new WaitForSeconds (onTime);
 		//off
 		SwitchRenderers ();
-		yield return new WaitForSeconds (time);
+		yield return new WaitForSeconds (offTime);
 		//on
 		SwitchRenderers ();
-		yield return new WaitForSeconds (time);
+		yield return new WaitForSeconds (onTime);
 		//off
 		SwitchRenderers ();
-		yield return new WaitForSeconds (time);
+		yield return new WaitForSeconds (offTime);
 		//on
 		SwitchRenderers ();
-		yield return new WaitForSeconds (time);
+		yield return new WaitForSeconds (onTime);
 		//off
 		SwitchRenderers ();
-		yield return new WaitForSeconds (time);
+		yield return new WaitForSeconds (offTime);
 		Player.Instance.Kill();
 		//on
 		SwitchRenderers ();
-		yield return new WaitForSeconds (time);
+		yield return new WaitForSeconds (onTime);
 
 		triggered = false;
 	}

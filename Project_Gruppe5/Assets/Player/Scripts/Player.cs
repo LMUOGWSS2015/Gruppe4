@@ -20,6 +20,7 @@ public class Player : Singleton<Player> {
 	Rigidbody rigidbody;
 	Animator anim;
 
+	bool deadSound;
 	bool dead;
 	bool hit;
 	bool isFreezed;
@@ -219,7 +220,7 @@ public class Player : Singleton<Player> {
 		if (jumped) {StopWalkingSound(); PlaySound(1,0.7f);}
 		if (isDoubleJumped) {isDoubleJumped = false; PlaySound(2,1f);}
 		if (hit) {hit = false; PlaySound(3,1f);}
-		if (dead&&allowplay) {dead = false; PlaySound(5,1f);}
+		if (deadSound&&allowplay) {deadSound = false; PlaySound(5,1f);}
 	}
 
 	/*
@@ -261,8 +262,9 @@ public class Player : Singleton<Player> {
 	 */
 	public void KillByObject ()
 	{
-		Freeze (true);
 		dead = true;
+		deadSound = true;
+		Freeze (true);
 
 		rigidbody.constraints = RigidbodyConstraints.None;
 		rigidbody.AddTorque (new Vector3 (0f, 100.0f, 0f));
@@ -271,10 +273,15 @@ public class Player : Singleton<Player> {
 		death.Trigger();
 	}
 
+	public bool isDead() {
+		return dead;
+	}
+
 	/*
 	 * Setzt den Spieler an den aktuellen CheckPoint zurück.
 	 */
 	public void Respawn() {
+		dead = false;
 		isFreezed = false;
 
 		rigidbody.velocity = Vector3.zero;
