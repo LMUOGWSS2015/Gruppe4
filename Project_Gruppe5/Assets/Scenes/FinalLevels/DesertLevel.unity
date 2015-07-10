@@ -1617,6 +1617,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 5, z: 1}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &265881692 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11490680, guid: fecc5cb6cb45349c3984fa842755db49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1895890864}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &270588128
 Prefab:
   m_ObjectHideFlags: 0
@@ -3617,6 +3623,12 @@ Transform:
   - {fileID: 1198964499}
   m_Father: {fileID: 1690195186}
   m_RootOrder: 33
+--- !u!114 &662118526 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11435056, guid: fecc5cb6cb45349c3984fa842755db49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1895890864}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &680438284
 Prefab:
   m_ObjectHideFlags: 0
@@ -5939,15 +5951,23 @@ Prefab:
     - target: {fileID: 11417100, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}
       propertyPath: minutesText
       value: 
-      objectReference: {fileID: 1012056103}
+      objectReference: {fileID: 662118526}
     - target: {fileID: 11417100, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}
       propertyPath: secondsText
       value: 
-      objectReference: {fileID: 1640401236}
+      objectReference: {fileID: 265881692}
     - target: {fileID: 11417100, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}
       propertyPath: time
       value: 
       objectReference: {fileID: 1895890865}
+    - target: {fileID: 11417100, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}
+      propertyPath: bestMinutesText
+      value: 
+      objectReference: {fileID: 1012056103}
+    - target: {fileID: 11417100, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}
+      propertyPath: bestSecondsText
+      value: 
+      objectReference: {fileID: 1640401236}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7815ef88a91a8458ab68b6073dfafc90, type: 2}
   m_IsPrefabParent: 0

@@ -54,16 +54,26 @@ public class Finish : MonoBehaviour {
 
 			switch (LevelController.Instance.levelName) {
 			case LoadingController.Scene.DESERT_LEVEL:
+				if (LevelController.Instance.CurrentTime() > PlayerPrefs.GetFloat(MainController.DESERT_TIME))
+					PlayerPrefs.SetFloat(MainController.DESERT_TIME, LevelController.Instance.CurrentTime());
 				LoadingController.Instance.ICE_LEVEL_ACTIVE = true;
 				PlayerPrefs.SetInt(LoadingController.ICE_LEVEL, 1);
 				break;
 			case LoadingController.Scene.ICE_LEVEL:
+				if (LevelController.Instance.CurrentTime() > PlayerPrefs.GetFloat(MainController.ICE_TIME))
+					PlayerPrefs.SetFloat(MainController.ICE_TIME, LevelController.Instance.CurrentTime());
 				LoadingController.Instance.THORN_LEVEL_ACTIVE = true;
 				PlayerPrefs.SetInt(LoadingController.THORN_LEVEL, 1);
 				break;
 			case LoadingController.Scene.THORN_LEVEL:
+				if (LevelController.Instance.CurrentTime() > PlayerPrefs.GetFloat(MainController.THORN_TIME))
+					PlayerPrefs.SetFloat(MainController.THORN_TIME, LevelController.Instance.CurrentTime());
 				LoadingController.Instance.FOREST_LEVEL_ACTIVE = true;
 				PlayerPrefs.SetInt(LoadingController.FOREST_LEVEL, 1);
+				break;
+			case LoadingController.Scene.FOREST_LEVEL:
+				if (LevelController.Instance.CurrentTime() > PlayerPrefs.GetFloat(MainController.FOREST_TIME))
+					PlayerPrefs.SetFloat(MainController.FOREST_TIME, LevelController.Instance.CurrentTime());
 				break;
 			default:
 				break;

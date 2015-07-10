@@ -7,6 +7,11 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class MainController : Singleton<MainController> {
 
+	public static string DESERT_TIME = "DesertTime";
+	public static string ICE_TIME = "IceTime";
+	public static string THORN_TIME = "ThornTime";
+	public static string FOREST_TIME = "ForestTime";
+
 	public LoadingController.Scene startScene; // Die Szene mit der das Spiel starten soll.
 
 	public LoadingController loadingControllerPrefab; // Prefab für den LoadingController.

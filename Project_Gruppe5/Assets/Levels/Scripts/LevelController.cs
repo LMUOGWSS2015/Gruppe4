@@ -24,9 +24,12 @@ public class LevelController : Singleton<LevelController> {
 	private float startTime;
 	private float currentTime;
 	private float prevTime;
+	private float bestTime;
 
 	public Text minutesText;
 	public Text secondsText;
+	public Text bestMinutesText;
+	public Text bestSecondsText;
 
 	private void Start() {
 		restartContent = Instantiate (originalRestartContent);
@@ -34,6 +37,36 @@ public class LevelController : Singleton<LevelController> {
 		Player.Instance.gameObject.GetComponent<AlternativeSelection> ().Initialize ();
 
 		winMusic.SetActive (false);
+
+		switch (levelName) {
+		case LoadingController.Scene.DESERT_LEVEL:
+			bestTime = PlayerPrefs.GetFloat(MainController.DESERT_TIME);
+			break;
+		case LoadingController.Scene.ICE_LEVEL:
+			bestTime = PlayerPrefs.GetFloat(MainController.ICE_TIME);
+			break;
+		case LoadingController.Scene.THORN_LEVEL:
+			bestTime = PlayerPrefs.GetFloat(MainController.THORN_TIME);
+			break;
+		case LoadingController.Scene.FOREST_LEVEL:
+			bestTime = PlayerPrefs.GetFloat(MainController.FOREST_TIME);
+			break;
+		default:
+			break;
+		}
+
+		int minutes = (int)(bestTime / 60);
+		int seconds = (int)bestTime - (minutes * 60);
+
+		if (minutes < 10)
+			bestMinutesText.text = "0" + minutes.ToString();
+		else
+			bestMinutesText.text = minutes.ToString();
+		
+		if (seconds < 10)
+			bestSecondsText.text = "0" + seconds.ToString();
+		else
+			bestSecondsText.text = seconds.ToString();
 
 		clock = true;
 		startTime = Time.timeSinceLevelLoad;
@@ -66,6 +99,10 @@ public class LevelController : Singleton<LevelController> {
 				levelMenu = Instantiate (originalLevelMenu);
 			}
 		}
+	}
+
+	public float CurrentTime() {
+		return currentTime;
 	}
 
 	public void StopTime() {
