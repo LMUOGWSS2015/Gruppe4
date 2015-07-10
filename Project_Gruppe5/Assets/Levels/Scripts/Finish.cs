@@ -55,12 +55,15 @@ public class Finish : MonoBehaviour {
 			switch (LevelController.Instance.levelName) {
 			case LoadingController.Scene.DESERT_LEVEL:
 				LoadingController.Instance.ICE_LEVEL_ACTIVE = true;
+				PlayerPrefs.SetInt(LoadingController.ICE_LEVEL, 1);
 				break;
 			case LoadingController.Scene.ICE_LEVEL:
 				LoadingController.Instance.THORN_LEVEL_ACTIVE = true;
+				PlayerPrefs.SetInt(LoadingController.THORN_LEVEL, 1);
 				break;
 			case LoadingController.Scene.THORN_LEVEL:
 				LoadingController.Instance.FOREST_LEVEL_ACTIVE = true;
+				PlayerPrefs.SetInt(LoadingController.FOREST_LEVEL, 1);
 				break;
 			default:
 				break;

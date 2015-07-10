@@ -21,6 +21,11 @@ public class MainController : Singleton<MainController> {
 
 		sound = GetComponent<AudioSource> ();
 
+		if (PlayerPrefs.HasKey (InputManager.CONTROLLER))
+			InputManager.controller = InputManager.Controllers ()[PlayerPrefs.GetInt (InputManager.CONTROLLER)];
+		else
+			PlayerPrefs.SetInt (InputManager.CONTROLLER, 0);
+
 		InitControllers();
 		InitGame();
 	}

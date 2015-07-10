@@ -142,7 +142,7 @@ public class Player : Singleton<Player> {
 			Vector3 extraGravityForce = (Physics.gravity * gravityMultiplier) - Physics.gravity;
 			rigidbody.AddForce(extraGravityForce);
 			
-			groundCheckDistance = rigidbody.velocity.y <= 0 ? origGroundCheckDistance : 0.1f;
+			groundCheckDistance = rigidbody.velocity.y <= 0 ? origGroundCheckDistance : 0.3f;
 		}
 	}
 	

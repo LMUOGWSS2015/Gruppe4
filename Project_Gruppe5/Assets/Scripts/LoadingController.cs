@@ -47,6 +47,13 @@ public class LoadingController : Singleton<LoadingController> {
 	public override void StartMe()
 	{
 		DontDestroyOnLoad (this);
+
+		if (PlayerPrefs.GetInt (ICE_LEVEL) == 1)
+			ICE_LEVEL_ACTIVE = true;
+		if (PlayerPrefs.GetInt (THORN_LEVEL) == 1)
+			THORN_LEVEL_ACTIVE = true;
+		if (PlayerPrefs.GetInt (FOREST_LEVEL) == 1)
+			FOREST_LEVEL_ACTIVE = true;
 	}
 
 	/*
