@@ -32,13 +32,13 @@ public class MainController : Singleton<MainController> {
 			PlayerPrefs.SetInt (InputManager.CONTROLLER, 0);
 
 		if (!PlayerPrefs.HasKey (DESERT_TIME))
-			PlayerPrefs.SetFloat (DESERT_TIME, float.MaxValue);
+			PlayerPrefs.SetFloat (DESERT_TIME, 5999f);
 		if (!PlayerPrefs.HasKey (ICE_TIME))
-			PlayerPrefs.SetFloat (ICE_TIME, float.MaxValue);
+			PlayerPrefs.SetFloat (ICE_TIME, 5999f);
 		if (!PlayerPrefs.HasKey (THORN_TIME))
-			PlayerPrefs.SetFloat (THORN_TIME, float.MaxValue);
+			PlayerPrefs.SetFloat (THORN_TIME, 5999f);
 		if (!PlayerPrefs.HasKey (FOREST_TIME))
-			PlayerPrefs.SetFloat (FOREST_TIME, float.MaxValue);
+			PlayerPrefs.SetFloat (FOREST_TIME, 5999f);
 
 		InitControllers();
 		InitGame();
