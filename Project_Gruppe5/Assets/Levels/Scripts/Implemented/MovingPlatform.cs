@@ -23,7 +23,7 @@ public class MovingPlatform : InteractivePhysicsObject {
 		go.transform.position = transform.position;
 		go.name = transform.name + "_StartingPoint";
 		pathPoints.Insert(0, go.transform);
-		go.transform.SetParent (LevelController.Instance.levelContent.transform);
+		go.transform.SetParent (transform.parent);
 
 		if(pathPoints.Count < 3) {
 			randomize = false;
