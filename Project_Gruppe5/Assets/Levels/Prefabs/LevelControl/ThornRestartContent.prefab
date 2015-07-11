@@ -10772,7 +10772,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b8fe3ab561746d44398acdbbac7485ae, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -12860,7 +12860,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b8fe3ab561746d44398acdbbac7485ae, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -20140,7 +20140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noTrigger: 0
   delay: 0
-  singleUse: 0
+  singleUse: 1
   isActivated: 0
   isDeactivated: 0
   isUsed: 0
@@ -20242,7 +20242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noTrigger: 0
   delay: 3.20000005
-  singleUse: 0
+  singleUse: 1
   isActivated: 0
   isDeactivated: 0
   isUsed: 0
@@ -20683,7 +20683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noTrigger: 0
   delay: 0
-  singleUse: 0
+  singleUse: 1
   isActivated: 0
   isDeactivated: 0
   isUsed: 0
