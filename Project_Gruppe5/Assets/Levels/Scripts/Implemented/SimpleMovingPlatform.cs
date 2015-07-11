@@ -86,6 +86,8 @@ public class SimpleMovingPlatform : InteractivePhysicsObject {
 	public override void DoActivation()
 	{
 		if(pingPong && transform.position == endPosition) {
+			if(transform.name == "Moving Platform 2")
+				Debug.Log ("TRIGGERED!!!");
 			isActivated = false;
 			isDeactivated = true;
 		}
@@ -98,6 +100,6 @@ public class SimpleMovingPlatform : InteractivePhysicsObject {
 			isActivated = true;
 			isDeactivated = false;
 		}
-		rb.MovePosition(Vector3.MoveTowards(transform.localPosition, startPosition, Time.deltaTime * speed));
+		rb.MovePosition(Vector3.MoveTowards(transform.position, startPosition, Time.deltaTime * speed));
 	}
 }

@@ -23,7 +23,7 @@ public class MovingPlatform : InteractivePhysicsObject {
 		go.transform.position = transform.position;
 		go.name = transform.name + "_StartingPoint";
 		pathPoints.Insert(0, go.transform);
-		go.transform.SetParent (transform);
+		go.transform.SetParent (LevelController.Instance.levelContent.transform);
 
 		if(pathPoints.Count < 3) {
 			randomize = false;
@@ -72,6 +72,7 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 	public override void DoDeactivation ()
 	{
+		Debug.Log ("BLA: " + movingForward);
 		if(pathPoints.Count > 1) {
 			newActivation = true;
 			if(movingForward) {
