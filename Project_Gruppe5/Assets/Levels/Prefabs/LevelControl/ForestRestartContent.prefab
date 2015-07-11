@@ -1370,7 +1370,7 @@ GameObject:
   - 65: {fileID: 6573082}
   - 23: {fileID: 2335330}
   - 54: {fileID: 5406304}
-  - 114: {fileID: 11407782}
+  - 114: {fileID: 11492630}
   m_Layer: 0
   m_Name: Lift 1
   m_TagString: Untagged
@@ -9125,7 +9125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134620}
   m_LocalRotation: {x: 0, y: -.707106888, z: 0, w: .707106769}
-  m_LocalPosition: {x: 10, y: 52, z: 0}
+  m_LocalPosition: {x: 9.38000011, y: 51.2099991, z: .5}
   m_LocalScale: {x: 6, y: 1, z: 6}
   m_Children: []
   m_Father: {fileID: 453130}
@@ -18573,29 +18573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075d2665241dbc04e8fe2bd28087c4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11407782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e48d8dc4d5584dd41ae30579c196a584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  noTrigger: 0
-  delay: 0
-  singleUse: 0
-  isActivated: 0
-  isDeactivated: 0
-  isUsed: 0
-  rb: {fileID: 0}
-  canBeDeactivated: 0
-  randomize: 0
-  speed: 0
-  pathPoints:
-  - {fileID: 490536}
 --- !u!114 &11408922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19334,7 +19311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noTrigger: 0
   delay: 0
-  singleUse: 1
+  singleUse: 0
   isActivated: 0
   isDeactivated: 0
   isUsed: 0
@@ -19360,7 +19337,7 @@ MonoBehaviour:
   isLocked: 0
   lockTime: 0
   interactingObjects:
-  - {fileID: 11407782}
+  - {fileID: 11492630}
   clickRequired: 1
   deactivatable: 1
 --- !u!114 &11486930
@@ -19441,6 +19418,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075d2665241dbc04e8fe2bd28087c4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11492630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5f635d181a41b4a94b146cf845ff71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noTrigger: 0
+  delay: 0
+  singleUse: 0
+  isActivated: 0
+  isDeactivated: 0
+  isUsed: 0
+  rb: {fileID: 0}
+  canBeDeactivated: 1
+  pingPong: 0
+  speed: 10
+  direction: 4
+  distance: 16
 --- !u!114 &11492808
 MonoBehaviour:
   m_ObjectHideFlags: 1
