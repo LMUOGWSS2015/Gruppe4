@@ -5,14 +5,18 @@ public class ForestEnd : MonoBehaviour {
 
 	public InteractivePhysicsObject barriere;
 	public ParticleSystem dust;
+	public Collider[] deadZones;
 
 	private bool isTriggered;
 
 	void OnTriggerEnter (Collider other)
 	{
 		if(other.tag == "Player") {
-			if(!isTriggered)
+			if(!isTriggered) {
 				StartCoroutine(CloseExit());
+				foreach(Collider col in deadZones)
+					col.enabled = true;
+			}
 		}
 	}
 

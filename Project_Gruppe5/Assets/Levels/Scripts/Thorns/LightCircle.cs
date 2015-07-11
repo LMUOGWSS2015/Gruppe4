@@ -6,13 +6,16 @@ public class LightCircle : InteractiveObject {
 	public Light light;
 	public SphereCollider sphere;
 	public float shrinkTime;
+	public Light directionalLight;
 
 	private bool refreshed;
+	private float lightIntensity;
 
 	// Use this for initialization
 	public override void StartMe () 
 	{
 		//StartCoroutine(Shrink (shrinkTime));
+		lightIntensity = directionalLight.intensity;
 		FullLight ();
 	}
 	
@@ -43,9 +46,11 @@ public class LightCircle : InteractiveObject {
 		bool shrinking = true;
 		float elapsedTime = 0.0f;
 		float angle = light.spotAngle;
-		float targetAngle = 10.0f;
+		float targetAngle = 1f;
 		float radius = sphere.radius;
-		float targetRadius = 0.5f;
+		float targetRadius = 2.0f;
+		float intensity = directionalLight.intensity;
+
 		while(shrinking) {
 			if(refreshed)
 				break;
@@ -56,8 +61,13 @@ public class LightCircle : InteractiveObject {
 			float newRadius = Mathf.Lerp (radius, targetRadius, elapsedTime / time);
 			sphere.radius = newRadius;
 
-			if(light.spotAngle == targetAngle && sphere.radius == targetRadius)
+			float newLightIntensity = Mathf.Lerp (intensity, 0, elapsedTime / time);
+			directionalLight.intensity = newLightIntensity;
+
+			if(light.spotAngle == targetAngle && sphere.radius == targetRadius) {
 				shrinking = false;
+				Player.Instance.Kill ();
+			}
 
 			yield return null;
 		}
@@ -70,6 +80,7 @@ public class LightCircle : InteractiveObject {
 		float elapsedTime = 0.0f;
 		float angle = light.spotAngle;
 		float radius = sphere.radius;
+		float intensity = directionalLight.intensity;
 		while(refreshing) {
 			elapsedTime += Time.deltaTime;
 			float newAngle = Mathf.Lerp (angle, targetAngle, elapsedTime / time);
@@ -77,6 +88,9 @@ public class LightCircle : InteractiveObject {
 			
 			float newRadius = Mathf.Lerp (radius, targetRadius, elapsedTime / time);
 			sphere.radius = newRadius;
+
+			float newLightIntensity = Mathf.Lerp (intensity, lightIntensity, elapsedTime / time);
+			directionalLight.intensity = newLightIntensity;
 			
 			if(light.spotAngle == targetAngle && sphere.radius == targetRadius)
 				refreshing = false;
@@ -86,6 +100,8 @@ public class LightCircle : InteractiveObject {
 		refreshed = false;
 		if(shrink)
 			StartCoroutine(Shrink(shrinkTime));
+		else
+			sphere.enabled = false;
 	}
 
 
