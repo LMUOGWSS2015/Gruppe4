@@ -6,14 +6,21 @@ using System.Collections;
  */
 public class ControllerMenu : AbstractMenu {
 
-	private InputManager.Controller[] controllers; // Die verfügbaren Controller.
-	private bool[] settingState; // Gibt an welcher Controller gerade ausgewählt ist.
-
 	void Start() {
-		controllers = new InputManager.Controller[] {InputManager.Controller.XBOX,
-			InputManager.Controller.PS2, InputManager.Controller.MOUSE};
+		int currentController = PlayerPrefs.GetInt (InputManager.CONTROLLER);
+		for (int i=0; i<InputManager.Controllers().Length; i++) {
+			if (currentController == i) {
+				SettingMenuController.Instance.settingTexts[i] = "Controller Activated";
+			}
+			else {
+				SettingMenuController.Instance.settingTexts[i] = "Choose Controller";
+			}
+		}
 
-		settingState = new bool[] {true, false, false};
+		if (SettingMenuController.Instance.getCurrentSetting() == currentController)
+			SettingMenuController.Instance.settingText.text = "Controller Activated";
+		else
+			SettingMenuController.Instance.settingText.text = "Choose Controller";
 	}
 
 	/*
@@ -21,20 +28,20 @@ public class ControllerMenu : AbstractMenu {
 	 * oder lädt das SettingMenu.
 	 */
 	public override void DoSetting() {
-		if (SettingMenuController.Instance.getCurrentSetting () < controllers.Length) {
-			InputManager.controller = controllers [SettingMenuController.Instance.getCurrentSetting ()];
+		if (SettingMenuController.Instance.getCurrentSetting () < InputManager.Controllers().Length) {
+			if (SettingMenuController.Instance.getCurrentSetting () != PlayerPrefs.GetInt(InputManager.CONTROLLER)) {
+				InputManager.controller = InputManager.Controllers() [SettingMenuController.Instance.getCurrentSetting ()];
+				PlayerPrefs.SetInt(InputManager.CONTROLLER, SettingMenuController.Instance.getCurrentSetting ());
 
-			if (!settingState[SettingMenuController.Instance.getCurrentSetting ()]) {
-				for(int i=0; i<settingState.Length; i++) {
-					settingState[i] = false;
-					SettingMenuController.Instance.settingTexts[i] = "Choose Controller";
-				}
-				settingState[SettingMenuController.Instance.getCurrentSetting ()] = true;
 				SettingMenuController.Instance.settingText.text = "Controller Activated";
 
-				for(int i=0; i<settingState.Length; i++) {
-					if (settingState[i]) {
+				int currentController = PlayerPrefs.GetInt (InputManager.CONTROLLER);
+				for (int i=0; i<InputManager.Controllers().Length; i++) {
+					if (currentController == i) {
 						SettingMenuController.Instance.settingTexts[i] = "Controller Activated";
+					}
+					else {
+						SettingMenuController.Instance.settingTexts[i] = "Choose Controller";
 					}
 				}
 			}

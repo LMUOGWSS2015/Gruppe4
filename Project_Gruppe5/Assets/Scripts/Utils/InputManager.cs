@@ -15,10 +15,16 @@ public class InputManager : MonoBehaviour {
 		PS2
 	}
 
+	public static string CONTROLLER = "Controller";
+
 	public static Controller controller = Controller.XBOX; // Der aktive Controller.
 
 	public static float rotationSensivity = 2.0f;
 	public static float zoomSensivity = 2.0f;
+
+	public static Controller[] Controllers() {
+		return new Controller[] {Controller.XBOX, Controller.PS2, Controller.MOUSE};
+	}
 
 	/*
 	 * Gibt den Wert der horizontalen Bewegung des Spielers zurück.

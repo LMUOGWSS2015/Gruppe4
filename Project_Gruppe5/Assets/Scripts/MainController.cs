@@ -7,6 +7,11 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class MainController : Singleton<MainController> {
 
+	public static string DESERT_TIME = "DesertTime";
+	public static string ICE_TIME = "IceTime";
+	public static string THORN_TIME = "ThornTime";
+	public static string FOREST_TIME = "ForestTime";
+
 	public LoadingController.Scene startScene; // Die Szene mit der das Spiel starten soll.
 
 	public LoadingController loadingControllerPrefab; // Prefab für den LoadingController.
@@ -20,6 +25,20 @@ public class MainController : Singleton<MainController> {
 		DontDestroyOnLoad (this);
 
 		sound = GetComponent<AudioSource> ();
+
+		if (PlayerPrefs.HasKey (InputManager.CONTROLLER))
+			InputManager.controller = InputManager.Controllers ()[PlayerPrefs.GetInt (InputManager.CONTROLLER)];
+		else
+			PlayerPrefs.SetInt (InputManager.CONTROLLER, 0);
+
+		if (!PlayerPrefs.HasKey (DESERT_TIME))
+			PlayerPrefs.SetFloat (DESERT_TIME, 5999f);
+		if (!PlayerPrefs.HasKey (ICE_TIME))
+			PlayerPrefs.SetFloat (ICE_TIME, 5999f);
+		if (!PlayerPrefs.HasKey (THORN_TIME))
+			PlayerPrefs.SetFloat (THORN_TIME, 5999f);
+		if (!PlayerPrefs.HasKey (FOREST_TIME))
+			PlayerPrefs.SetFloat (FOREST_TIME, 5999f);
 
 		InitControllers();
 		InitGame();
