@@ -2016,7 +2016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &130758
 GameObject:
   m_ObjectHideFlags: 1
@@ -6851,7 +6851,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179248}
   m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .707106769}
-  m_LocalPosition: {x: 9.50000477, y: 47.8000031, z: -60.2000084}
+  m_LocalPosition: {x: 9.5, y: 47.7999992, z: -50}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 474158}
@@ -6914,7 +6914,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127530}
   m_LocalRotation: {x: 0, y: .707106888, z: 0, w: .707106769}
-  m_LocalPosition: {x: 11.1000004, y: 19, z: -24}
+  m_LocalPosition: {x: 11.1000004, y: 18, z: -24}
   m_LocalScale: {x: 5, y: .75, z: 5}
   m_Children:
   - {fileID: 438592}
@@ -8586,7 +8586,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130374}
   m_LocalRotation: {x: -4.21468442e-08, y: 0, z: -3.55271368e-15, w: 1}
-  m_LocalPosition: {x: 0, y: 16, z: 0}
+  m_LocalPosition: {x: 0, y: 11.8000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 404808}
@@ -9505,7 +9505,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174884}
   m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .707106769}
-  m_LocalPosition: {x: 43.7999878, y: 15.8000031, z: 2.50001431}
+  m_LocalPosition: {x: 38.6599998, y: 15.8000002, z: 2.5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 424270}
@@ -10440,7 +10440,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.7000008, y: 32.2000008, z: 96.9000015}
+  m_LocalPosition: {x: 31.2000008, y: 31.25, z: 96.4000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 450282}
@@ -10778,7 +10778,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199244}
   m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .707106769}
-  m_LocalPosition: {x: -4.49999762, y: 35, z: 39.2999878}
+  m_LocalPosition: {x: 27.7999992, y: 38.5, z: -13.1999998}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 444310}
@@ -25042,7 +25042,7 @@ MonoBehaviour:
   pingPong: 0
   speed: 10
   direction: 4
-  distance: 16
+  distance: 8
 --- !u!114 &11492808
 MonoBehaviour:
   m_ObjectHideFlags: 1
