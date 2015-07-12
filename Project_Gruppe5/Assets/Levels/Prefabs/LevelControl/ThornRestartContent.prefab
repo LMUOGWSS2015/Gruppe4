@@ -20140,16 +20140,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noTrigger: 0
   delay: 0
-  singleUse: 1
+  singleUse: 0
   isActivated: 0
   isDeactivated: 0
   isUsed: 0
   rb: {fileID: 0}
-  canBeDeactivated: 0
+  canBeDeactivated: 1
   randomize: 0
   speed: 6
   pathPoints:
   - {fileID: 433870}
+  oneWay: 1
 --- !u!114 &11406682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20192,6 +20193,7 @@ MonoBehaviour:
   speed: 5
   pathPoints:
   - {fileID: 435502}
+  oneWay: 1
 --- !u!114 &11414360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20362,7 +20364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noTrigger: 0
   delay: 0
-  singleUse: 0
+  singleUse: 1
   isActivated: 0
   isDeactivated: 0
   isUsed: 0
@@ -20372,6 +20374,7 @@ MonoBehaviour:
   speed: 7
   pathPoints:
   - {fileID: 493148}
+  oneWay: 1
 --- !u!114 &11427094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20532,7 +20535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c9459206626d245bb6fbc981fa5804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noTrigger: 0
+  noTrigger: 1
   delay: 0
   singleUse: 0
   isActivated: 0
@@ -20683,16 +20686,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noTrigger: 0
   delay: 0
-  singleUse: 1
+  singleUse: 0
   isActivated: 0
   isDeactivated: 0
   isUsed: 0
   rb: {fileID: 0}
-  canBeDeactivated: 0
+  canBeDeactivated: 1
   randomize: 0
   speed: 5
   pathPoints:
   - {fileID: 470272}
+  oneWay: 1
 --- !u!114 &11473028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20874,7 +20878,7 @@ MonoBehaviour:
   - {fileID: 11450650}
   - {fileID: 11422098}
   clickRequired: 1
-  deactivatable: 1
+  deactivatable: 0
 --- !u!135 &13507332
 SphereCollider:
   m_ObjectHideFlags: 1

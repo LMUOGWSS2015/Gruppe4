@@ -9,6 +9,7 @@ public class Ghost : MyMonoBehaviour {
 	public float turningSpeed;
 	public Collider coneCollider;
 	public GameObject blackHolePrefab;
+	public bool move;
 
 	private bool moving;
 	private bool turning;
@@ -19,15 +20,17 @@ public class Ghost : MyMonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		forward = true;
-		GameObject initialPoint = new GameObject();
-		initialPoint.transform.position = transform.position;
-		initialPoint.name = "Waypoint";
-		//initialPoint.transform.SetParent(LevelController.Instance.levelContent.transform);
-		wayPoints.Insert(0, initialPoint.transform);
-		currentPoint = 1;
+		if(wayPoints.Count > 0) {
+			forward = true;
+			GameObject initialPoint = new GameObject();
+			initialPoint.transform.position = transform.position;
+			initialPoint.name = "Waypoint";
+			initialPoint.transform.SetParent(transform.parent);
+			wayPoints.Insert(0, initialPoint.transform);
+			currentPoint = 1;
 
-		StartCoroutine(Turning ());
+			StartCoroutine(Turning ());
+		}
 	}
 	
 	// Update is called once per frame
@@ -60,12 +63,9 @@ public class Ghost : MyMonoBehaviour {
 
 	private IEnumerator Move ()
 	{
-		Debug.Log ("Move: " + wayPoints[currentPoint].position);
 		moving = true;
 		while(moving) {
 			Vector3 newPos = Vector3.MoveTowards(transform.position, wayPoints[currentPoint].position, Time.deltaTime * speed);
-
-			Debug.Log (newPos + " vs " + transform.position);
 
 			transform.position = newPos;
 

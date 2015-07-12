@@ -7,6 +7,7 @@ public class MovingPlatform : InteractivePhysicsObject {
 	public bool randomize;
 	public float speed;
 	public List<Transform> pathPoints;
+	public bool oneWay;
 
 	private int currentPoint = 1;
 	private bool movingForward = true;
@@ -54,8 +55,12 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 			if(movingForward && transform.position == pathPoints[currentPoint].position && !randomize) {
 				if(currentPoint == pathPoints.Count - 1) {
-					movingForward = false;
-					currentPoint--;
+					if(oneWay) {
+						isActivated = false;
+					} else {
+						movingForward = false;
+						currentPoint--;
+					}
 				} else {
 					currentPoint++;
 				}
@@ -72,7 +77,6 @@ public class MovingPlatform : InteractivePhysicsObject {
 
 	public override void DoDeactivation ()
 	{
-		Debug.Log ("BLA: " + movingForward);
 		if(pathPoints.Count > 1) {
 			newActivation = true;
 			if(movingForward) {
