@@ -15,14 +15,14 @@ public class CheatMode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (InputManager.Next()) {
 			if (checkPointNumber >= 0 && checkPointNumber < checkPointsGO.Length - 1) {
 				checkPointNumber++;
 			} else {
 				checkPointNumber = 0;
 			}
 			Teleport ();
-		} else if (Input.GetKeyDown (KeyCode.Q)) {
+		} else if (InputManager.Prev()) {
 			if (checkPointNumber >= 1) {
 				checkPointNumber--;
 			} else {
@@ -33,11 +33,25 @@ public class CheatMode : MonoBehaviour {
 	}
 	
 	public void Teleport() {
+		/*
 		GetComponent<Rigidbody>().velocity = new Vector3 (0f, 0f, 0f);
 		
 		Transform respawnPoint = checkPointsGO [checkPointNumber].transform;
 		transform.position = respawnPoint.position;
 		transform.rotation = respawnPoint.rotation;
+		*/
+
+		Transform oldRespawnPoint = Player.Instance.respawnPoint;
+		if (oldRespawnPoint) {
+			CheckPoint oldCheckPoint = oldRespawnPoint.gameObject.GetComponent<CheckPoint>();
+			if (oldCheckPoint)
+				oldCheckPoint.DeActivate();
+		}
+		
+		Player.Instance.respawnPoint = transform;
+		checkPointsGO[checkPointNumber].GetComponent<CheckPoint>().Activate();
+
+		Player.Instance.Respawn ();
 	}
 	
 }
