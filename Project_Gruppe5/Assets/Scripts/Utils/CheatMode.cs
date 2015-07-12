@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class CheatMode : MonoBehaviour {
 
@@ -10,7 +11,8 @@ public class CheatMode : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// get all check points in the scene
-		checkPointsGO = GameObject.FindGameObjectsWithTag ("CheckPoint");
+		checkPointsGO = GameObject.FindGameObjectsWithTag ("CheckPoint").OrderBy(go => go.name).ToArray();
+
 	}
 	
 	// Update is called once per frame
