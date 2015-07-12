@@ -48,10 +48,10 @@ public class CheatMode : MonoBehaviour {
 				oldCheckPoint.DeActivate();
 		}
 		
-		Player.Instance.respawnPoint = transform;
+		Player.Instance.respawnPoint = checkPointsGO[checkPointNumber].transform;
 		checkPointsGO[checkPointNumber].GetComponent<CheckPoint>().Activate();
 
-		Player.Instance.Respawn ();
+		Player.Instance.Kill();
 	}
 	
 }
