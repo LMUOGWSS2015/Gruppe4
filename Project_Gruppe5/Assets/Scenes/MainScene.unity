@@ -130,6 +130,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8265520, guid: 579768693aead4550afc748901aa41f8, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cbc9bd38323eca2449b3d28db05bd6cb, type: 3}
+    - target: {fileID: 8265520, guid: 579768693aead4550afc748901aa41f8, type: 2}
+      propertyPath: m_Volume
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265520, guid: 579768693aead4550afc748901aa41f8, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 579768693aead4550afc748901aa41f8, type: 2}
   m_IsPrefabParent: 0
