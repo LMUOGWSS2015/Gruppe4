@@ -10,6 +10,7 @@ public class LightCircle : InteractiveObject {
 
 	private bool refreshed;
 	private float lightIntensity;
+	private bool fullLight;
 
 	// Use this for initialization
 	public override void StartMe () 
@@ -26,6 +27,9 @@ public class LightCircle : InteractiveObject {
 		if(Input.GetKeyDown(KeyCode.R)) {
 			StartCoroutine(Refresh(110.0f, 17.0f, 0.3f, true));
 		}
+
+		if(Player.Instance.isDead () && sphere.enabled)
+			gameObject.SetActive(false);
 	}
 
 	public override void DoActivation ()
@@ -37,11 +41,12 @@ public class LightCircle : InteractiveObject {
 
 	public void FullLight ()
 	{
+		gameObject.SetActive(true);
 		StartCoroutine(Refresh(110.0f, 17.0f, 0.3f, false));
 		sphere.enabled = false;
 	}
 
-	private IEnumerator Shrink (float time)
+	private IEnumerator Shrink (float time, bool kill)
 	{
 		bool shrinking = true;
 		float elapsedTime = 0.0f;
@@ -50,6 +55,7 @@ public class LightCircle : InteractiveObject {
 		float radius = sphere.radius;
 		float targetRadius = 2.0f;
 		float intensity = directionalLight.intensity;
+		fullLight = false;
 
 		while(shrinking) {
 			if(refreshed)
@@ -66,7 +72,8 @@ public class LightCircle : InteractiveObject {
 
 			if(light.spotAngle == targetAngle && sphere.radius == targetRadius) {
 				shrinking = false;
-				Player.Instance.Kill ();
+				if(kill)
+					Player.Instance.Kill ();
 			}
 
 			yield return null;
@@ -99,7 +106,7 @@ public class LightCircle : InteractiveObject {
 		}
 		refreshed = false;
 		if(shrink)
-			StartCoroutine(Shrink(shrinkTime));
+			StartCoroutine(Shrink(shrinkTime, true));
 		else
 			sphere.enabled = false;
 	}

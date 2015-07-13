@@ -15,6 +15,7 @@ TagManager:
   - CheckPoint
   - Ghost
   - SpikeBall
+  - ShowingSound
   layers:
   - Default
   - TransparentFX

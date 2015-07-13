@@ -22,7 +22,6 @@ public class VanishingObject : MyMonoBehaviour {
 		if(transform.tag == "ShowingObject")
 			Disable();
 	}
-
 	private void SetupRenderers ()
 	{
 		renderers = gameObject.GetComponentsInChildren<Renderer>();
@@ -68,8 +67,9 @@ public class VanishingObject : MyMonoBehaviour {
 			foreach(Collider collider in colliders)
 				collider.isTrigger = false;
 
-			if(transform.tag == "ShowingObject")
-				transform.GetComponent<Collider>().isTrigger = true;
+			if(transform.tag == "ShowingObject") {		
+				GetComponent<Collider>().isTrigger = true;
+			}
 
 		} else {
 			StartCoroutine(Grow(2.0f));
@@ -85,7 +85,7 @@ public class VanishingObject : MyMonoBehaviour {
 			Vector3 newScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * speed);
 			transform.localScale = newScale;
 			
-			if(transform.localScale == targetScale)
+			if(transform.localScale == targetScale) 
 				shrinking = false;
 			
 			yield return null;

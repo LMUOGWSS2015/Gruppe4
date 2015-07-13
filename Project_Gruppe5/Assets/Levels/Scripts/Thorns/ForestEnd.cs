@@ -16,6 +16,7 @@ public class ForestEnd : MonoBehaviour {
 				StartCoroutine(CloseExit());
 				foreach(Collider col in deadZones)
 					col.enabled = true;
+				GameObject.Find("owls").GetComponent<AudioSource>().Stop ();
 			}
 		}
 	}

@@ -95,7 +95,6 @@ public class Ghost : MyMonoBehaviour {
 			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turningSpeed);
 
 			if(transform.rotation == lookRotation) {
-				Debug.Log ("turning false");
 				turning = false;
 				StartCoroutine(Move ());
 			}

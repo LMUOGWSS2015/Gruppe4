@@ -21,6 +21,9 @@ public class LightCircleCollider : MonoBehaviour {
 		if(other.tag == "ShowingObject") {
 			other.GetComponent<VanishingObject>().Enable();
 		}
+		if(other.tag == "ShowingSound") {
+			other.GetComponent<VanishingSound>().Enable();
+		}
 	}
 	
 	void OnTriggerExit (Collider other)
