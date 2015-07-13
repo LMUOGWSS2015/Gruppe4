@@ -8263,7 +8263,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 22.5, z: 0}
+  m_LocalPosition: {x: 20, y: 22.5, z: .519999981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423704}
@@ -9605,7 +9605,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170868}
   m_LocalRotation: {x: 0, y: -.707106888, z: 0, w: .707106769}
-  m_LocalPosition: {x: 10, y: 27.5, z: 0}
+  m_LocalPosition: {x: 9.36999989, y: 27.5, z: .560000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470294}
@@ -24065,9 +24065,7 @@ MonoBehaviour:
   groupName: rock
   setOfMeshesToPaint:
   - {fileID: 171826, guid: b4f8867d949984249b589f12d205162f, type: 2}
-  paintBuffer:
-  - {fileID: 0}
-  - {fileID: 0}
+  paintBuffer: []
   deletionBuffer: []
   paint: 112
   delete: 108
