@@ -83,10 +83,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 455566}
   - 33: {fileID: 3375228}
-  - 23: {fileID: 2301248}
   - 54: {fileID: 5454522}
   - 64: {fileID: 6496950}
   - 114: {fileID: 11431356}
+  - 114: {fileID: 11452858}
   m_Layer: 0
   m_Name: Axe Collider
   m_TagString: Untagged
@@ -158,30 +158,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 435046}
   m_RootOrder: 1
---- !u!23 &2301248
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194962}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: b8fe3ab561746d44398acdbbac7485ae, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2303476
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -216,7 +192,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b8fe3ab561746d44398acdbbac7485ae, type: 2}
+  - {fileID: 2100000, guid: a51c6c479f9970d4ca5b1134cb792ee2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -418,6 +394,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075d2665241dbc04e8fe2bd28087c4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11452858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc50d8b6a2412e489ed5eabeaea7800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 25
 --- !u!114 &11473060
 MonoBehaviour:
   m_ObjectHideFlags: 1

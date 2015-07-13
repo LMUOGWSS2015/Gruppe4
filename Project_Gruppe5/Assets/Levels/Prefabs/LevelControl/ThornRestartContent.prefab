@@ -5254,6 +5254,7 @@ GameObject:
   - 54: {fileID: 5462308}
   - 64: {fileID: 6494286}
   - 114: {fileID: 11427610}
+  - 114: {fileID: 11479164}
   m_Layer: 0
   m_Name: Axe Collider
   m_TagString: Untagged
@@ -21419,6 +21420,18 @@ MonoBehaviour:
   - {fileID: 5479300}
   - {fileID: 5410744}
   explosionPosition: {fileID: 404930}
+--- !u!114 &11479164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc50d8b6a2412e489ed5eabeaea7800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 25
 --- !u!114 &11479864
 MonoBehaviour:
   m_ObjectHideFlags: 1
