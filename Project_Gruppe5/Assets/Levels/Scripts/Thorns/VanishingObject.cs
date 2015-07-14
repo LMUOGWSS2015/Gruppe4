@@ -2,13 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//Object that either vanishes or shows when the light hits it
 public class VanishingObject : MyMonoBehaviour {
 
+	//vanishes or shows instantly without an animation
 	public bool instantVanish;
 
+	//list of all renderers of the obejct and its childs
 	private Renderer[] renderers;
+	//list of all colliders of the object and its childs
 	private Collider[] colliders;
-
+	
 	private bool shrinking;
 	private bool growing;
 
@@ -22,16 +26,20 @@ public class VanishingObject : MyMonoBehaviour {
 		if(transform.tag == "ShowingObject")
 			Disable();
 	}
+
+	//Get all the renderers in all children of the object
 	private void SetupRenderers ()
 	{
 		renderers = gameObject.GetComponentsInChildren<Renderer>();
 	}
 
+	//Get all the colliders in all children of the object
 	private void SetupColliders () 
 	{
 		colliders = gameObject.GetComponentsInChildren<Collider>();
 	}
 
+	//Triggers the object and shows it
 	public void Disable ()
 	{
 		if(instantVanish) {
@@ -52,6 +60,7 @@ public class VanishingObject : MyMonoBehaviour {
 		}
 	}
 
+	//Triggers the object and hides it
 	public void Enable ()
 	{
 		if(instantVanish) {
@@ -76,6 +85,7 @@ public class VanishingObject : MyMonoBehaviour {
 		}
 	}
 
+	//shrinks the object to zero over time
 	private IEnumerator Shrink (float speed)
 	{
 		growing = false;
@@ -92,6 +102,7 @@ public class VanishingObject : MyMonoBehaviour {
 		}
 	}
 
+	//grows the object to full size over time
 	private IEnumerator Grow (float speed)
 	{
 		shrinking = false;

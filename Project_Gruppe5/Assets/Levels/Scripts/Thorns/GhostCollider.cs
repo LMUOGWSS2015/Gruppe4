@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//NOT IN THE FINAL GAME
 public class GhostCollider : MonoBehaviour {
 
 	public Ghost ghost;

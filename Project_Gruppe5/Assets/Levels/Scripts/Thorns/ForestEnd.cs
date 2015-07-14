@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//The exit of the forest in the thornlevel
 public class ForestEnd : MonoBehaviour {
 
+	//barriere that closes the forest
 	public InteractivePhysicsObject barriere;
+	//dust that is on the bottom
 	public ParticleSystem dust;
 
 	private bool isTriggered;
@@ -23,6 +26,7 @@ public class ForestEnd : MonoBehaviour {
 		}
 	}
 
+	//closes the exit and plays the sound
 	private IEnumerator CloseExit ()
 	{
 		isTriggered = true;

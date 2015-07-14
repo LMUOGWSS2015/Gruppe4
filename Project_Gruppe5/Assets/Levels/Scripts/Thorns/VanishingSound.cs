@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Sound that playes when the lightcircle hits it
 public class VanishingSound : MonoBehaviour {
 
 	private bool played;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//NOT IN THE FINAL GAME
 public class GhostLantern : MonoBehaviour {
 
 	public float maxRotation;

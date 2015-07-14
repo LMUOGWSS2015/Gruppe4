@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//NOT IN THE FINAL GAME!!!
 public class Ghost : MyMonoBehaviour {
 
 	public List<Transform> wayPoints;

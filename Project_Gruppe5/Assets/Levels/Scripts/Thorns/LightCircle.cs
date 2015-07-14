@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Light Circle in the thorn level that is above the player
 public class LightCircle : InteractiveObject {
 
+	//spotlight ontop
 	public Light light;
+	//collider for the light
 	public SphereCollider sphere;
+	//time it needs to shrink down to
 	public float shrinkTime;
 	public Light directionalLight;
 
@@ -41,6 +45,7 @@ public class LightCircle : InteractiveObject {
 		isActivated = false;
 	}
 
+	//Turns the light on completely and doesnt make it shrink
 	public void FullLight ()
 	{
 		gameObject.SetActive(true);
@@ -48,6 +53,7 @@ public class LightCircle : InteractiveObject {
 		sphere.enabled = false;
 	}
 
+	//Shrink the light and collider over time	
 	private IEnumerator Shrink (float time, bool kill)
 	{
 		bool shrinking = true;
@@ -82,6 +88,7 @@ public class LightCircle : InteractiveObject {
 		}
 	}
 
+	//refresh the collider and light to full circle again and triggers shrinking - if wanted
 	private IEnumerator Refresh(float targetAngle, float targetRadius, float time, bool shrink)
 	{
 		refreshed = true;

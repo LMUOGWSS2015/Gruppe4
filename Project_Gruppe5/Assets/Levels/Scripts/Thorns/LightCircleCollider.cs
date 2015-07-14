@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Collider of the LightCircle to trigger showing and vanishing objects in the thorn level
 public class LightCircleCollider : MonoBehaviour {
 
 	// Use this for initialization

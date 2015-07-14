@@ -4,6 +4,7 @@ using System.Collections;
 //Tracks a list of Firewalls and keeps all on except for one
 public class FlameCircle : InteractiveObject {
 
+	//All firewalls that are in the circle
 	public Firewall[] firewalls;
 
 	private int current = 0;

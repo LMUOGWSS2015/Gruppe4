@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Entrance of the forest in the thorns level
 public class ForestEntrance : MonoBehaviour {
 
 	public LightCircle light;
