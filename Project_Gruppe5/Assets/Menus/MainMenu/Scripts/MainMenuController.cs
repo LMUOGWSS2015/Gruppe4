@@ -383,7 +383,6 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			//t = t * t * t * (t * (6f * t - 15f) + 10f);
-			t = t;
 			
 			Vector3 pos = Vector3.Lerp(startPos, endPos, t);
 			island.localPosition = pos;
@@ -510,7 +509,6 @@ public class MainMenuController : Singleton<MainMenuController> {
 			
 			float t = currentLerpTime / lerpTime;
 			//t = t * t * t * (t * (6f * t - 15f) + 10f);
-			t = t;
 			
 			Vector3 pos = Vector3.Lerp(startPos, endPos, t);
 			fog.localPosition = pos;
