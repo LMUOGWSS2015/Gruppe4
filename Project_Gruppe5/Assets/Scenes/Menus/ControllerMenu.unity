@@ -1196,9 +1196,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11444814, guid: de8c198b5667e46749826308c886a76d, type: 2}
       propertyPath: m_Text
-      value: 'CONTROLLER
-
-        SETTINGS'
+      value: SETTINGS
       objectReference: {fileID: 0}
     - target: {fileID: 11400176, guid: de8c198b5667e46749826308c886a76d, type: 2}
       propertyPath: m_Text
