@@ -9,6 +9,9 @@ public class LevelController : Singleton<LevelController> {
 
 	public LoadingController.Scene levelName; // Der Scenenname des Levels.
 
+	public GameObject cameraDofOn;
+	public GameObject cameraDofOff;
+
 	public GameObject levelMusic;
 	public GameObject winMusic;
 
@@ -32,6 +35,14 @@ public class LevelController : Singleton<LevelController> {
 	public Text bestSecondsText;
 
 	private void Start() {
+		if (PlayerPrefs.GetInt (MainController.DOF) == MainController.DOF_OFF) {
+			cameraDofOn.SetActive (false);
+			cameraDofOff.SetActive (true);
+		} else {
+			cameraDofOn.SetActive (true);
+			cameraDofOff.SetActive (false);
+		}
+
 		restartContent = Instantiate (originalRestartContent);
 		restartContent.transform.SetParent (levelContent.transform);
 

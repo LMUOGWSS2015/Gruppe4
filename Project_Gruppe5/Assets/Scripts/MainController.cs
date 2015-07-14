@@ -7,6 +7,10 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class MainController : Singleton<MainController> {
 
+	public static string DOF = "dof";
+	public static int DOF_OFF = 0;
+	public static int DOF_ON = 1;
+
 	public static string DESERT_TIME = "DesertTime";
 	public static string ICE_TIME = "IceTime";
 	public static string THORN_TIME = "ThornTime";
@@ -25,6 +29,9 @@ public class MainController : Singleton<MainController> {
 		DontDestroyOnLoad (this);
 
 		sound = GetComponent<AudioSource> ();
+
+		if (!PlayerPrefs.HasKey (DOF))
+			PlayerPrefs.SetInt (DOF, DOF_ON);
 
 		if (PlayerPrefs.HasKey (InputManager.CONTROLLER))
 			InputManager.controller = InputManager.Controllers ()[PlayerPrefs.GetInt (InputManager.CONTROLLER)];
