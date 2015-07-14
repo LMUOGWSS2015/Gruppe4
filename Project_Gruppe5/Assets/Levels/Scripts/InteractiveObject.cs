@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//"Interface" for objects that can be triggered and are interactive
 public class InteractiveObject : MyMonoBehaviour {
 
+	//is a trigger needed
 	public bool noTrigger;
+	//delay until the object is triggered after activation
 	public float delay;
+	//can be used more than once
 	public bool singleUse;
 	
 	[HideInInspector]
@@ -12,6 +16,7 @@ public class InteractiveObject : MyMonoBehaviour {
 	[HideInInspector]
 	public bool isDeactivated;
 
+	//is already used
 	public bool isUsed;
 
 	public void Start()
@@ -41,7 +46,8 @@ public class InteractiveObject : MyMonoBehaviour {
 			DoDeactivation ();
 		}
 	}
-	
+
+	//execute object
 	public virtual void Activate()
 	{
 		if(!isUsed) {
@@ -56,7 +62,8 @@ public class InteractiveObject : MyMonoBehaviour {
 		yield return new WaitForSeconds(delay);
 		isActivated = true;
 	}
-	
+
+	//deactivate object
 	public virtual void Deactivate()
 	{
 		isActivated = false;
@@ -73,12 +80,14 @@ public class InteractiveObject : MyMonoBehaviour {
 	{
 		isDeactivated = false;
 	}
-	
+
+	//needs to be implemented by the certain object
 	public virtual void DoActivation() 
 	{
 
 	}
-	
+
+	//needs to be implemented by the certain object
 	public virtual void DoDeactivation() 
 	{
 		

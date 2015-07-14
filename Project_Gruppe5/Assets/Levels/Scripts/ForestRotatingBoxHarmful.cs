@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Special script for the huge rotating box in the forest level
+ * needed so child spikeballs trigger death
+ */
 public class ForestRotatingBoxHarmful : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other) 

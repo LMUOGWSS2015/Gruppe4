@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//NOT IN FINAL GAME
 public class Lever : ActivatingObject {
 
 	public Color deactivatedColor;

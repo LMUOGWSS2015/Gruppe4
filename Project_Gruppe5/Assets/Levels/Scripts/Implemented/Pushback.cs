@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Pushes the Player back if its hit by this object
 public class Pushback : MyMonoBehaviour {
 
 	public float power = 40.0f;

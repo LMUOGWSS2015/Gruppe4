@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+//Activator for interactive objects
 public class ActivatingObject : MyMonoBehaviour {
 	
 	public bool isActivated;
@@ -9,6 +10,7 @@ public class ActivatingObject : MyMonoBehaviour {
 	public bool isLocked;
 	public float lockTime;
 
+	// List of all objects that will be triggered
 	public List<InteractiveObject> interactingObjects;
 
 	public virtual void Update() {
@@ -22,6 +24,7 @@ public class ActivatingObject : MyMonoBehaviour {
 		StartMe ();
 	}
 
+	//Activates all objects
 	public virtual void Activated()
 	{
 		if(!isLocked) {
@@ -34,7 +37,8 @@ public class ActivatingObject : MyMonoBehaviour {
 			StartCoroutine(LockActivator());
 		}
 	}
-	
+
+	//Deactivates all objects
 	public virtual void Deactivated()
 	{
 		if(!isLocked) {
@@ -48,6 +52,7 @@ public class ActivatingObject : MyMonoBehaviour {
 		}
 	}
 
+	//Locks the activator for a certain time
 	private IEnumerator LockActivator ()
 	{
 		isLocked = true;

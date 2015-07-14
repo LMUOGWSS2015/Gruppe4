@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Platform that rotates around the own center by a given number of degrees
 public class RotatingPlatform : InteractivePhysicsObject {
 
+	//axis about which the object is rotated
 	public AXIS axis;
+	//speed of rotation
 	public float speed;
+	//destination degrees
 	public float endRotationDegrees;
 
 	private Quaternion startRotation;
@@ -55,6 +59,7 @@ public class RotatingPlatform : InteractivePhysicsObject {
 		updateRotationState ();
 	}
 
+	//start the rotation
 	public override void DoActivation ()
 	{
 		/*if(checkAxis) {
@@ -66,6 +71,8 @@ public class RotatingPlatform : InteractivePhysicsObject {
 
 		/*if(transform.rotation == endRotation)
 			checkAxis = true;*/
+
+		//makes it possible to keep rotating the object further after first activation
 		if (continueRotation && transform.rotation == endRotation) {
 			//this.Deactivate();
 			this.isActivated = false;
@@ -75,6 +82,7 @@ public class RotatingPlatform : InteractivePhysicsObject {
 		}
 	}
 
+	//deactivates the platform making it rotate back to the original state
 	public override void DoDeactivation ()
 	{
 		/*if(checkAxis) {
@@ -86,6 +94,8 @@ public class RotatingPlatform : InteractivePhysicsObject {
 
 		/*if(transform.rotation == startRotation)
 			checkAxis = true;*/
+
+		//makes it possible to keep rotating the object further after first activation
 		if (continueRotation && transform.rotation == endRotation) {
 			this.Deactivate();
 			currentStartRotation -= endRotationDegrees;
@@ -94,6 +104,7 @@ public class RotatingPlatform : InteractivePhysicsObject {
 		}
 	}
 
+	//update the state of the rotation
 	private void updateRotationState() {
 		Vector3 eulerStart = new Vector3();
 		Vector3 eulerEnd = new Vector3();

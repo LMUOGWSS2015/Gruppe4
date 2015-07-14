@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Single firestream used in a Firewall
 public class FirewallEmitter : MonoBehaviour {
 
 	public Light light;

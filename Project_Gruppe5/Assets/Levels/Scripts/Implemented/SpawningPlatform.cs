@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//NOT IN FINAL VERSION
+//Spawns an object ontop of this one
 public class SpawningPlatform : InteractiveObject {
 
+	//object that is supposed to be spawned
 	public GameObject spawnPrefab;
 	public float timeToSpawn;
 	private GameObject spawn;

@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//object that simple moves in one direction
 public class SimpleMovingPlatform : InteractivePhysicsObject {
-	
+
+	//goes back and forth
 	public bool pingPong;
+	//speed of movement
 	public float speed;
+	//direction of movement
 	public Direction direction;
+	//distance the object should move
 	public float distance;
 	
 	private Vector3 startPosition;
@@ -27,6 +32,7 @@ public class SimpleMovingPlatform : InteractivePhysicsObject {
 		endPosition = transform.position + GetDistanceVector();
 	}
 
+	//calculates the vector in which the object is supposed to move
 	private Vector3 GetDistanceVector() 
 	{
 		Vector3 distanceVector;
@@ -83,17 +89,17 @@ public class SimpleMovingPlatform : InteractivePhysicsObject {
 		return distanceVector;
 	}
 
+	//starts the movement
 	public override void DoActivation()
 	{
 		if(pingPong && transform.position == endPosition) {
-			if(transform.name == "Moving Platform 2")
-				Debug.Log ("TRIGGERED!!!");
 			isActivated = false;
 			isDeactivated = true;
 		}
 		rb.MovePosition(Vector3.MoveTowards(transform.position, endPosition, Time.deltaTime * speed));
 	}
-	
+
+	//reverts the movement
 	public override void DoDeactivation()
 	{
 		if(pingPong && transform.position == startPosition) {

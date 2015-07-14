@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//object that spins around its own center
 public class SpinningPlatform : InteractivePhysicsObject {
 
 	public Vector3 velocity;

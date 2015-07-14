@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Script for breaking platform
 public class BreakablePlatform : MonoBehaviour {
 
 	public Rigidbody[] breakableParts;
@@ -34,6 +35,7 @@ public class BreakablePlatform : MonoBehaviour {
 		}
 	}
 
+	//Coroutine that initiates the breaking of the platform
 	private IEnumerator BreakingApart()
 	{
 		isShaking = true;
@@ -43,6 +45,7 @@ public class BreakablePlatform : MonoBehaviour {
 		BreakApart();
 	}
 
+	//Causes explosion in the middle of the platform for every part of it
 	private void BreakApart()
 	{
 		foreach(Rigidbody rb in breakableParts) {
@@ -53,11 +56,7 @@ public class BreakablePlatform : MonoBehaviour {
 	}
 
 	void PlaySound() {
-
-
 		audio.Play();
-		
-	
 	}
 	
 }

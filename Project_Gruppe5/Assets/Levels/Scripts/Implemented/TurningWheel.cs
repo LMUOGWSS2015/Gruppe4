@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Places objects in a circle around a center and rotates them around the center
 public class TurningWheel : InteractiveObject {
 
+	//speed of movement
 	public float speed;
+	//radius of the circle
 	public float radius;
+	//rotation about which axis
 	public AXIS axis;
 	public bool clockwise;
+	//Elements that should be placed around the center
 	public GameObject[] elements;
 
 	private float angle;
 	private Vector3 direction;
+	//rigidbodies of elements
 	private Rigidbody[] rigidbodies;
 
 	public enum AXIS {
@@ -27,6 +33,7 @@ public class TurningWheel : InteractiveObject {
 		PlaceObjects();
 	}
 
+	//sets the rotation direction
 	private void SetDirection()
 	{
 		int factor = 1;
@@ -49,6 +56,7 @@ public class TurningWheel : InteractiveObject {
 		}
 	}
 
+	//places objects evenly distributed around the center
 	private void PlaceObjects()
 	{
 		//Vector3 centrePos = new Vector3(0, 0, 7);

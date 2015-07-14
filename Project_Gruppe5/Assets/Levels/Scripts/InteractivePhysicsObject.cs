@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Extension of InteractiveObject for objects that need to use physics
 public class InteractivePhysicsObject : InteractiveObject {
 
+	//rigidbody of object
 	[HideInInspector]
 	public Rigidbody rb;
 	public bool canBeDeactivated;
@@ -24,7 +26,8 @@ public class InteractivePhysicsObject : InteractiveObject {
 
 	//overrides InteractiveObject.Update()
 	void Update() {}
-	
+
+	//FixedUpdate for physics
 	void FixedUpdate() 
 	{
 		if(isActivated) {

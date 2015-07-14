@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Complex rotating platform (does the same as rotating platform but needed for special cases)
 public class ComplexRotatingPlatform : InteractivePhysicsObject {
 	
 	public AXIS axis;

@@ -1,14 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Firewall that emits fire and kills the player
 public class Firewall : MonoBehaviour {
 
+	//delay until the fire starts
 	public float delay;
+	//duration until flames go away again
 	public float durationTime;
+	//duration between the flames appear
 	public float cooldownTime;
+	//the flame is always on
 	public bool alwaysFlame;
+	//collider of the flamewall
 	public BoxCollider collider;
+	//bottom light
 	public Light groundLight;
+	//the single firestreams
 	public FirewallEmitter[] emitters;
 
 	private bool running;
@@ -24,6 +32,7 @@ public class Firewall : MonoBehaviour {
 		}
 	}
 
+	//Initialize the firwall and take delay, duration and cooldown into account
 	private IEnumerator Init ()
 	{
 		yield return new WaitForSeconds(delay);
@@ -36,6 +45,7 @@ public class Firewall : MonoBehaviour {
 		}
 	}
 
+	//start the flames
 	public void Activate ()
 	{
 		foreach(FirewallEmitter fe in emitters)
@@ -44,6 +54,7 @@ public class Firewall : MonoBehaviour {
 		groundLight.enabled = true;
 	}
 
+	//deactivate the flames
 	public void Deactivate ()
 	{
 		foreach(FirewallEmitter fe in emitters)

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Tracks a list of Firewalls and keeps all on except for one
 public class FlameCircle : InteractiveObject {
 
 	public Firewall[] firewalls;
@@ -19,7 +20,7 @@ public class FlameCircle : InteractiveObject {
 		isActivated = false;
 		Next ();
 	}
-
+	
 	private void Next ()
 	{
 		current++;
@@ -28,6 +29,7 @@ public class FlameCircle : InteractiveObject {
 		Switch ();
 	}
 
+	//Deactivates the next firewall and turns the rest on
 	private void Switch ()
 	{
 		for(int i = 0; i < firewalls.Length; i++) {
