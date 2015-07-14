@@ -1,0 +1,8 @@
+Flying Isles
+
+Idee und Umsetzung:
+Elias Englmeier, David Englmeier, Patrik Hagen, Stefan Schätz, Linh Nguyen Vo, Thomas Wimmer
+
+The Flying Isles ist ein klassisches Plattform/Jump ‘n’ Run Spiel. Angesiedelt auf schwebenden Inseln führt der Spieler den Hauptcharakter durch staubige Wüsten, in die Höhen eisiger Gletscher, durch dunkle Wälder und über windige Bergpässe. Dabei stößt er auf zahlreiche Gefahren und muss stets darauf achten keinen falschen Schritt zu machen.
+Mit Hilfe eines Eye-Trackers (oder optional der Maus) kann die Umgebung verändert und Rätsel gelöst werden, um somit den sicheren Weg zum Ziel zu ebnen.
+Die Grafik ist im abstrakten und modernen LowPoly-Stil gehalten, bei dem nur eine sehr geringe Polygonzahl verwendet wird. Dadurch wurde eine klare Struktur geschaffen und der Fokus auf die zentrale Spielmechanik geht nicht verloren.
