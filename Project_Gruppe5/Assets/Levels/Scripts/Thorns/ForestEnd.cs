@@ -5,7 +5,6 @@ public class ForestEnd : MonoBehaviour {
 
 	public InteractivePhysicsObject barriere;
 	public ParticleSystem dust;
-	public Collider[] deadZones;
 
 	private bool isTriggered;
 
@@ -14,9 +13,12 @@ public class ForestEnd : MonoBehaviour {
 		if(other.tag == "Player") {
 			if(!isTriggered) {
 				StartCoroutine(CloseExit());
-				foreach(Collider col in deadZones)
-					col.enabled = true;
+				GameObject deadZones = GameObject.Find ("DeadZones");
+				foreach(Transform dz in deadZones.transform) {
+					dz.GetComponent<Collider>().enabled = true;
+				}
 				GameObject.Find("owls").GetComponent<AudioSource>().Stop ();
+				Debug.Log (GameObject.Find("owls"));
 			}
 		}
 	}
@@ -26,6 +28,7 @@ public class ForestEnd : MonoBehaviour {
 		isTriggered = true;
 		Player.Instance.Freeze (true);
 		dust.Play ();
+		GetComponent<AudioSource>().Play();
 		barriere.Activate ();
 		yield return new WaitForSeconds (2.0f);
 		Player.Instance.Freeze (false);
