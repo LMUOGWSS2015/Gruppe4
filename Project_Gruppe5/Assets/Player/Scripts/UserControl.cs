@@ -14,22 +14,24 @@ public class UserControl : MonoBehaviour
 	private bool jump;                      // true if the User pressed the jump button
 
 	private void Start() {
-		// get the transform of the main camera
-		if (Camera.main != null) {
-			cam = Camera.main.transform;
-		}
-		else {
-			Debug.LogWarning(
-				"Warning: no main camera found. Third person character needs a Camera tagged \"MainCamera\", for camera-relative controls.");
-			// we use self-relative controls in this case, which probably isn't what the user wants, but hey, we warned them!
-		}
-
 		// get the third person character ( this should never be null due to require component )
 		player = GetComponent<Player>();
 	}
 	
 	
 	private void Update() {
+		if (cam == null) {
+			// get the transform of the main camera
+			if (Camera.main != null) {
+				cam = Camera.main.transform;
+			}
+			else {
+				Debug.LogWarning(
+					"Warning: no main camera found. Third person character needs a Camera tagged \"MainCamera\", for camera-relative controls.");
+				// we use self-relative controls in this case, which probably isn't what the user wants, but hey, we warned them!
+			}
+		}
+
 		if (!jump) {
 			jump = InputManager.Jump();
 		}
