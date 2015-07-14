@@ -24,9 +24,11 @@ public class LightCircle : InteractiveObject {
 	public override void UpdateMe () 
 	{
 		base.UpdateMe();
+		/* CHEAT MODE!!!
 		if(Input.GetKeyDown(KeyCode.R)) {
 			StartCoroutine(Refresh(110.0f, 17.0f, 0.3f, true));
 		}
+		*/
 
 		if(Player.Instance.isDead () && sphere.enabled)
 			gameObject.SetActive(false);
