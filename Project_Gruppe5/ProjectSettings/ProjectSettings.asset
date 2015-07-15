@@ -9,7 +9,7 @@ PlayerSettings:
   targetDevice: 2
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: ' LMU OG 2015'
+  companyName: LMU OG 2015
   productName: Flying Isles
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
